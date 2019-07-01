@@ -1,0 +1,51 @@
+{{- define "main" -}}
+
+    <section class="hero is-fullheight is-default is-bold">
+        
+        {{- partial "navbar.html" . -}}
+        {{- partial "navbar-clone.html" . -}}
+
+        {{- $homepage   := .Site.Params.homepage -}}
+        {{- $title      := index $homepage "title" -}}
+        {{- $subtitle   := index $homepage "subtitle" -}}
+        {{- $buttonText := index $homepage "buttontext" -}}
+        {{- $buttonLink := index $homepage "buttonlink" -}}
+        {{- $image      := index $homepage "image" -}}
+        <div class="hero-body">
+        <div class="container">
+            <div class="columns is-vcentered">
+            <div class="column is-5 is-offset-1 landing-caption">
+                <h1 class="title is-1 is-bold is-spaced">
+                {{- $title -}}
+                </h1>
+                {{- with $subtitle -}}
+                <h2 class="subtitle is-5 is-muted">
+                {{ . }}
+                </h2>
+                {{- end -}}
+                {{/*  <p>
+                <a class="button cta rounded primary-btn raised" href="{{- $buttonLink -}}">
+                    {{- $buttonText -}}
+                </a>
+                </p>  */}}
+            </div>
+            <div class="column is-5 is-offset-1">
+                <figure class="image is-4by3">
+                {{- $img := resources.Get (printf "/images/%s" $image) -}}
+                <img src="{{- $img.Permalink | relURL -}}" alt="Myself">
+                {{/*  <img src="{{- printf "/images/%s" $image | absURL -}}" alt="Description">  */}}
+                </figure>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    {{- partial "footer.html" . -}}
+
+    <!-- Back To Top Button -->
+    <div id="backtotop"><a href="#"></a></div>
+
+    {{- partial "sidebar.html" . -}}
+
+{{- end -}}

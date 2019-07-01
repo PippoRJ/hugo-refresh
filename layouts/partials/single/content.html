@@ -1,0 +1,32 @@
+<section class="section is-medium">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-centered-tablet-portrait">
+        <h1 class="title section-title">{{- .Title -}}</h1>
+        <h5 class="subtitle is-5 is-muted">{{- .Params.Subtitle -}}</h5>
+        <div class="divider"></div>
+        {{/*  <section class="section content">  */}}
+        <section class="section content">
+          <!-- <div class="content"> -->
+            {{- .Content -}}
+          <!-- </div> -->
+        </section>
+      </div>
+    </div>
+  </div>  
+  <!-- <div class="container">
+    <div class="columns">
+      <div class="column">
+      </div>
+    </div>
+  </div> -->
+  {{- if not .Params.hideLastModified -}}
+  <div class="container">
+    <div class="columns">
+      <div class="column has-text-right is-family-monospace is-centered-tablet-portrait">
+        Last modified: {{- .Lastmod.Format "2 January 2006" -}}
+      </div>
+    </div>
+  </div>
+  {{- end -}}
+</section>

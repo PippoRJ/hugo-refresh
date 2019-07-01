@@ -1,0 +1,35 @@
+{{- define "main" -}}
+{{- $page404    := .Site.Params.pagNotFound }}
+{{- $title      := index $page404 "title" }}
+{{- $subtitle   := index $page404 "subtitle" }}
+{{- $image      := index $page404 "image" }}
+<section class="hero is-fullheight is-default is-bold">
+  {{/* partial "navbar.html" . */}}
+  {{/* partial "navbar-clone.html" . */}}
+  <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered">
+          <div class="column is-5 is-offset-1 landing-caption">
+            <h1 class="title is-2 is-bold is-spaced">
+              {{ $title }}
+            </h1>
+            {{- with $subtitle -}}
+            <h2 class="subtitle is-5 is-muted">
+              {{ . }}
+            </h2>
+            {{- end -}}
+          </div>
+          <div class="column is-5 is-offset-1">
+            <figure class="image is-4by3">
+                {{- $img := resources.Get (printf "/images/%s" $image) -}}
+                <img src="{{- $img.Permalink | relURL -}}" alt="Myself">
+              {{/*  <img src="{{ printf "/images/%s" $image | absURL }}" alt="Description">  */}}
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  {{/* partial "hero-footer.html" . */}}
+</section>
+{{- end -}}

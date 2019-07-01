@@ -1,0 +1,76 @@
+<footer class="footer footer-dark">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <!-- <div class="footer-logo"> -->
+            {{- $sidebar := .Site.Params.footer -}}
+            {{- $logo    := index $sidebar "logo" -}}
+            {{- $img     := resources.Get (printf "/images/%s" $logo) -}}
+            <img src="{{- $img.Permalink | relURL -}}" alt="">
+            {{/*  <img src="{{- printf "/images/%s" $logo | absURL -}}">  */}}
+        <!-- </div> -->
+      </div>
+      
+    <div class="column">
+        <div class="footer-column">
+          <div class="footer-header">
+              <h3>Website</h3>
+          </div>
+          <ul class="link-list">
+            <li>
+                <a href="{{- printf "/credits" | absURL -}}">
+                  <span class="icon"><i class="fa fa-cube"></i></span>
+                  Credits
+                </a>
+              </li>
+            <li>
+              <a href="{{- printf "/tags" | absURL -}} ">
+                <span class="icon"><i class="fa fa-tag"></i></span> 
+                All Tags
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="column">
+        <div class="footer-column">
+          <div class="footer-header">
+              <h3>Contacts</h3>
+          </div>
+          <ul class="link-list">
+            <li>
+              <a href="https://www.linkedin.com/in/roberto-jordaney-56686634/" target="_blank">
+                <span class="icon"><i class="fa fa-linkedin"></i></span>
+                Linkedin
+              </a>
+            </li>
+            <li>
+              <a href="mailto:jordaney.roberto@gmail.com" target="_blank">
+                <span class="icon"><i class="fa fa-envelope"></i></span>
+                jordaney.roberto@gmail.com
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="footer-column">
+          <div class="footer-header">
+              <h3>Copyright</h3>
+          </div>
+          <ul class="link-list">
+            <li>
+              <a>
+                <span class="icon"><i class="fa fa-copyright"></i></span>
+                Roberto Jordaney - 2019
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</footer>

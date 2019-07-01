@@ -1,0 +1,65 @@
+{{- $js1 := resources.Get "js/jquery-2.2.4.js"                        }}
+{{- $js2 := resources.Get "js/feather.4.22.0.js"                      }}
+{{- $js3 := resources.Get "js/modernizr-2.8.3.js"                     }}
+{{- $js4 := resources.Get "js/fresh_new.js"                           }}
+{{- $js5 := resources.Get "js/highlight.9.15.8.pack.js"               }}
+{{- $js6 := resources.Get "js/highlightjs-line-numbers.2.7.0.min.js"  }}
+
+{{/*  Attempt to put all js in one file  */}}
+{{/*  https://discourse.gohugo.io/t/bundle-many-resources/13497  */}}
+
+{{- $.Scratch.Set "jslibs" slice -}}
+{{- $libs := slice $js1 $js2 $js3 $js4 $js5 $js6 -}}
+{{- range $libs -}}
+    {{- $.Scratch.Add "jslibs" . -}}
+{{- end -}}
+{{- $js := .Scratch.Get "jslibs" | resources.Concat "js/main.js" -}}
+{{- $js := $js | resources.Minify | resources.Fingerprint -}}
+
+{{/*  or  */}}
+
+{{- $jsCombined := slice $js1 $js2 $js3 $js4 $js5 $js6 | resources.Concat "js/combined_all.js" -}}
+{{- $jsmin      := $jsCombined | resources.Minify | resources.Fingerprint -}}
+
+{{/*  end  */}}
+
+{{- if .Site.Params.jsMinify -}}
+    {{- $js1 = $js1 | resources.Minify }}
+    {{- $js2 = $js2 | resources.Minify }}
+    {{- $js3 = $js3 | resources.Minify }}
+    {{- $js4 = $js4 | resources.Minify }}
+    {{- $js5 = $js5 | resources.Minify }}
+    {{- $js6 = $js6 | resources.Minify }}
+{{- end -}}
+
+{{- if .Site.Params.jsFingerprint -}}
+    {{- $js1 = $js1 | resources.Fingerprint }}
+    {{- $js2 = $js2 | resources.Fingerprint }}
+    {{- $js3 = $js3 | resources.Fingerprint }}
+    {{- $js4 = $js4 | resources.Fingerprint }}
+    {{- $js5 = $js5 | resources.Fingerprint }}
+    {{- $js6 = $js6 | resources.Fingerprint }}
+{{- end -}}
+
+{{- if .Site.Params.jsFingerprint -}}
+
+<script src="{{- $js1.Permalink | relURL -}}" integrity="{{- $js1.Data.Integrity -}}"></script>
+<script src="{{- $js2.Permalink | relURL -}}" integrity="{{- $js2.Data.Integrity -}}"></script>
+<script src="{{- $js3.Permalink | relURL -}}" integrity="{{- $js3.Data.Integrity -}}"></script>
+<script src="{{- $js4.Permalink | relURL -}}" integrity="{{- $js4.Data.Integrity -}}"></script>
+<script src="{{- $js5.Permalink | relURL -}}" integrity="{{- $js5.Data.Integrity -}}"></script>
+<script src="{{- $js6.Permalink | relURL -}}" integrity="{{- $js6.Data.Integrity -}}"></script>
+
+{{- else -}}
+
+<script src="{{- $js1.Permalink | relURL -}}"></script>
+<script src="{{- $js2.Permalink | relURL -}}"></script>
+<script src="{{- $js3.Permalink | relURL -}}"></script>
+<script src="{{- $js4.Permalink | relURL -}}"></script>
+<script src="{{- $js5.Permalink | relURL -}}"></script>
+<script src="{{- $js6.Permalink | relURL -}}"></script>
+
+{{- end -}}
+
+<script>hljs.initHighlightingOnLoad();</script>
+<script>hljs.initLineNumbersOnLoad();</script>

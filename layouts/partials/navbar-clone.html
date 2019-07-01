@@ -1,0 +1,74 @@
+<nav id="navbar-clone" class="navbar is-fresh is-transparent" role="navigation" aria-label="main navigation">
+  <div class="container">
+      <div class="navbar-brand">
+  
+        <!-- <div class="navbar-start"> -->
+        <!-- <div class="columns"> -->
+        
+        <a class="navbar-item">
+          <div class="menu-icon-wrapper left-menu-icon-wrapper" style="visibility: visible;">
+            <svg width="1000px" height="1000px">
+              <path class="path1" d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
+              <path class="path2" d="M 300 500 L 700 500"></path>
+              <path class="path3" d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
+            </svg>
+            <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+          </div>
+          <div class="navbar-item left-menu-icon-wrapper">Tags</div>
+        </a>
+  
+        <div class="navbar-item is-expanded"></div>
+        <a class="navbar-item is-hidden-desktop">  
+          <div data-target="cloned-navbar-menu" class="navbar-item right-menu-icon-wrapper is-hidden-desktop">Menu</div>
+          <div data-target="cloned-navbar-menu" class="menu-icon-wrapper right-menu-icon-wrapper" style="visibility: visible;">
+            <svg width="1000px" height="1000px">
+              <path class="path1" d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
+              <path class="path2" d="M 300 500 L 700 500"></path>
+              <path class="path3" d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
+            </svg>
+            <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+          </div>
+        </a>
+      </div>
+  
+      
+  
+      <div id="cloned-navbar-menu" class="navbar-menu is-static">
+        <div class="navbar-end">
+          <a href="{{ "/about_me" | absURL }}" class="navbar-item is-secondary">
+            About Me
+          </a>
+          {{- range .Site.Sections -}}
+            {{- if not (eq .Title "singles") -}}
+            {{- $secCount := len .Sections -}}
+            {{- if (ne $secCount 0) -}}
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a href="{{- .Permalink -}}" class="navbar-link">
+                {{- .Title -}}
+              </a>
+              <div class="navbar-dropdown">
+                <!-- <a href="{{- .Permalink -}}" class="navbar-item">
+                  > All
+                </a> -->
+                {{- range .Sections -}}
+                <a href="{{- .Permalink -}}" class="navbar-item">
+                  {{- .Title -}}
+                </a>
+                {{- end -}}
+              </div>
+            </div>
+            {{- else -}}
+            <a href="{{- .Permalink -}}" class="navbar-item is-secondary">
+              {{- .Title -}}
+            </a>
+            {{- end -}}
+          {{- end -}}
+          {{- end -}}
+        </div>
+      </div>
+  
+  
+  
+  
+    </div>
+  </nav>

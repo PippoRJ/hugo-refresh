@@ -1,0 +1,75 @@
+baseURL: https://something-refresh.org/
+languageCode: en-us
+title: Personal website and blog
+theme: hugo-refresh
+
+disableKinds: ["sitemap","RSS"]
+
+blackfriday:
+  hrefTargetBlank: true
+
+Taxonomies:
+  tag: "tags"
+
+params:
+  # parameter used to specify if you want to minify the imported js
+  jsMinify: true
+  # parameter used to specify if you want to add the fingerprint to the imported js
+  jsFingerprint: false
+  # parameter used to specify if you want to minify the imported css
+  cssMinify: true
+  # parameter used to specify if you want to add the fingerprint to the imported css
+  cssFingerprint: true
+
+  # summary options
+  summary:
+    # option to specify the default image in the summary list
+    defaultImage : "/images/default_summary.jpg"
+  
+  # loading options
+  loading:
+    # option to specify the loading image
+    image: "../images/loaders/rings_3.svg"
+
+  # option to specify the main colour of the theme
+  mainColour: "#F39200"
+
+  # main pages options
+  mainPage:
+    # option to specify the main font of the theme
+    fontFamily: "Open Sans" 
+
+  # sidebar options
+  sidebar:
+    # option to specify the logo of the sidebar
+    logo: fresh-square.svg
+    # option to specify the font of the sidebar
+    fontFamily: "Open Sans" # "Open Sans"
+
+  # navbar options
+  navbar:
+    # option to specify the logo of the sidebar
+    fontFamily: "Open Sans"
+  
+  # 404 page options
+  pagNotFound:
+    # option to specify the main picture of the sidebar
+    image: avataaars_404.png
+    # option to specify the title of the 404 page
+    title: 404 Page Not Found :(
+    # option to specify the subtitle of the 404 page
+    subtitle: This is not the page you were looking for...
+  
+  # homepage options
+  homepage:
+    # option to specify the title in the homepage
+    title: Julia The White
+    # option to specify the subtitle in the homepage
+    subtitle: Personal website and blog
+    # option to specify image in the homepage
+    image: avataaars.png # worker.svg 
+  
+  # footer options
+  footer:
+    # option to specify the logo in the footer
+    logo: fresh-square.svg

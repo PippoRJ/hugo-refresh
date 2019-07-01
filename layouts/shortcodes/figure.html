@@ -1,0 +1,8 @@
+{{- $original := (.Page.Resources.ByType "image").GetMatch (printf "*%s*" (.Get "src")) -}}
+{{- $width    := printf "%s" (.Get "width" ) -}}
+{{- $height   := printf "%s" (.Get "height") -}}
+{{- $size     := printf "%sx%s" $width $height -}}
+{{- with $original -}}
+{{- $image := .Resize $size -}} 
+<img src="{{- $image.RelPermalink -}}" width="{{- $image.Width -}}" height="{{- $image.Height -}}">
+{{- end -}}

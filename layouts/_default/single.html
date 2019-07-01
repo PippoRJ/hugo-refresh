@@ -1,0 +1,14 @@
+{{- define "main" -}}
+
+    {{- partial "navbar.html" . -}}
+    {{- partial "navbar-clone.html" . -}}
+    {{- partial "single/content.html" . -}}
+    
+    {{- partial "footer.html" . -}}
+
+    <!-- Back To Top Button -->
+    <div id="backtotop"><a href="#"></a></div>
+
+    {{- partial "sidebar.html" . -}}
+
+{{- end -}}

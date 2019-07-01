@@ -1,0 +1,65 @@
+{{- $sass      := "style.sass" -}}
+{{- $scss      := "style.scss" -}}
+{{- $cssTarget := "css/style.css" -}}
+
+{{- $cssOpts   := cond (.Site.IsServer) (dict "targetPath" $cssTarget "enableSourceMap" true) (dict "targetPath" $cssTarget "outputStyle" "compressed") -}}
+{{- $font1     := replace .Site.Params.mainPage.fontFamily " " "+" -}}
+{{- $font2     := replace .Site.Params.sidebar.fontFamily " " "+" -}}
+{{- $font3     := replace .Site.Params.navbar.fontFamily " " "+" -}}
+{{/*  {{- $fontSizes := delimit .Site.Params.mainPage.sizes "," -}}  */}}
+{{/*  {{- $fontUrl1     := printf "https://fonts.googleapis.com/css?family=%s:%s" $font1 $fontSizes -}}
+{{- $fontUrl2     := printf "https://fonts.googleapis.com/css?family=%s:%s" $font2 $fontSizes -}}
+{{- $fontUrl3     := printf "https://fonts.googleapis.com/css?family=%s:%s" $font3 $fontSizes -}}  */}}
+{{- $fontUrl1  := printf "https://fonts.googleapis.com/css?family=%s" $font1 -}}
+{{- $fontUrl2  := printf "https://fonts.googleapis.com/css?family=%s" $font2 -}}
+{{- $fontUrl3  := printf "https://fonts.googleapis.com/css?family=%s" $font3 -}}
+
+{{- $favico := resources.Get "images/favicon.png" -}}
+<link rel="icon" type="image/png" href="{{- $favico.Permalink | relURL -}}" />
+{{/*  <link rel="icon" type="image/png" href="{{- "images/favicon.png" | relURL -}}" />  */}}
+
+<link href="{{- $fontUrl1 -}}" rel="stylesheet">
+<link href="{{- $fontUrl2 -}}" rel="stylesheet">
+<link href="{{- $fontUrl3 -}}" rel="stylesheet">
+
+{{- $css  := resources.Get $sass | resources.ExecuteAsTemplate $scss . | toCSS $cssOpts -}}
+{{- $css1 := resources.Get "css/monokai-sublime.9.15.8.min.css" -}}
+{{- $css2 := resources.Get "css/icons.css" -}}
+{{- $css3 := resources.Get "css/mycss.css" -}}
+
+{{- if .Site.Params.cssMinify -}}
+
+{{- $css  = $css  | resources.Minify -}}
+{{- $css1 = $css1 | resources.Minify -}}
+{{- $css2 = $css2 | resources.Minify -}}
+{{- $css3 = $css3 | resources.Minify -}}
+
+{{- end -}}
+
+{{- if .Site.Params.cssFingerprint -}}
+
+{{- $css  = $css  | resources.Fingerprint -}}
+{{- $css1 = $css1 | resources.Fingerprint -}}
+{{- $css2 = $css2 | resources.Fingerprint -}}
+{{- $css3 = $css3 | resources.Fingerprint -}}
+
+{{- end -}}
+
+{{- if .Site.Params.cssFingerprint -}}
+
+<link rel="stylesheet" type="text/css" href="{{- $css.Permalink  | relURL -}}" integrity="{{- $css.Data.Integrity -}}">
+<link rel="stylesheet" type="text/css" href="{{- $css1.Permalink | relURL -}}" integrity="{{- $css1.Data.Integrity -}}">
+<link rel="stylesheet" type="text/css" href="{{- $css2.Permalink | relURL -}}" integrity="{{- $css2.Data.Integrity -}}">
+<link rel="stylesheet" type="text/css" href="{{- $css3.Permalink | relURL -}}" integrity="{{- $css3.Data.Integrity -}}">
+
+{{- else -}}
+
+<link rel="stylesheet" type="text/css" href="{{- $css.Permalink  | relURL -}}">
+<link rel="stylesheet" type="text/css" href="{{- $css1.Permalink | relURL -}}">
+<link rel="stylesheet" type="text/css" href="{{- $css2.Permalink | relURL -}}">
+<link rel="stylesheet" type="text/css" href="{{- $css3.Permalink | relURL -}}">
+
+{{- end -}}
+
+{{/*  <link rel="stylesheet" type="text/css" href="{{- "css/bulma.css" | absURL -}}">  */}}
+{{/*  <link rel="stylesheet" type="text/css" href="{{- "css/icons.css" | relURL -}}">  */}}

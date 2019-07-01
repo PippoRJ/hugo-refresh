@@ -1,0 +1,47 @@
+{{- $sidebar  := .Site.Params.sidebar -}}
+{{- $logo     := index $sidebar "logo" -}}
+<div class="sidebar">
+  <div class="sidebar-header">
+    {{- $img     := resources.Get (printf "/images/%s" $logo) -}}
+    <img src="{{- $img.Permalink | relURL -}}" alt="">
+    {{/*  <img src="{{- printf "/images/%s" $logo | absURL -}}">  */}}
+    <a class="sidebar-close" href="javascript:void(0);">
+      <i data-feather="x"></i>
+    </a>
+  </div>
+  <div class="inner">
+    <ul class="sidebar-menu">
+      {{- range .Site.Taxonomies.tags.Alphabetical -}}
+      <li class="no-children">
+          <a href="{{- printf "/tags/%s" .Name | absURL -}}">
+            <div class="columns">
+              {{/*  <div class="is-fullwidth">
+                <div>{{- .Name | humanize -}}</div>
+                <div class="has-text-right" >{{- .Count -}}</div>
+              </div>  */}}
+              <table width="100%"> <!-- class="is-fullwidth" --> 
+                  <tr>
+                    <td class="">
+                    {{- if eq (.Name) "xxxxx" -}}
+                      <span class="icon"><i class="fa fa-tag"></i></span>
+                    {{- else -}}
+                      <span class="icon"><i class="fa fa-cube"></i></span>
+                    {{- end -}}
+                      {{- .Name | humanize -}}
+                    </td>
+                    <td class="has-text-right" >
+                        <div class="tag-number">{{- .Count -}}</div>
+                      <!-- <span class="badge badge-notification clicks" title="32 clicks">{{- .Count -}}</span> -->
+                    </td>
+                    <!-- <span class="badge badge-notification clicks" title="32 clicks">32</span> -->
+                  </tr>
+              </table>
+              {{/*  <div class="column">{{- .Name | humanize -}}</div>
+              <div class="column has-text-right">{{- .Count -}}</div>  */}}
+            </div>
+          </a>
+      </li>
+      {{- end -}}
+    </ul>
+  </div>
+</div>

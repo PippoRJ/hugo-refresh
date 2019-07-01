@@ -1,0 +1,33 @@
+  {{- $numberOfDefaultImages := 4 -}}
+  <div class="column is-4">
+    <div class="box">
+      <figure class="image is-3by2">
+        {{- $image := "" -}}
+        {{- if .Params.summaryImage -}} 
+          {{- $image = .Page.Resources.GetMatch .Params.summaryImage -}}
+          {{- .Scratch.Set "image" ($image.Resize "600x") -}}
+          {{- $image = .Scratch.Get "image" -}}
+        {{ else }}
+          {{- $image = resources.Get .Site.Params.summary.defaultImage -}}
+          {{- .Scratch.Set "image" ($image.Resize "600x") -}}
+          {{- $image = .Scratch.Get "image" -}}
+        {{- end }}
+        <img src="{{- $image.Permalink | relURL -}}" alt="">
+      </figure>
+      <h3 class="title is-5 summary-title">
+        {{ .Params.title }}
+      </h3>
+      <p class="summary-summary">
+        {{- if .Params.summary -}}
+          {{- .Params.summary -}}
+        {{- else }}
+          {{- .Plain -}}
+        {{- end -}}
+      </p> 
+      <div class="action has-text-right">
+        <a href="{{- .Permalink | relURL -}}" class="button is-primary">
+                Read More
+            </a>
+      </div>
+    </div>
+  </div>
