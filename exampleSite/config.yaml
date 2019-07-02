@@ -73,3 +73,9 @@ params:
   footer:
     # option to specify the logo in the footer
     logo: fresh-square.svg
+    # option to specify your contact email in the footer
+    email: jordaney.roberto@gmail.com
+    # option to specify your linkedin profile in the footer
+    linkedin: https://www.linkedin.com/in/roberto-jordaney-56686634/
+    # option to specify the copyright in the footer
+    copyright: Roberto Jordaney - 2019

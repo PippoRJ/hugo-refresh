@@ -40,13 +40,13 @@
           </div>
           <ul class="link-list">
             <li>
-              <a href="https://www.linkedin.com/in/roberto-jordaney-56686634/" target="_blank">
+              <a href="{{ .Site.Params.footer.linkedin }}" target="_blank">
                 <span class="icon"><i class="fa fa-linkedin"></i></span>
                 Linkedin
               </a>
             </li>
             <li>
-              <a href="mailto:jordaney.roberto@gmail.com" target="_blank">
+              <a href="mailto:{{ .Site.Params.footer.email }}" target="_blank">
                 <span class="icon"><i class="fa fa-envelope"></i></span>
                 jordaney.roberto@gmail.com
               </a>
@@ -64,7 +64,7 @@
             <li>
               <a>
                 <span class="icon"><i class="fa fa-copyright"></i></span>
-                Roberto Jordaney - 2019
+                {{ .Site.Params.footer.copyright }}
               </a>
             </li>
           </ul>
