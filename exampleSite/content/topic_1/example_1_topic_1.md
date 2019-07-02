@@ -6,7 +6,7 @@ hideLastModified: true
 summary: "This summary \
 is \
 multiline"
-tags: ["summary", "code"]
+tags: ["custom_summary", "code"]
 ---
 
 Example code:

@@ -5,7 +5,7 @@ draft: true
 hideLastModified: true
 summary: "The summary image should be a custom one"
 summaryImage: "summary_2.jpg"
-tags: ["image", "summary", "code", "leaf_bundle"]
+tags: ["custom_image", "custom_summary", "code", "leaf_bundle"]
 resources:
 - src: summary_2.jpg
 ---
