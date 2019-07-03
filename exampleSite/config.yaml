@@ -63,7 +63,9 @@ params:
     title: 404 Page Not Found :(
     # option to specify the subtitle of the 404 page
     subtitle: This is not the page you were looking for...
-  
+    # option to specify the width of the image in the 404 page
+    imageWidth: 500px
+
   # homepage options
   homepage:
     # option to specify the title in the homepage
@@ -72,7 +74,9 @@ params:
     subtitle: Personal website and blog
     # option to specify image in the homepage
     image: avataaars.png # worker.svg 
-  
+    # option to specify the width of the image in the homepage
+    imageWidth: 500px
+
   # footer options
   footer:
     # option to specify the logo in the footer

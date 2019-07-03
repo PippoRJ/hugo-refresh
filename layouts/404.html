@@ -20,11 +20,10 @@
             {{- end -}}
           </div>
           <div class="column is-5 is-offset-1">
-            <figure class="image is-4by3">
-            {{/* <figure class="image">  */}}
+            <figure class="image">
                 {{- $img := resources.Get (printf "/images/%s" $image) -}}
-                <img src="{{- $img.Permalink | relURL -}}" style="width:350px" alt="Myself">
-              {{/*  <img src="{{ printf "/images/%s" $image | absURL }}" alt="Description">  */}}
+                <img src="{{- $img.Permalink | relURL -}}" 
+                     style="width:{{- .Site.Params.pagNotFound.imageWidth -}}" alt="Myself">
             </figure>
           </div>
         </div>
