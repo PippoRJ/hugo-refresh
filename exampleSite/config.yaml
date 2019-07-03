@@ -24,6 +24,8 @@ params:
   cssMinify: true
   # parameter used to specify if you want to add the fingerprint to the imported css
   cssFingerprint: true
+  # option to specify the main colour of the theme
+  mainColour: "#F39200"
 
   # summary options
   summary:
@@ -34,9 +36,6 @@ params:
   loading:
     # option to specify the loading image
     image: "../images/loaders/rings_3.svg"
-
-  # option to specify the main colour of the theme
-  mainColour: "#F39200"
 
   # main pages options
   mainPage:
