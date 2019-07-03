@@ -1,19 +1,12 @@
 name = "Hugo ReFresh"
 license = "MIT"
-licenselink = "https://github.com/StefMa/hugo-fresh/blob/master/LICENSE.md"
-description = "A Hugo re-adaptation of the Hugo Fresh theme"
-homepage = "https://github.com/StefMa/hugo-fresh"
+licenselink = "https://raw.githubusercontent.com/PippoRJ/hugo-refresh/master/README.md"
+description = "A re-adaptation of the Hugo Fresh theme"
+homepage = "https://github.com/PippoRJ/hugo-refresh"
 tags = ["responsive", "blog", "light", "clean", "personal"]
-features = []
+features = ["blog", "responsive", "simple", "404"]
 min_version = "0.45"
 
 [author]
   name = "Roberto Jordaney"
-  homepage = "https://github.com/StefMa"
-
-
-# If porting an existing theme
-[original]
-    author = "Stefan M."
-    homepage = "https://github.com/StefMa"
-    repo = "https://github.com/StefMa/hugo-fresh"
+  homepage = "https://github.com/PippoRJ"
