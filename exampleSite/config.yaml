@@ -35,7 +35,7 @@ params:
   # loading options
   loading:
     # option to specify the loading image
-    image: "../images/loaders/rings_3.svg"
+    image: "/loaders/rings_3.svg"
 
   # main pages options
   mainPage:
