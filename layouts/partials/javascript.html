@@ -63,3 +63,10 @@
 
 <script>hljs.initHighlightingOnLoad();</script>
 <script>hljs.initLineNumbersOnLoad();</script>
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('.codeinline').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>

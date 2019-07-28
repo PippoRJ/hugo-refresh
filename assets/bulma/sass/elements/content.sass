@@ -112,6 +112,8 @@ $content-table-foot-cell-color: $text-strong !default
       display: inline-block
     figcaption
       font-style: italic
+  //code
+  //  color: #4a4a4a          // added by me
   pre
     +overflow-touch
     overflow-x: auto
@@ -130,6 +132,8 @@ $content-table-foot-cell-color: $text-strong !default
         td                                             //  
           &:first-child                                // code style  
             border-right: 1px solid $border;           //
+  .codeinline
+    display:inline !important                          // Added by me
   sup,
   sub
     font-size: 75%
