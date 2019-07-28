@@ -1,6 +1,6 @@
 name = "Hugo ReFresh"
 license = "MIT"
-licenselink = "https://raw.githubusercontent.com/PippoRJ/hugo-refresh/master/README.md"
+licenselink = "https://raw.githubusercontent.com/PippoRJ/hugo-refresh/master/LICENSE"
 description = "A re-adaptation of the Hugo Fresh theme"
 homepage = "https://github.com/PippoRJ/hugo-refresh"
 tags = ["responsive", "blog", "light", "clean", "personal"]
