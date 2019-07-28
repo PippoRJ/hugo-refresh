@@ -27,7 +27,7 @@ rm config.toml
 curl -O https://raw.githubusercontent.com/PippoRJ/hugo-refresh/master/exampleSite/config.yaml
 
 # Run the site locally
-hugo server
+hugo server -D
 
 # Open the site in your browser
 open http://localhost:1313
