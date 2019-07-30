@@ -36,7 +36,7 @@
     <div id="navbar-menu" class="navbar-menu is-static">
       <!-- <div class="navbar-start"></div> -->
       <div class="navbar-end">
-        <a href="{{ "/about_me" | absURL }}" class="navbar-item is-secondary">
+        <a href="{{ "about_me" | relURL }}" class="navbar-item is-secondary">
           About Me
         </a>
         {{- range .Site.Sections -}}

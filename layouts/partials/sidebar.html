@@ -13,7 +13,7 @@
     <ul class="sidebar-menu">
       {{- range .Site.Taxonomies.tags.Alphabetical -}}
       <li class="no-children">
-          <a href="{{- printf "/tags/%s" .Name | absURL -}}">
+          <a href="{{- printf "tags/%s" .Name | relURL -}}">
             <div class="columns">
               {{/*  <div class="is-fullwidth">
                 <div>{{- .Name | humanize -}}</div>
