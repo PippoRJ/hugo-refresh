@@ -9,7 +9,8 @@ $(document).ready(function () {
 
     //Animate right hamburger icon and open sidebar
     // $('.menu-icon-trigger').click(function (e) {
-    $('.right-menu-icon-wrapper').click(function (e) {
+    // $('.right-menu-icon-wrapper').click(function (e) {
+    $('.right-menu-icon-wrapper').on("click", function (e) {
         e.preventDefault();
         $('.right-menu-icon-wrapper').toggleClass('open'); //new line
         var menu_id = $(this).attr('data-target');
@@ -32,7 +33,8 @@ $(document).ready(function () {
 
     //Animate left hamburger icon and open sidebar
     // $('.menu-icon-trigger').click(function (e) {
-    $('.left-menu-icon-wrapper').click(function (e) {
+    // $('.left-menu-icon-wrapper').click(function (e) {
+    $('.left-menu-icon-wrapper').on("click", function (e) {
         e.preventDefault();
         // $('.menu-icon-wrapper').toggleClass('open');
         $('.left-menu-icon-wrapper').toggleClass('open');
@@ -40,7 +42,8 @@ $(document).ready(function () {
     });
 
     //Close sidebar
-    $('.sidebar-close').click(function () {
+    // $('.sidebar-close').click(function () {
+    $('.sidebar-close').on("click", function () {
         $('.sidebar').removeClass('is-active');
         // $('.menu-icon-wrapper').removeClass('open');
         $('.left-menu-icon-wrapper').removeClass('open');
@@ -65,7 +68,8 @@ $(document).ready(function () {
 
     //Navbar Clone
     if ($('#navbar-clone').length) {
-        $(window).scroll(function () {    // this will work when your window scrolled.
+        // $(window).scroll(function () {    // this will work when your window scrolled.
+        $(window).on("scroll", function () {    // this will work when your window scrolled.
             var height = $(window).scrollTop();  //getting the scrolling height of window
             if (height > 50) {
                 $("#navbar-clone").addClass('is-active');
@@ -106,7 +110,8 @@ $(document).ready(function () {
     // Back to Top button behaviour
     var pxShow = 600;
     var scrollSpeed = 500;
-    $(window).scroll(function () {
+    // $(window).scroll(function () {
+    $(window).on("scroll", function () {
         if ($(window).scrollTop() >= pxShow) {
             $("#backtotop").addClass('visible');
         } else {
@@ -134,7 +139,8 @@ $(document).ready(function () {
         // Remove links that don't actually link to anything
         .not('[href="#"]')
         .not('[href="#0"]')
-        .click(function (event) {
+        // .click(function (event) {
+        .on("click", function (event) {
             // On-page links
             if (
                 location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
