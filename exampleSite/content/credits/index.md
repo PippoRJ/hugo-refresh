@@ -6,5 +6,4 @@ hideLastModified: true
 # no need for the "summary" parameter as it is not displayed in any previews
 ---
 
-
-https://getavataaars.com/
+The images used in the site comes from https://getavataaars.com/.
