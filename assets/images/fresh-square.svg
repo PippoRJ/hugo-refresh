@@ -4,7 +4,7 @@
 	 viewBox="0 0 1230 300" style="enable-background:new 0 0 1230 300;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#FFFFFF;}
-	.st1{fill:#F39208;}
+	.st1{fill:{{ .Site.Params.mainColour }};}
 </style>
 <rect x="13" y="5.1" class="st0" width="131.9" height="291.5"/>
 <rect x="156.9" y="5.1" class="st0" width="131.9" height="137.9"/>
