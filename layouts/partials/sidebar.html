@@ -2,7 +2,13 @@
 {{- $logo     := index $sidebar "logo" -}}
 <div class="sidebar">
   <div class="sidebar-header">
-    {{- $img     := resources.Get (printf "/images/%s" $logo) -}}
+    {{- $out_fo  := "sidebar.svg" -}}
+    {{- $img_n   := printf "/images/%s" $logo -}}
+    {{- $type    := lower (substr $img_n (sub (len $img_n) 3) (len $img_n)) -}}
+    {{- $img     := resources.Get $img_n -}}
+    {{- if eq $type "svg" -}}
+      {{- $img    = $img | resources.ExecuteAsTemplate $out_fo . }}
+    {{- end -}}
     <img src="{{- $img.Permalink | relURL -}}" alt="">
     {{/*  <img src="{{- printf "/images/%s" $logo | absURL -}}">  */}}
     <a class="sidebar-close" href="javascript:void(0);">
