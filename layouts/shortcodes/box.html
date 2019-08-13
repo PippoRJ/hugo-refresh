@@ -1,0 +1,12 @@
+<div class="columns is-centered container">
+    <div class="column is-full">
+        <div class="box">
+            {{ $content := print "$s" (.Inner  | markdownify) }}
+            {{ if in  $content "\n" }} 
+                {{ .Inner  | markdownify }}
+            {{ else }}
+                <p>{{ .Inner  | markdownify }}</p>
+            {{ end }}
+        </div>
+    </div>
+</div>

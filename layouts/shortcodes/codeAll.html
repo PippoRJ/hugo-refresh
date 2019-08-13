@@ -1,0 +1,9 @@
+{{- if .Get 0 -}}
+<div class="columns is-centered container" id="{{ .Get 0 }}">
+{{- else -}}
+<div class="columns is-centered container">
+{{- end -}}
+    <div class="column is-full">
+        {{ .Inner | markdownify}}
+    </div>
+</div>
