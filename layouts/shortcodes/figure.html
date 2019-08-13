@@ -3,6 +3,14 @@
 {{- $height   := printf "%s" (.Get "height") -}}
 {{- $size     := printf "%sx%s" $width $height -}}
 {{- with $original -}}
-{{- $image := .Resize $size -}} 
-<img src="{{- $image.RelPermalink -}}" width="{{- $image.Width -}}" height="{{- $image.Height -}}">
+{{- $image := .Resize $size -}}
+<div class="columns is-centered container">
+    <div class="column is-full">
+        <figure>
+            <img class="rounded-corners" src="{{- $image.RelPermalink -}}" 
+                width="{{- $image.Width -}}" 
+                height="{{- $image.Height -}}">
+        </figure>
+    </div>
+</div>
 {{- end -}}
