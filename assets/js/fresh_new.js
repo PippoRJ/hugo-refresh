@@ -153,7 +153,7 @@ $(document).ready(function () {
                 // Does a scroll target exist?
                 if (target.length) {
                     // Only prevent default if animation is actually gonna happen
-                    event.preventDefault();
+                    // event.preventDefault(); // removed to add history to the navigation
                     $('html, body').animate({
                         scrollTop: target.offset().top - ($('#navbar-clone').height() + 5)
                                   // '5' added as custom value
