@@ -63,6 +63,7 @@ $content-table-foot-cell-color: $text-strong !default
     &:not(:first-child)
       margin-top: 1.3333em
   h4
+    display: inline-block //added by me to fix a bug in the visualization
     font-size: 1.35em
     margin-bottom: 0.8em
   h5
@@ -132,8 +133,18 @@ $content-table-foot-cell-color: $text-strong !default
         td                                             //  
           &:first-child                                // code style  
             border-right: 1px solid $border;           //
+  code
+    border-radius: 4px;            // Added by me for consistency with the .codeinline class 
   .codeinline
-    display:inline !important                          // Added by me
+    display:inline !important                          // 
+    padding-top: 0.25em;                               // Added 
+    padding-right: 0.250em;                            // 
+    padding-bottom: 0.25em;                            // by
+    padding-left: 0.25em;                              // 
+    border-radius: 4px;                                // me
+    white-space: nowrap;                               // 
+  .rounded-corners
+    border-radius: 10px;         // Added by me
   sup,
   sub
     font-size: 75%
