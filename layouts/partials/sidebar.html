@@ -17,7 +17,23 @@
   </div>
   <div class="inner">
     <ul class="sidebar-menu">
-      {{- range .Site.Taxonomies.tags.Alphabetical -}}
+      <li class="no-children">
+          <a href="{{- printf "tags" | relURL -}}">
+            <div class="columns">
+              <table width="100%"> <!-- class="is-fullwidth" --> 
+                <tr>
+                  <td class="">
+                    <span class="icon"><i class="fa fa-cubes"></i></span>All Tags
+                  </td>
+                  <td class="has-text-right" >
+                      {{/*  <div class="tag-number">{{- .Site.Taxonomies.tags.Alphabetical.Count -}}</div>  */}}
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </a>
+      {{- range .Site.Taxonomies.tags.ByCount -}}
+      {{/*  {{- range .Site.Taxonomies.tags.Alphabetical -}}  */}}
       <li class="no-children">
           <a href="{{- printf "tags/%s" .Name | relURL -}}">
             <div class="columns">
