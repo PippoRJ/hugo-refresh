@@ -21,7 +21,7 @@
           </div>
           <div class="column is-5 is-offset-1">
             <figure class="image">
-                {{- $img := resources.Get (printf "/images/%s" $image) -}}
+                {{- $img := resources.Get $image -}}
                 <img src="{{- $img.Permalink | relURL -}}" 
                      style="width:{{- .Site.Params.pagNotFound.imageWidth -}}" alt="Myself">
             </figure>

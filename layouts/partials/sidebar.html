@@ -1,9 +1,7 @@
-{{- $sidebar  := .Site.Params.sidebar -}}
-{{- $logo     := index $sidebar "logo" -}}
 <div class="sidebar">
   <div class="sidebar-header">
     {{- $out_fo  := "sidebar.svg" -}}
-    {{- $img_n   := printf "/images/%s" $logo -}}
+    {{- $img_n   := .Site.Params.sidebar.logo -}}
     {{- $type    := lower (substr $img_n (sub (len $img_n) 3) (len $img_n)) -}}
     {{- $img     := resources.Get $img_n -}}
     {{- if eq $type "svg" -}}

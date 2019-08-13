@@ -2,7 +2,15 @@ $fontMainPage: "{{ .Site.Params.mainPage.fontFamily }}"
 $fontSidebar:  "{{ .Site.Params.sidebar.fontFamily }}"
 $fontNavbar:   "{{ .Site.Params.navbar.fontFamily }}"
 $mainColour:   {{ .Site.Params.mainColour }}
-$loadingImage: "{{ .Site.Params.loading.image }}"
 
+{{ $out_fo  := "loader.svg" }}
+{{ $img_n   := .Site.Params.loading.image }}
+{{ $type    := lower (substr $img_n (sub (len $img_n) 3) (len $img_n)) }}
+{{ $img     := resources.Get $img_n }}
+{{ if eq $type "svg" }}
+{{ $img    = $img | resources.ExecuteAsTemplate $out_fo . }}
+{{ end }}
+$loadingImage: "{{- $img.Permalink | relURL }}"
+ 
 @import "bulma/bulma"
 @import "fresh/core"
