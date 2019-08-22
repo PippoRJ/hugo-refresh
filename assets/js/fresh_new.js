@@ -20,6 +20,30 @@ $(document).ready(function () {
         $('.navbar.is-light').toggleClass('is-dark-mobile');
     });
 
+    // Collapse-expand elements
+    $('.collapsible').on("click", function(e){
+        var elem_id = $(this).attr('data-target');
+
+        $("#" + elem_id).slideToggle();
+
+        // if ($("#" + elem_id).hasClass("hide") ){
+        //     e.preventDefault();
+        //     $("#" + elem_id).slideDown(function(){
+        //         $("#" + elem_id).removeClass('hide');
+        //     });
+        //     // $("#" + elem_id).slideDown().removeClass('is-hidden');
+        //     //$("#" + elem_id).removeClass('is-hidden');
+        // }else{
+        //     if ($("#" + elem_id).hasClass("is-active") ){
+        //         $("#" + elem_id).slideUp();
+        //     }else{
+        //         $("#" + elem_id).slideToggle();
+        //     }
+        // }
+
+        $("#" + elem_id).toggleClass("is-active");
+    });
+
     //Mobile menu toggle
     // if ($('.navbar-burger').length) {
     //     $('.navbar-burger').on("click", function () {
@@ -48,6 +72,8 @@ $(document).ready(function () {
         // $('.menu-icon-wrapper').removeClass('open');
         $('.left-menu-icon-wrapper').removeClass('open');
     })
+
+
 
     //Sidebar menu
     if ($('.sidebar').length) {
