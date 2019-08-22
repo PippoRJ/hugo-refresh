@@ -1,0 +1,9 @@
+{{ $id := delimit (seq 30 | shuffle) "" "" }}
+<article class="message is-warning">
+    <div class="message-header collapsible"  data-target="{{ $id }}">
+        <p><a href="{{ .Get 0 }}" target="_blank" >{{ .Get 0 }}</a></p>
+    </div>
+    <div class="message-body hide" id="{{ $id }}">
+        {{ .Inner | markdownify }}
+    </div>
+</article>

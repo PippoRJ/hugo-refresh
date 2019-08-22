@@ -1,0 +1,27 @@
+{{- $original := (.Page.Resources.ByType "image").GetMatch (printf "*%s*" (.Get "image")) -}}
+{{/* - $width    := printf "%s" (.Get "width" ) -*/}}
+{{/*- $height   := printf "%s" (.Get "height") -*/}}
+{{/*- $size     := printf "%sx%s" $width $height -*/}}
+{{- $size     := printf "%s" (.Get "size") -}}
+<div class="box">
+    <div class="columns">
+      <div class="column is-2">
+        <!-- <figure class="image is-128x128"> -->
+        <figure class="image">
+          {{- with $original -}}
+          {{- $image := .Resize $size -}}
+          <img src="{{ $image.RelPermalink }}" alt="Book image">
+          {{- end -}}
+        </figure>
+      </div>
+      <div class="column">
+        <p class="title is-4">{{ .Get "title" }}</p>
+        <p class="subtitle is-6">{{ .Get "authors" }}</p>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="content">
+        {{ .Inner | markdownify }}
+      </div>
+    </div>
+</div>
