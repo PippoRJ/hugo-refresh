@@ -35,10 +35,25 @@ hugo server -D
 open http://localhost:1313
 ```
 
-## Customizing your page
+To run the Example Site using Hugo ReFresh:
 
-There are different configuration options for Hugo ReFresh including options for: the navbar, the sidebar, the homepage, fonts, colours landing and images. 
-Read the comments in the `config.yaml` file to know more.
+```bash
+# Create site and cd into it
+hugo new site my-site && cd my-site
+
+# Clone the ReFresh theme into the themes folder
+git init
+git submodule add https://github.com/PippoRJ/hugo-refresh themes/hugo-refresh
+
+# Remove the default config
+rm config.toml
+
+# Copy the Example site content and configuration in my-site
+cp -R themes/hugo-refresh/exampleSite/* ./
+
+# Open the site in your browser
+hugo server -D
+```
 
 ## Troubleshooting
 
@@ -48,6 +63,33 @@ If you see `error: failed to transform resource: TOCSS: failed to transform "sty
 # On Ubuntu:
 snap refresh hugo --channel=extended
 ```
+
+## Customizing your page
+
+There are different configuration options for Hugo ReFresh including options for: the navbar, the sidebar, the homepage, fonts, colours landing and images. 
+Read the comments in the `config.yaml` file to know more.
+
+
+## List of shortcodes you can use in your articles with description:
+
+<details>
+<summary>title1.html, title2.html, title3.html, title4.html, title5.html, title6.html</summary>
+
+```
+# Usage example:
+{{< title1 "My awesome title" "my-title-id">}}
+```
+The first parameter is the title of the shortcode.
+
+The second paramter is the ID of the shortcode. 
+It can be used in links to the same page as:
+```
+[link to the title](#my-title-id)
+```
+
+</details>
+
+
 
 ## List of modifications from the original theme
 
