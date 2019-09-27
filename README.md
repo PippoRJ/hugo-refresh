@@ -73,21 +73,159 @@ Read the comments in the `config.yaml` file to know more.
 ## List of shortcodes you can use in your articles with description:
 
 <details>
-<summary>title1.html, title2.html, title3.html, title4.html, title5.html, title6.html</summary>
+<summary> title1.html, title2.html, title3.html, title4.html, title5.html, title6.html </summary>
+
+Usage example:
 
 ```
-# Usage example:
 {{< title1 "My awesome title" "my-title-id">}}
 ```
-The first parameter is the title of the shortcode.
+The **first parameter** is the title of the shortcode (in this example is "My awesome title").
 
-The second paramter is the ID of the shortcode. 
+The **second paramter** is the ID of the shortcode (in this example is "my-title-id"). 
 It can be used in links to the same page as:
 ```
 [link to the title](#my-title-id)
 ```
 
 </details>
+
+<details>
+<summary> code.html </summary>
+
+This shortcode builds a centered page that is two-third of the full size of the page.
+
+Usage example:
+
+```
+{{% code %}}
+\`\`\`
+    $ sudo bash -c 'echo 0 > /proc/sys/kernel/randomize_va_space'
+\`\`\`
+{{% /code %}}
+```
+
+</details>
+
+<details>
+<summary> codeAll.html </summary>
+
+This shortcode builds a centered page that is as wide as the full size of the page.
+
+Usage example:
+
+```
+{{% codeAll %}}
+\`\`\`
+    $ dmesg | tail
+    ......
+    [13401.299114] overflow64[16566]: segfault at 616161616161 ip 0000616161616161 sp 00007fffffffddb0 error 14 in libc-2.27.so[7ffff79e4000+1e7000]
+\`\`\`
+{{% /codeAll %}}
+```
+
+
+</details>
+
+<details>
+<summary> figure.html </summary>
+
+This shortcode resize an image that with the width and/or height that you specify
+
+Usage example:
+
+```
+{{% figure src="images/the_stack.png" width="700" %}}
+{{% figure src="images/the_stack.png" height="700" %}}
+```
+
+The parameter **src** is the location of the image relative to the location of the file where the shortcode has been used.
+The parameter **width** is the width of the image.
+The parameter **height** is the height of the image.
+
+</details>
+
+<details>
+<summary> twoFigure.html </summary>
+
+This shortcode shows 2 images one next to the other with the possibility to resize them.
+
+Usage example:
+
+```
+{{% twoFigure src1="images/overflow_1.png" width1="700" src2="images/overflow_2.png" width2="700" %}}
+```
+
+The parameter **src1** is the location of the right image relative to the location of the file where the shortcode has been used.
+The parameter **width1** is the width of the right image.
+The parameter **height1** is the height of the right image.
+
+The parameter **src2** is the location of the left image relative to the location of the file where the shortcode has been used.
+The parameter **width2** is the width of the left image.
+The parameter **height2** is the height of the left image.
+
+With a small screen these images will be shown one on top of the other.
+
+</details>
+
+<details>
+<summary> book.html </summary>
+
+
+
+</details>
+
+<details>
+<summary> code_tabs.html </summary>
+
+
+
+</details>
+
+<details>
+<summary> exercise.html </summary>
+
+
+
+</details>
+
+
+<details>
+<summary> code_tabs.html </summary>
+
+
+
+</details>
+
+
+<details>
+<summary> codeInLine.html </summary>
+
+
+
+</details>
+
+<details>
+<summary> message_blue.html, message_dark.html, message_green.html, message_red.html, message_yellow.html </summary>
+
+
+
+</details>
+
+<details>
+<summary> notificationBlue.html, notificationGreen.html, notificationRed.html, notificationYellow.html </summary>
+
+
+
+</details>
+
+<details>
+<summary> site_blue.html, site_green.html, site_lightgreen.html, site_red.html, site_yellow.html </summary>
+
+
+
+</details>
+
 
 
 
