@@ -1,7 +1,7 @@
 baseURL: https://example.com
 languageCode: en-us
 title: Personal website and blog
-theme: hugo-refresh
+theme: ../..
 
 disableKinds: ["sitemap","RSS"]
 
@@ -11,9 +11,12 @@ blackfriday:
 Taxonomies:
   tag: "tags"
 
-
 # Supported fonts are:
 # https://fonts.google.com/
+
+# Icons taken from:
+# https://konpa.github.io/devicon/
+# https://bulkitv2.cssninja.io/_components-icons-fa.html
 
 params:
   # parameter used to specify if you want to minify the imported js
@@ -35,7 +38,7 @@ params:
   # loading options
   loading:
     # option to specify the loading image
-    image: "/images/rings.svg"
+    image: "/images/loaders/rings.svg"
 
   # main pages options
   mainPage:
