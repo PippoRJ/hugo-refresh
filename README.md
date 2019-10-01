@@ -80,9 +80,8 @@ Usage example:
 ```
 {{< title1 "My awesome title" "my-title-id">}}
 ```
-The **first parameter** is the title of the shortcode (in this example is "My awesome title").
-
-The **second paramter** is the ID of the shortcode (in this example is "my-title-id"). 
+The **first parameter** is the title of the shortcode (in this example is "My awesome title").<br>
+The **second paramter** is the ID of the shortcode (in this example is "my-title-id").<br>
 It can be used in links to the same page as:
 ```
 [link to the title](#my-title-id)
@@ -116,11 +115,11 @@ Usage example:
 
 ```
 {{% codeAll %}}
-\`\`\`
+` ` `
     $ dmesg | tail
     ......
     [13401.299114] overflow64[16566]: segfault at 616161616161 ip 0000616161616161 sp 00007fffffffddb0 error 14 in libc-2.27.so[7ffff79e4000+1e7000]
-\`\`\`
+` ` `
 {{% /codeAll %}}
 ```
 
