@@ -36,15 +36,19 @@
     <div id="navbar-menu" class="navbar-menu is-static">
       <!-- <div class="navbar-start"></div> -->
       <div class="navbar-end">
-        <a href="{{ "about" | relURL }}" class="navbar-item is-secondary">
-          About Me
-        </a>
+        {{ range .Site.RegularPages }}
+          {{- if eq .Params.showInMenu true -}}
+          <a href="{{- .Permalink | relURL -}}" class="navbar-item is-secondary">
+            {{- .Title -}}
+          </a>
+          {{- end -}}
+        {{- end -}}
         {{- range .Site.Sections -}}
           {{- if not (eq .Title "singles") -}}
           {{- $secCount := len .Sections -}}
           {{- if (ne $secCount 0) }}
           <div class="navbar-item has-dropdown is-hoverable">
-            <a href="{{- .Permalink -}}" class="navbar-link">
+            <a href="{{- .Permalink | relURL -}}" class="navbar-link">
               {{- .Title -}}
             </a>
             <div class="navbar-dropdown">
@@ -52,14 +56,14 @@
                 > All
               </a> -->
               {{- range .Sections -}}
-              <a href="{{- .Permalink -}}" class="navbar-item">
+              <a href="{{- .Permalink | relURL -}}" class="navbar-item">
                 {{- .Title -}}
               </a>
               {{- end -}}
             </div>
           </div>
           {{- else -}}
-          <a href="{{- .Permalink -}}" class="navbar-item is-secondary">
+          <a href="{{- .Permalink | relURL -}}" class="navbar-item is-secondary">
             {{- .Title -}}
           </a>
           {{- end -}}
