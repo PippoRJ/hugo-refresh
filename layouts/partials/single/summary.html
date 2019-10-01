@@ -14,10 +14,10 @@
         {{- end }}
         <a href="{{- .Permalink | relURL -}}"><img src="{{- $image.Permalink | relURL -}}" alt=""></a>
       </figure>
-      <h3 class="title is-5 summary-title">
+      <h3 class="title is-5 refresh-summary-title">
         {{ .Params.title }}
       </h3>
-      <p class="summary-summary">
+      <p class="refresh-summary">
         {{- if .Params.summary -}}
           {{- .Params.summary -}}
         {{- else }}

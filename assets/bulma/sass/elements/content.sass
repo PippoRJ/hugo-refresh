@@ -117,6 +117,11 @@ $content-table-foot-cell-color: $text-strong !default
   //  color: #4a4a4a          // added by me
   .hide
     display: none // !important;
+  
+  .pre-colorless                                 // added by me
+    pre                                          // to make the <pre> transparent
+      background-color: hsla(120, 100%, 50%, 0); // for tabs
+
   pre
     +overflow-touch
     overflow-x: auto
