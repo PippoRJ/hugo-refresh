@@ -1,0 +1,10 @@
+<article class="message">
+    <div class="message-body">
+        {{ $content := print "$s" (.Inner  | markdownify) }}
+        {{ if in  $content "\n" }} 
+            {{ .Inner  | markdownify }}
+        {{ else }}
+            <p>{{ .Inner  | markdownify }}</p>
+        {{ end }}
+    </div>
+  </article>

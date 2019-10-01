@@ -1,0 +1,66 @@
+{{ $id := delimit (seq 15 | shuffle) "" "" }}
+{{/*  <div class="field has-addons is-marginless">
+<p class="control is-marginless">
+    <a class="button is-size-5 has-background-primary">
+    <span class="icon is-small">
+        <i class="fa fa-bold"></i>
+    </span>
+    <span>{{ .Get 0 }}</span>
+    </a>
+</p>
+    <p class="control is-marginless">
+        <a class="button is-size-5" href="{{ .Get 1 }}" target="_blank">
+        <span class="icon is-small">
+            <i class="fa fa-hand-pointer-o"></i>
+        </span>
+        <span class="container">www.google.com</span>
+        <span class="icon is-small">
+                <i class="fa fa-hand-pointer-o"></i>
+            </span>
+        <span class="container is-pulled-right"></span>
+        </a>
+    </p>
+    <p class="control is-marginless" >
+        <a class="button is-size-5 collapsible" data-target="asadasdwww" >
+        <span class="icon is-small">
+            <i class="fa fa-angle-down"></i>
+        </span>
+        </a>
+    </p>
+</div>  */}}
+
+<div class="columns is-marginless container">
+    <div class="column is-2 is-paddingless">
+        {{/*  <p class="control is-marginless">  */}}
+            <a class="button is-size-5 has-background-success refresh-site-left">
+                <span class="icon is-small">
+                    <i class="fa fa-flag"></i>
+                </span>
+            <span>{{ .Get 0 }}</span>
+            </a>
+        {{/*  </p>  */}}
+    </div>
+    <div class="column is-paddingless">
+        <a class="button is-size-5 is-radiusless" 
+           style="width: 100%"
+           href="{{ .Get 1 }}" target="_blank">
+            {{/*  <span class="icon is-small">
+                <i class="fa fa-hand-pointer-o"></i>
+            </span>  */}}
+            <span class="container">{{ .Get 1 }}</span>
+
+        </a>
+    </div>
+    <div class="column is-1 is-paddingless">
+        <a class="button is-size-5 collapsible refresh-site-right" data-target="{{ $id }}">
+            <span class="icon is-small">
+                <i class="fa fa-angle-down"></i>
+            </span>
+        </a>
+    </div>
+</div>
+<article class="hide message is-marginless is-success" id="{{ $id }}">
+    <div class="message-body" ><p>
+        {{ .Inner  | markdownify }}
+    </div>
+</article>

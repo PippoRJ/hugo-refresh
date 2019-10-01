@@ -10,7 +10,7 @@
         <figure class="image">
           {{- with $original -}}
           {{- $image := .Resize $size -}}
-          <img src="{{ $image.RelPermalink }}" alt="Book image">
+          <img class="refresh-book" src="{{ $image.RelPermalink }}" alt="Book image">
           {{- end -}}
         </figure>
       </div>
@@ -20,8 +20,15 @@
       </div>
     </div>
     <div class="columns">
-      <div class="content">
-        {{ .Inner | markdownify }}
+      <div class="content" style="padding: 0px 20px 10px 20px">
+        <p>
+          {{ $content := print "$s" (.Inner  | markdownify) }}
+          {{ if in  $content "\n" }} 
+            {{ .Inner | markdownify }}
+          {{ else }}
+            <p>{{ .Inner  | markdownify }}</p>
+          {{ end }}
+        </p>
       </div>
     </div>
 </div>
