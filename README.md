@@ -80,9 +80,11 @@ Usage example:
 ```
 {{< title1 "My awesome title" "my-title-id">}}
 ```
+
 The **first parameter** is the title of the shortcode (in this example is "My awesome title").<br>
 The **second paramter** is the ID of the shortcode (in this example is "my-title-id").<br>
 It can be used in links to the same page as:
+
 ```
 [link to the title](#my-title-id)
 ```
@@ -92,15 +94,15 @@ It can be used in links to the same page as:
 <details>
 <summary> code.html </summary>
 
-This shortcode builds a centered page that is two-third of the full size of the page.
+This shortcode builds a centred page that is two-third of the full size of the page.
 
 Usage example:
 
 ```
 {{% code %}}
-\`\`\`
+` ` `
     $ sudo bash -c 'echo 0 > /proc/sys/kernel/randomize_va_space'
-\`\`\`
+` ` `
 {{% /code %}}
 ```
 
@@ -109,7 +111,7 @@ Usage example:
 <details>
 <summary> codeAll.html </summary>
 
-This shortcode builds a centered page that is as wide as the full size of the page.
+This shortcode builds a centred page that is as wide as the full size of the page.
 
 Usage example:
 
@@ -138,9 +140,9 @@ Usage example:
 {{% figure src="images/the_stack.png" height="700" %}}
 ```
 
-The parameter **src** is the location of the image relative to the location of the file where the shortcode has been used.
-The parameter **width** is the width of the image.
-The parameter **height** is the height of the image.
+The parameter **src** is the location of the image relative to the location of the file where the shortcode has been used.<br>
+The parameter **width** is the width of the image.<br>
+The parameter **height** is the height of the image.<br>
 
 </details>
 
@@ -155,15 +157,16 @@ Usage example:
 {{% twoFigure src1="images/overflow_1.png" width1="700" src2="images/overflow_2.png" width2="700" %}}
 ```
 
-The parameter **src1** is the location of the right image relative to the location of the file where the shortcode has been used.
-The parameter **width1** is the width of the right image.
-The parameter **height1** is the height of the right image.
-
-The parameter **src2** is the location of the left image relative to the location of the file where the shortcode has been used.
-The parameter **width2** is the width of the left image.
-The parameter **height2** is the height of the left image.
+The parameter **src1** is the location of the right image relative to the location of the file where the shortcode has been used.<br>
+The parameter **width1** is the width of the right image.<br>
+The parameter **height1** is the height of the right image.<br>
+The parameter **src2** is the location of the left image relative to the location of the file where the shortcode has been used.<br>
+The parameter **width2** is the width of the left image.<br>
+The parameter **height2** is the height of the left image.<br>
 
 With a small screen these images will be shown one on top of the other.
+
+See example of use [here](https://rjordaney.is/lectures/basic_buffer_overflow/)
 
 </details>
 
@@ -176,12 +179,15 @@ Usage example:
 {{< book title="Title Awesome" authors="Awesome author" image="images/cover.jpg" size="300x">}}
 ```
 
-The parameter **title** is the title of the book.
-The parameter **authors** contains the authors of the book.
-The parameter **image** is the cover of the book.
+The parameter **title** is the title of the book.<br>
+The parameter **authors** contains the authors of the book.<br>
+The parameter **image** is the cover of the book.<br>
 
-The parameter **size** is used to specify the size of the book in pixel "width" x "height".
-E.g.: "300x" means 300px of width. E.g.: "x300" means 300px of height. 
+The parameter **size** is used to specify the size of the book in pixel "width" x "height".<br>
+E.g.: "300x" means 300px of width.<br> 
+E.g.: "x300" means 300px of height. <br>
+
+See example of use [here](https://rjordaney.is/miscellaneous/ml_books/)
 
 </details>
 
@@ -198,13 +204,39 @@ Text of the exercise.
 
 This shortcode has no parameters.
 
+See example of use [here](https://rjordaney.is/code_exercises/staircase_n_steps/)
+
 </details>
 
 
 <details>
 <summary> code_tabs.html </summary>
 
+Usage example:
 
+```
+{{< code_tabs 
+    file1="/content/code_exercises/staircase_n_steps/code/solution_python.md" title1="Python" icon1="python"
+    file2="/content/code_exercises/staircase_n_steps/code/solution_c.md" title2="C" icon2="c"
+    file3="/content/code_exercises/staircase_n_steps/code/solution_java.md" title3="Java" icon3="java" 
+>}}
+```
+
+The parameter **file1** is the name of the markdown file to be displayed in the first tab.
+The path needs to start from the `content` folder.<br>
+The **title1** is the title of the first tab.<br>
+The **icon1** is the icon to be shown at the right of the title, it is an optional parameter. See the partial code `icon.html` for the available icons.
+
+There are 6 tabs supported at this moment
+
+* the files parameters are **file1**, **file2**, **file3**, **file4**, **file5**, **file6** 
+
+* the titles parameters are **title1**, **title2**, **title3**, **title4**, **title5**, **title6** 
+
+* the icons parameters are **icon1**, **icon2**, **icon3**, **icon4**, **icon5**, **icon6** 
+
+
+See example of use [here](https://rjordaney.is/code_exercises/staircase_n_steps/)
 
 </details>
 
@@ -219,6 +251,8 @@ Usage example:
 ```
 
 This shortcode has no parameters.
+
+See an example of usage [here](https://rjordaney.is/lectures/basic_buffer_overflow/)
 
 </details>
 
@@ -247,10 +281,10 @@ Usage example:
 {{< /site_lightgreen >}}
 ```
 
-The **first parameter** will appear in the right coloured part of the shortcode.
-The **second parameter** will appear in the middle part of the shortcode.
+The **first parameter** will appear in the right coloured part of the shortcode.<br>
+The **second parameter** will appear in the middle part of the shortcode.<br>
 
-
+See example of usage [here](https://rjordaney.is/miscellaneous/ctf_resources/)
 
 </details>
 
@@ -292,7 +326,7 @@ showInMenu: true
 
 * The _list_ and _terms_ types of pages contain a list of the post summaries.
 
-* The images used to build the summares are resized to allow better usage of the bandwith.
+* The images used to build the summaries are resized to allow better usage of the bandwidth.
 
 * The js and css files are minified (with a configurable option on the `config.yaml`).
 
@@ -302,7 +336,7 @@ showInMenu: true
 
 * The `.sass` files are now processed with `resources.ExecuteAsTemplate` so that it is possible to use variables from the `config.yaml`.
 
-* An option in the config.yaml was added to confifure the font-family for the navbar, sidebar and content of the page.
+* An option in the config.yaml was added to configure the font-family for the navbar, sidebar and content of the page.
 
 * [Bulma](https://bulma.io/) (the css framework the theme is based on) is now updated to version 0.7.5 because in the new version the class _content_ has a separate style to allow modification that will impact only the contents of the posts.
 
