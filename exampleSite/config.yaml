@@ -1,7 +1,9 @@
 baseURL: https://example.com
 languageCode: en-us
 title: Personal website and blog
-theme: ../..
+theme: hugo-refresh
+# theme: ../..
+
 
 disableKinds: ["sitemap","RSS"]
 
