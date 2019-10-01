@@ -1,9 +1,19 @@
-{{ $id := delimit (seq 30 | shuffle) "" "" }}
-<article class="message is-link">
+{{ $id := delimit (seq 15 | shuffle) "" "" }}
+<div class="container ">
+    <div class="box button is-dark has-text-left collapsible"  data-target="{{ $id }}">
+        <p><a href="{{ .Get 0 }}" target="_blank" >{{ .Get 0 }}</a></p>
+    </div>
+
+    <div class="message-body hide" id="{{ $id }}">
+        {{ .Inner | markdownify }}
+    </div>
+</div> 
+
+{{/*  <article class="message is-link">
     <div class="message-header collapsible"  data-target="{{ $id }}">
         <p><a href="{{ .Get 0 }}" target="_blank" >{{ .Get 0 }}</a></p>
     </div>
     <div class="message-body hide" id="{{ $id }}">
         {{ .Inner | markdownify }}
     </div>
-</article> 
+</article>   */}}

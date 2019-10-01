@@ -1,4 +1,4 @@
-{{ $id := delimit (seq 30 | shuffle) "" "" }}
+{{ $id := delimit (seq 15 | shuffle) "" "" }}
 <article class="message is-danger">
     <div class="message-header collapsible"  data-target="{{ $id }}">
         <p><a href="{{ .Get 0 }}" target="_blank" >{{ .Get 0 }}</a></p>
