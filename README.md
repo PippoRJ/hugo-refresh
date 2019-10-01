@@ -171,21 +171,33 @@ With a small screen these images will be shown one on top of the other.
 <details>
 <summary> book.html </summary>
 
+Usage example:
 
+```
+{{< book title="Title Awesome" authors="Awesome author" image="images/cover.jpg" size="300x">}}
+```
 
-</details>
+The parameter **title** is the title of the book.
+The parameter **authors** contains the authors of the book.
+The parameter **image** is the cover of the book.
 
-<details>
-<summary> code_tabs.html </summary>
-
-
+The parameter **size** is used to specify the size of the book in pixel "width" x "height".
+E.g.: "300x" means 300px of width. E.g.: "x300" means 300px of height. 
 
 </details>
 
 <details>
 <summary> exercise.html </summary>
 
+Usage example:
 
+```
+{{< exercise >}}
+Text of the exercise.
+{{< /exercise >}}
+```
+
+This shortcode has no parameters.
 
 </details>
 
@@ -201,7 +213,13 @@ With a small screen these images will be shown one on top of the other.
 <details>
 <summary> codeInLine.html </summary>
 
+Usage example:
 
+```
+{{% codeInline %}}sudo echo 0 > /proc/sys/kernel/randomize_va_space{{% /codeInline %}}
+```
+
+This shortcode has no parameters.
 
 </details>
 
@@ -221,6 +239,17 @@ With a small screen these images will be shown one on top of the other.
 
 <details>
 <summary> site_blue.html, site_green.html, site_lightgreen.html, site_red.html, site_yellow.html </summary>
+
+Usage example:
+
+```
+{{< site_lightgreen "Web" "https://www.example.com" >}}
+<p>Description of the website.</p>
+{{< /site_lightgreen >}}
+```
+
+The **first parameter** will appear in the right coloured part of the shortcode.
+The **second parameter** will appear in the middle part of the shortcode.
 
 
 
