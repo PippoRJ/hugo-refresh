@@ -228,6 +228,33 @@ With a small screen these images will be shown one on top of the other.
 
 
 
+## Customization options for a regular page
+
+This is the front matter of a regular page:
+
+```
+---
+title: "My Awesome Title"
+date: 2019-06-03T21:51:13+01:00
+draft: false
+hideLastModified: true
+summaryImage: "images/system.jpg" 
+tags: ["Tag1", "tag2", "tag 3"]
+summary: "This is a custom summary for my article"
+showInMenu: true
+---
+```
+
+* `summaryImage`: it is used to specify the image to be used in the summary 
+
+* `summary`: it is used to specify the summary of an article instead of taking it from the article itself.
+
+* `hideLastModified`: it is used to hide the the timestamp added at the end of the article.
+
+* `showInMenu`: it is used to show the article in the top right menu. 
+
+* `tags`: it is the list of tags for the article; they will be used to build the left sidebar.
+
 
 ## List of modifications from the original theme
 
