@@ -1,0 +1,44 @@
+.refresh-summary-title{
+  position: relative;
+  margin: 10px 0;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.refresh-summary{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  height: 4.5em;
+  text-overflow: ellipsis;
+}
+
+/* .pre-colorless{
+  pre{
+    background-color: black;
+  }
+} */
+
+.refresh-site-left{
+  width: 100%; 
+  border-top-right-radius: 0px; ; 
+  border-bottom-right-radius: 0px;
+}
+
+.refresh-site-right{
+  width: 100%; 
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.refresh-book{
+  min-width: 50px; 
+  max-width: 250px;
+}
+
+.hide{
+    display: none;
+}
