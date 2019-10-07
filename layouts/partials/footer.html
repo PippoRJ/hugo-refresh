@@ -54,6 +54,23 @@
                 {{ .Site.Params.footer.email }}
               </a>
             </li>
+            {{ if isset .Site.Params.footer "facebook" }}
+            <li>
+              <a href="https://facebook.com/{{ .Site.Params.footer.facebook }}" target="_blank">
+                <span class="icon"><i class="fa fa-facebook"></i></span>
+                {{ .Site.Params.footer.facebook }}
+              </a>
+            </li>
+            {{ end }}       
+            {{ if isset .Site.Params.footer "twitter" }}
+            <li>
+              <a href="https://twitter.com/{{ .Site.Params.footer.twitter }}" target="_blank">
+                <span class="icon"><i class="fa fa-twitter"></i></span>
+                {{ .Site.Params.footer.twitter }}
+              </a>
+            </li>
+            {{ end }}       
+
           </ul>
         </div>
       </div>
