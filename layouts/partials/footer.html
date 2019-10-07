@@ -42,12 +42,14 @@
               <h3>Contacts</h3>
           </div>
           <ul class="link-list">
+            {{ if isset .Site.Params.footer "linkedin" }}
             <li>
               <a href="{{ .Site.Params.footer.linkedin }}" target="_blank">
                 <span class="icon"><i class="fa fa-linkedin"></i></span>
                 Linkedin
               </a>
             </li>
+            {{ end }}
             <li>
               <a href="mailto:{{ .Site.Params.footer.email }}" target="_blank">
                 <span class="icon"><i class="fa fa-envelope"></i></span>
@@ -70,7 +72,14 @@
               </a>
             </li>
             {{ end }}       
-
+            {{ if isset .Site.Params.footer "instagram" }}
+            <li>
+              <a href="https:/instagram.com/{{ .Site.Params.footer.instagram }}" target="_blank">
+                <span class="icon"><i class="fa fa-instagram"></i></span>
+                {{ .Site.Params.footer.instagram }}
+              </a>
+            </li>
+            {{ end }}       
           </ul>
         </div>
       </div>

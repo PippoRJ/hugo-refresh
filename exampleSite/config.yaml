@@ -85,13 +85,21 @@ params:
   footer:
     # option to specify the logo in the footer
     logo: "/images/refresh-square.svg"
+    
     # option to specify your contact email in the footer
     email: name.surname@domain.com
+    
     # option to specify your linkedin profile in the footer
     linkedin: https://www.linkedin.com/your_linkedin_profile/
+    
     # option to specify your facebook account in the footer; **uncomment** the below line to show in footer
     #facebook: your.user.name
+    
     # option to specify your twitter user name in the footer; **uncomment** the below line to show in footer
     #twitter: username
+
+    # option to specify your instagram user name in the footer; **uncomment** the below line to show in footer
+    #instagram: username
+
     # option to specify the copyright in the footer
     copyright: Julia The White - 2019
