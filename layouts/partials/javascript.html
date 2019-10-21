@@ -1,12 +1,12 @@
-{{- $js1 := resources.Get "js/jquery-2.2.4.js"                        }}
-{{- $js2 := resources.Get "js/feather.4.22.0.js"                      }}
-{{- $js3 := resources.Get "js/modernizr-2.8.3.js"                     }}
-{{- $js4 := resources.Get "js/refresh.js"                             }}
-{{- $js5 := resources.Get "js/highlight.9.15.8.pack.js"               }}
-{{- $js6 := resources.Get "js/highlightjs-line-numbers.2.7.0.min.js"  }}
-{{- $js7 := resources.Get "js/MathJax.js"                             }}
-{{- $js8 := resources.Get "js/extensions/MathZoom.js"                 }}
-{{- $js9 := resources.Get "js/extensions/MathMenu.js"                 }}
+{{- $js1 := resources.Get "js/jquery-2.2.4.js" -}}
+{{- $js2 := resources.Get "js/feather.4.22.0.js" -}}
+{{- $js3 := resources.Get "js/modernizr-2.8.3.js" -}}
+{{- $js4 := resources.Get "js/refresh.js" -}}
+{{- $js5 := resources.Get "js/highlight.9.15.8.pack.js" -}}
+{{- $js6 := resources.Get "js/highlightjs-line-numbers.2.7.0.min.js" -}}
+{{- $js7 := resources.Get "js/MathJax.js" -}}
+{{- $js8 := resources.Get "js/extensions/MathZoom.js" -}}
+{{- $js9 := resources.Get "js/extensions/MathMenu.js" -}}
 
 {{/*  Attempt to put all js in one file  */}}
 {{/*  https://discourse.gohugo.io/t/bundle-many-resources/13497  */}}
@@ -27,27 +27,27 @@
 {{/*  end  */}}
 
 {{- if .Site.Params.jsMinify -}}
-    {{- $js1 = $js1 | resources.Minify }}
-    {{- $js2 = $js2 | resources.Minify }}
-    {{- $js3 = $js3 | resources.Minify }}
-    {{- $js4 = $js4 | resources.Minify }}
-    {{- $js5 = $js5 | resources.Minify }}
-    {{- $js6 = $js6 | resources.Minify }}
-    {{- $js7 = $js7 | resources.Minify }}
-    {{- $js8 = $js8 | resources.Minify }}
-    {{- $js9 = $js9 | resources.Minify }}
+    {{- $js1 = $js1 | resources.Minify -}}
+    {{- $js2 = $js2 | resources.Minify -}}
+    {{- $js3 = $js3 | resources.Minify -}}
+    {{- $js4 = $js4 | resources.Minify -}}
+    {{- $js5 = $js5 | resources.Minify -}}
+    {{- $js6 = $js6 | resources.Minify -}}
+    {{- $js7 = $js7 | resources.Minify -}}
+    {{- $js8 = $js8 | resources.Minify -}}
+    {{- $js9 = $js9 | resources.Minify -}}
 {{- end -}}
 
 {{- if .Site.Params.jsFingerprint -}}
-    {{- $js1 = $js1 | resources.Fingerprint }}
-    {{- $js2 = $js2 | resources.Fingerprint }}
-    {{- $js3 = $js3 | resources.Fingerprint }}
-    {{- $js4 = $js4 | resources.Fingerprint }}
-    {{- $js5 = $js5 | resources.Fingerprint }}
-    {{- $js6 = $js6 | resources.Fingerprint }}
-    {{- $js7 = $js7 | resources.Fingerprint }}
-    {{- $js8 = $js8 | resources.Fingerprint }}
-    {{- $js9 = $js9 | resources.Fingerprint }}
+    {{- $js1 = $js1 | resources.Fingerprint -}}
+    {{- $js2 = $js2 | resources.Fingerprint -}}
+    {{- $js3 = $js3 | resources.Fingerprint -}}
+    {{- $js4 = $js4 | resources.Fingerprint -}}
+    {{- $js5 = $js5 | resources.Fingerprint -}}
+    {{- $js6 = $js6 | resources.Fingerprint -}}
+    {{- $js7 = $js7 | resources.Fingerprint -}}
+    {{- $js8 = $js8 | resources.Fingerprint -}}
+    {{- $js9 = $js9 | resources.Fingerprint -}}
 {{- end -}}
 
 {{- if .Site.Params.jsFingerprint -}}

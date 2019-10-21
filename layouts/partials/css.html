@@ -24,9 +24,9 @@
 
 {{- $css  := resources.Get $sass | resources.ExecuteAsTemplate $scss . | toCSS $cssOpts -}}
 {{- $css1 := resources.Get "css/monokai-sublime.9.15.8.min.css" -}}
-{{- $css2 := resources.Get "css/icons.css"                      -}}
-{{- $css3 := resources.Get "css/refresh-css.css"                -}}
-{{- $css4 := resources.Get "css/devicon.min.css"                -}}
+{{- $css2 := resources.Get "css/icons.css" -}}
+{{- $css3 := resources.Get "css/refresh-css.css" -}}
+{{- $css4 := resources.Get "css/devicon.min.css" -}}
 
 {{- if .Site.Params.cssMinify -}}
 
@@ -65,6 +65,3 @@
 <link rel="stylesheet" type="text/css" href="{{- $css4.Permalink | relURL -}}">
 
 {{- end -}}
-
-{{/*  <link rel="stylesheet" type="text/css" href="{{- "css/bulma.css" | absURL -}}">  */}}
-{{/*  <link rel="stylesheet" type="text/css" href="{{- "css/icons.css" | relURL -}}">  */}}
