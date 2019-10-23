@@ -66,7 +66,7 @@ snap refresh hugo --channel=extended
 
 ## Statistics counter
 
-You can enter your Google / Yandex / etc statistic counter code into the `layouts/partials/counter.html`. Code will be inseted right after open `<body>` tag.
+You can enter your Google / Yandex / etc statistic counter code into the `layouts/partials/counter.html`. Code will be generated right after open `<body>` tag.
 
 ## Customizing your page
 
