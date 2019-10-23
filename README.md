@@ -64,9 +64,13 @@ If you see `error: failed to transform resource: TOCSS: failed to transform "sty
 snap refresh hugo --channel=extended
 ```
 
+## Statistics counter
+
+You can enter your Google / Yandex / etc statistic counter code into the `layouts/partials/counter.html`. Code will be inseted right after open `<body>` tag.
+
 ## Customizing your page
 
-There are different configuration options for Hugo ReFresh including options for: the navbar, the sidebar, the homepage, fonts, colours landing and images. 
+There are different configuration options for Hugo ReFresh including options for: the navbar, the sidebar, the homepage, fonts, colours landing, stats counters and images. 
 Read the comments in the `config.yaml` file to know more.
 
 
