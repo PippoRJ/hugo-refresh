@@ -322,7 +322,7 @@ showInMenu: true
 * `tags`: it is the list of tags for the article; they will be used to build the left sidebar.
 
 
-It is usually recommended to define a regular page as a leaf bundle. Following the example above it will be:
+To avoid path problems when specifying the `summaryImage`, it is recommended to define a regular page as a leaf bundle. The example above will result in:
 
 ```
 * my_awesome_title (folder)
