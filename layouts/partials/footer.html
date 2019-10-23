@@ -36,28 +36,59 @@
         </div>
       </div>
     
+      {{ if (or (or (or (or (isset .Site.Params.footer "linkedin") (isset .Site.Params.footer "email")) (isset .Site.Params.footer "facebook")) (isset .Site.Params.footer "twitter")) (isset .Site.Params.footer "instagram")) }}
       <div class="column">
         <div class="footer-column">
           <div class="footer-header">
               <h3>Contacts</h3>
           </div>
           <ul class="link-list">
+            {{ if isset .Site.Params.footer "linkedin" }}
             <li>
               <a href="{{ .Site.Params.footer.linkedin }}" target="_blank">
                 <span class="icon"><i class="fa fa-linkedin"></i></span>
                 Linkedin
               </a>
             </li>
+            {{ end }}
+            {{ if isset .Site.Params.footer "email" }}
             <li>
               <a href="mailto:{{ .Site.Params.footer.email }}" target="_blank">
                 <span class="icon"><i class="fa fa-envelope"></i></span>
                 {{ .Site.Params.footer.email }}
               </a>
             </li>
+            {{ end }}
+            {{ if isset .Site.Params.footer "facebook" }}
+            <li>
+              <a href="https://facebook.com/{{ .Site.Params.footer.facebook }}" target="_blank">
+                <span class="icon"><i class="fa fa-facebook"></i></span>
+                {{ .Site.Params.footer.facebook }}
+              </a>
+            </li>
+            {{ end }}       
+            {{ if isset .Site.Params.footer "twitter" }}
+            <li>
+              <a href="https://twitter.com/{{ .Site.Params.footer.twitter }}" target="_blank">
+                <span class="icon"><i class="fa fa-twitter"></i></span>
+                {{ .Site.Params.footer.twitter }}
+              </a>
+            </li>
+            {{ end }}       
+            {{ if isset .Site.Params.footer "instagram" }}
+            <li>
+              <a href="https://instagram.com/{{ .Site.Params.footer.instagram }}" target="_blank">
+                <span class="icon"><i class="fa fa-instagram"></i></span>
+                {{ .Site.Params.footer.instagram }}
+              </a>
+            </li>
+            {{ end }}       
           </ul>
         </div>
       </div>
+      {{ end }}
 
+      {{ if isset .Site.Params.footer "copyright" }}
       <div class="column">
         <div class="footer-column">
           <div class="footer-header">
@@ -73,6 +104,7 @@
           </ul>
         </div>
       </div>
+      {{ end }}
 
     </div>
   </div>
