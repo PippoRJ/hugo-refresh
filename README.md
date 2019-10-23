@@ -296,7 +296,7 @@ See example of usage [here](https://rjordaney.is/miscellaneous/ctf_resources/)
 
 ## Customization options for a regular page
 
-This is the front matter of a regular page:
+These are the options that you can define is the front matter of a regular page:
 
 ```
 ---
@@ -320,6 +320,16 @@ showInMenu: true
 * `showInMenu`: it is used to show the article in the top right menu. 
 
 * `tags`: it is the list of tags for the article; they will be used to build the left sidebar.
+
+
+It is usually recommended to define a regular page as a leaf bundle. Following the example above it will be:
+
+```
+* my_awesome_title (folder)
+   * index.md (file)
+   * images (folder)
+      * system.jpg (file)
+```
 
 
 ## List of modifications from the original theme
