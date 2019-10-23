@@ -1,6 +1,8 @@
 .refresh-summary-title{
   position: relative;
-  margin: 10px 0;
+  margin: 10px 0 0 0;
+  margin-bottom: 10px !important;
+  padding: 0 0 5px 0;
   max-width: 100%;
   overflow: hidden;
   white-space: nowrap;
