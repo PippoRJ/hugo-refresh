@@ -97,3 +97,15 @@ params:
     # instagram: username
     # option to specify the copyright in the footer
     copyright: Julia The White - 2019
+    
+# supported languages params
+DefaultContentLanguage: ru
+# DefaultContentLanguage: en
+
+languages:
+  en:
+    languageName:       English
+    weight:             1
+  ru:
+    languageName:       Russian
+    weight:             2
