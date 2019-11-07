@@ -1,0 +1,10 @@
+- id: readMore
+  translation: "Читать →"
+- id: mainMenu
+  translation: "Меню"
+- id: allTags
+  translation: "Все теги"
+- id: tags
+  translation: "Теги"
+- id: lastModified
+  translation: "Обновлено:"
