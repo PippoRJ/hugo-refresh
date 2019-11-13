@@ -16,12 +16,15 @@
   <div class="inner">
     <ul class="sidebar-menu">
       <li class="no-children">
-          <a href="{{- printf "tags" | relURL -}}">
+          {{- with .Site.GetPage "tags" -}}
+          <a href="{{- .RelPermalink -}}">
+          {{- end -}}
             <div class="columns">
               <table width="100%"> <!-- class="is-fullwidth" --> 
                 <tr>
                   <td class="">
-                    <span class="icon"><i class="fa fa-cubes"></i></span>All Tags
+                    <span class="icon"><i class="fa fa-cubes"></i></span>
+                    {{ i18n "allTags" }}
                   </td>
                   <td class="has-text-right" >
                       {{/*  <div class="tag-number">{{- .Site.Taxonomies.tags.Alphabetical.Count -}}</div>  */}}
@@ -33,7 +36,7 @@
       {{- range .Site.Taxonomies.tags.ByCount -}}
       {{/*  {{- range .Site.Taxonomies.tags.Alphabetical -}}  */}}
       <li class="no-children">
-          <a href="{{- printf "tags/%s" .Name | relURL -}}">
+          <a href="{{- printf "tags/%s" .Name | relLangURL -}}">
             <div class="columns">
               {{/*  <div class="is-fullwidth">
                 <div>{{- .Name | humanize -}}</div>

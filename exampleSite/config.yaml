@@ -2,11 +2,18 @@ baseURL: https://example.com
 languageCode: en-us
 title: Personal website and blog
 theme: hugo-refresh
-# theme: ../..
+theme: ../..
 
+# Option to specify the default language of the theme
+# I.e., the landing language of your root 
+DefaultContentLanguage: en
+
+## Option to disable additional language in your site.
+# disableLanguages: ["ru"]
 
 disableKinds: ["sitemap","RSS"]
 
+# Option to specify that all links will be open in a new tab.
 blackfriday:
   hrefTargetBlank: true
 
@@ -97,3 +104,36 @@ params:
     # instagram: username
     # option to specify the copyright in the footer
     copyright: Julia The White - 2019
+
+# multilanguage support
+languages:
+  en:
+    languageName:       English
+    weight:             1
+  ru:
+    languageName:       Russian
+    weight:             2
+    # When Specifying different parameters for a different language 
+    # you need to specify all the mandatory sub-parameters as well.
+    # E.g.: if you specify the "homepage" parameter then you need to
+    #       specify all mandatory sub-parameters, e.g.: "title". 
+    # See example below:
+    params:
+      homepage:
+        title: Julia белая краска
+        subtitle: Персональный сайт и блог
+        image: "/images/avataaars.png" # worker.svg 
+        imageWidth: 500px
+      
+      # Some sub-parameters of the "footer" parameter
+      # can be omitted because the code allows for them to be 
+      # missed but they will treated as they do not exist.
+      footer:
+        logo: "/images/refresh-square.svg"
+        email: имя.фамилия@домен.com
+        linkedin: https://www.linkedin.com/your_linkedin_profile/
+        # facebook: your.username
+        # twitter: username
+        # instagram: username
+        copyright: Julia белая краска - 2019
+      

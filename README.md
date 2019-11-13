@@ -334,7 +334,9 @@ To avoid path problems when specifying the `summaryImage`, it is recommended to 
 
 ## List of modifications from the original theme
 
-* The ReFresh theme was transformed from single page template to multipage. 
+* The ReFresh theme was transformed from single page template to multipage.
+
+* Added multilanguage support.
 
 * The left side menu now contains page tags along with theirs post counter.
 

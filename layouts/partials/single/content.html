@@ -24,7 +24,8 @@
   <div class="container">
     <div class="columns">
       <div class="column has-text-right is-family-monospace is-centered-tablet-portrait">
-        Last modified: {{- .Lastmod.Format "2 January 2006" -}}
+        {{ i18n "lastModified" }}:&nbsp;
+        {{- .Lastmod.Format "2 January 2006" -}}
       </div>
     </div>
   </div>

@@ -1,0 +1,18 @@
+- id: readMore
+  translation: "Читать"
+- id: mainMenu
+  translation: "Меню"
+- id: allTags
+  translation: "Все теги"
+- id: tags
+  translation: "Теги"
+- id: lastModified
+  translation: "Обновлено"
+- id: website
+  translation: "Веб-сайт"
+- id: credits
+  translation: "кредиты"
+- id: copyright
+  translation: "Авторские права"
+- id: contacts
+  translation: "контакты"
