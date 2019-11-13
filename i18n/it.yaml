@@ -1,18 +1,18 @@
 - id: readMore
-  translation: "Read more"
+  translation: "Leggi tutto"
 - id: mainMenu
   translation: "Menu"
 - id: allTags
-  translation: "All Tags"
+  translation: "Tutti i tags"
 - id: tags
   translation: "Tags"
 - id: lastModified
-  translation: "Last modified"
+  translation: "Ultima modifica"
 - id: website
   translation: "Website"
 - id: credits
-  translation: "Credits"
+  translation: "Crediti"
 - id: copyright
   translation: "Copyright"
 - id: contacts
-  translation: "Contacts"
+  translation: "Contatti"

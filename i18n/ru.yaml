@@ -1,5 +1,5 @@
 - id: readMore
-  translation: "Читать →"
+  translation: "Читать"
 - id: mainMenu
   translation: "Меню"
 - id: allTags
@@ -7,4 +7,12 @@
 - id: tags
   translation: "Теги"
 - id: lastModified
-  translation: "Обновлено:"
+  translation: "Обновлено"
+- id: website
+  translation: "Веб-сайт"
+- id: credits
+  translation: "кредиты"
+- id: copyright
+  translation: "Авторские права"
+- id: contacts
+  translation: "контакты"
