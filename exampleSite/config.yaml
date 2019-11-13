@@ -2,7 +2,7 @@ baseURL: https://example.com
 languageCode: en-us
 title: Personal website and blog
 theme: hugo-refresh
-theme: ../..
+# theme: ../..
 
 # Option to specify the default language of the theme
 # I.e., the landing language of your root 
