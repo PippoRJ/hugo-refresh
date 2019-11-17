@@ -98,6 +98,8 @@ params:
     linkedin: https://www.linkedin.com/your_linkedin_profile/
     # option to specify your facebook account in the footer; **uncomment** the below line to show in footer
     # facebook: your.username
+    # option to specify your github account in the footer; **uncomment** the below line to show in footer
+    # github: username
     # option to specify your twitter username in the footer; **uncomment** the below line to show in footer
     # twitter: username
     # option to specify your instagram username in the footer; **uncomment** the below line to show in footer
@@ -127,7 +129,9 @@ languages:
       
       # Some sub-parameters of the "footer" parameter
       # can be omitted because the code allows for them to be 
-      # missed but they will treated as they do not exist.
+      # missed but they will treated as they do not exist,
+      # i.e., the parameters of the default language
+      # won't be inherited.
       footer:
         logo: "/images/refresh-square.svg"
         email: имя.фамилия@домен.com
@@ -135,5 +139,6 @@ languages:
         # facebook: your.username
         # twitter: username
         # instagram: username
+        # github: username
         copyright: Julia белая краска - 2019
       

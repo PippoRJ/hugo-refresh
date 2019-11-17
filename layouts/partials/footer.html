@@ -40,7 +40,7 @@
         </div>
       </div>
     
-      {{ if (or (or (or (or (isset .Site.Params.footer "linkedin") (isset .Site.Params.footer "email")) (isset .Site.Params.footer "facebook")) (isset .Site.Params.footer "twitter")) (isset .Site.Params.footer "instagram")) }}
+      {{ if (or (or (or (or (or (isset .Site.Params.footer "linkedin") (isset .Site.Params.footer "email")) (isset .Site.Params.footer "facebook")) (isset .Site.Params.footer "twitter")) (isset .Site.Params.footer "instagram")) (isset .Site.Params.footer "github")) }}
       <div class="column">
         <div class="footer-column">
           <div class="footer-header">
@@ -55,6 +55,14 @@
               </a>
             </li>
             {{ end }}
+            {{ if isset .Site.Params.footer "github" }}
+            <li>
+              <a href="https://github.com/{{ .Site.Params.footer.github }}" target="_blank">
+                <span class="icon"><i class="fa fa-github"></i></span>
+                {{ .Site.Params.footer.github }}
+              </a>
+            </li>
+            {{ end }}             
             {{ if isset .Site.Params.footer "email" }}
             <li>
               <a href="mailto:{{ .Site.Params.footer.email }}" target="_blank">
