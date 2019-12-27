@@ -30,7 +30,7 @@
             <div class="column is-5 is-offset-1">
                 <figure class="image"> 
                 {{- $img := resources.Get $image -}}
-                <img src="{{- $img.Permalink | relURL -}}" 
+                <img src="{{- .Site.Params.homepage.image -}}" 
                      style="width:{{- .Site.Params.homepage.imageWidth -}}" alt="Myself">
                 </figure>
             </div>
