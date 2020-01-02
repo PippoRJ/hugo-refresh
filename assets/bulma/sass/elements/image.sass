@@ -3,6 +3,7 @@ $dimensions: 16 24 32 48 64 96 128 !default
 .image
   display: block
   position: relative
+  overflow: hidden
   img
     display: block
     height: auto
@@ -29,8 +30,6 @@ $dimensions: 16 24 32 48 64 96 128 !default
     img,
     .has-ratio
       @extend %overlay
-      height: 100%
-      width: 100%
   &.is-square,
   &.is-1by1
     padding-top: 100%
