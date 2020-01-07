@@ -63,7 +63,6 @@ $content-table-foot-cell-color: $text-strong !default
     &:not(:first-child)
       margin-top: 1.3333em
   h4
-    display: inline-block //added by me to fix a bug in the visualization
     font-size: 1.35em
     margin-bottom: 0.8em
   h5
@@ -113,14 +112,6 @@ $content-table-foot-cell-color: $text-strong !default
       display: inline-block
     figcaption
       font-style: italic
-  //code
-  //  color: #4a4a4a          // added by me
-  .hide
-    display: none // !important;
-  
-  .pre-colorless                                 // added by me
-    pre                                          // to make the <pre> transparent
-      background-color: hsla(120, 100%, 50%, 0); // for tabs
 
   pre
     +overflow-touch
@@ -128,30 +119,7 @@ $content-table-foot-cell-color: $text-strong !default
     padding: $content-pre-padding
     white-space: pre
     word-wrap: normal
-    code                                               //
-      font-size: 1.1em                                 //
-      table                                            // This was
-        border: $content-table-cell-border-pre-code    //
-        width: auto                                    //
-        tbody                                          // added by
-        th,                                            //
-        td                                             //
-          border: $content-table-cell-border-pre-code  // me for
-        td                                             //  
-          &:first-child                                // code style  
-            border-right: 1px solid $border;           //
-  code
-    border-radius: 4px;            // Added by me for consistency with the .codeinline class 
-  .codeinline
-    display:inline !important                          // 
-    padding-top: 0.25em;                               // Added 
-    padding-right: 0.250em;                            // 
-    padding-bottom: 0.25em;                            // by
-    padding-left: 0.25em;                              // 
-    border-radius: 4px;                                // me
-    white-space: nowrap;                               // 
-  .rounded-corners
-    border-radius: 10px;         // Added by me
+
   sup,
   sub
     font-size: 75%
