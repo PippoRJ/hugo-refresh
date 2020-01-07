@@ -1,0 +1,159 @@
+{{ $id0 := delimit (seq 15 | shuffle) "" "" }}
+{{ $id1 := delimit (seq 15 | shuffle) "" "" }}
+{{ $id2 := delimit (seq 15 | shuffle) "" "" }}
+{{ $id3 := delimit (seq 15 | shuffle) "" "" }}
+{{ $id4 := delimit (seq 15 | shuffle) "" "" }}
+{{ $id5 := delimit (seq 15 | shuffle) "" "" }}
+
+{{ $content0 := readFile (.Get "file1") }}
+{{ $content1 := readFile (.Get "file2") }}
+{{ $title0   := .Get "title1" }}
+{{ $title1   := .Get "title2" }}
+{{ $icon0    := "" }}
+{{ $icon1    := "" }}
+{{ if .Get "icon1" }}
+  {{ $icon0 = printf "%s" (.Get "icon1") }}
+{{ end }}
+{{ if .Get "icon2" }}
+  {{ $icon1 = printf "%s" (.Get "icon2") }}
+{{ end }}
+
+{{ $file2    := false }}
+{{ $title2   := "" }}
+{{ $content2 := "" }}
+{{ $icon2    := "" }}
+{{ if .Get "file3" }}
+    {{ $content2 = readFile (.Get "file3") }}
+    {{ $title2   = .Get "title3" }}
+    {{ $file2    = true }}
+    {{ if .Get "icon3" }}
+      {{ $icon2    = printf "%s" (.Get "icon3") }}
+    {{ end }}
+{{ end }}
+{{ $file3    := false }}
+{{ $title3   := "" }}
+{{ $content3 := "" }}
+{{ $icon3    := "" }}
+{{ if .Get "file4" }}
+    {{ $content3 = readFile (.Get "file4") }}
+    {{ $title3   = "" }}
+    {{ $file3    = true }}
+    {{ if .Get "icon4" }}
+      {{ $icon3    = printf "%s" (.Get "icon4") }}
+    {{ end }}
+{{ end }}
+{{ $file4    := false }}
+{{ $title4   := "" }}
+{{ $content4 := "" }}
+{{ $icon4    := "" }}
+{{ if .Get "file5" }}
+    {{ $content4 = readFile (.Get "file5") }}
+    {{ $title4   = "" }}
+    {{ $file4    = true }}
+    {{ if .Get "icon5" }}
+      {{ $icon4    = printf "%s" (.Get "icon5") }}
+    {{ end }}
+{{ end }}
+{{ $file5    := false }}
+{{ $title5   := "" }}
+{{ $content5 := "" }}
+{{ $icon5    := "" }}
+{{ if .Get "file6" }}
+    {{ $content5 = readFile (.Get "file6") }}
+    {{ $title5   = "" }}
+    {{ $file5    = true }}
+    {{ if .Get "icon6" }}
+      {{ $icon5    = printf "%s" (.Get "icon6") }}
+    {{ end }}
+{{ end }}
+
+<div class="container pre-colorless">
+<div class="tabs is-medium is-marginless"> <!-- is-boxed is-toggle -->
+    <ul class="is-marginless">
+      <li class="is-active" data-target="{{ $id0 }}">
+        <a>
+          {{- partial "icon.html" (dict "context" . "icon" $icon0 ) -}}
+          <span>{{ $title0 }}</span>
+        </a>
+      </li>
+      <li data-target="{{ $id1 }}">
+        <a>
+            {{- partial "icon.html" (dict "context" . "icon" $icon1 ) -}}
+          <span>{{ $title1 }}</span>
+        </a>
+      </li>
+      {{ if $file2 }}
+      <li data-target="{{ $id2 }}">
+        <a>
+            {{- partial "icon.html" (dict "context" . "icon" $icon2 ) -}}
+          <span>{{ $title2 }}</span>
+        </a>
+      </li>
+      {{ end }}
+      {{ if $file3 }}
+      <li  data-target="{{ $id3 }}">
+        <a>
+            {{- partial "icon.html" (dict "context" . "icon" $icon3 ) -}}
+          <span>{{ $title3 }}</span>
+        </a>
+      </li>
+      {{ end }}
+      {{ if $file4 }}
+      <li  data-target="{{ $id4 }}">
+        <a>
+            {{- partial "icon.html" (dict "context" . "icon" $icon4 ) -}}
+          <span>{{ $title4 }}</span>
+        </a>
+      </li>
+      {{ end }}
+      {{ if $file5 }}
+      <li  data-target="{{ $id5 }}">
+        <a>
+            {{- partial "icon.html" (dict "context" . "icon" $icon5 ) -}}
+          <span>{{ $title5 }}</span>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+</div>
+    <!-- <div style="border-width: 2px; border-style: solid; border-color: #dbdbdb;" id="{{ $id0 }}"> -->
+    <div id="{{ $id0 }}">
+      <div class="pre-colorless">
+        {{ $content0 | markdownify }}
+      </div>
+    </div>
+    <div id="{{ $id1 }}" class="hide">
+      <div class="pre-colorless">
+        {{ $content1 | markdownify }}
+      </div>
+    </div>
+    {{ if $file2 }}
+        <div id="{{ $id2 }}" class="hide">
+          <div class="pre-colorless">
+            {{ $content2 | markdownify }}
+          </div>
+        </div>
+    {{ end }}
+    {{ if $file3 }}
+        <div id="{{ $id3 }}" class="hide">
+          <div class="pre-colorless">
+            {{ $content3 | markdownify }}
+          </div>
+        </div>
+    {{ end }}
+    {{ if $file4 }}
+    <div id="{{ $id4 }}" class="hide">
+      <div class="pre-colorless">
+        {{ $content4 | markdownify }}
+      </div>
+    </div>
+    {{ end }}
+    {{ if $file5 }}
+    <div id="{{ $id5 }}" class="hide">
+      <div class="pre-colorless">
+        {{ $content5 | markdownify }}
+      </div>
+    </div>
+{{ end }}
+</div>
+
