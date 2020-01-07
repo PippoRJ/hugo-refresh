@@ -1,0 +1,117 @@
+.refresh-summary-title{
+  position: relative;
+  margin: 10px 0 0 0;
+  margin-bottom: 10px !important;
+  padding: 0 0 5px 0;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* .codeinline{
+  display:inline !important;        
+  padding-top: 0.25em; 
+  padding-right: 0.250em;
+  padding-bottom: 0.25em;                            
+  padding-left: 0.25em;                               
+  border-radius: 4px;                                
+  white-space: nowrap;
+}  */
+
+/* .content{
+  pre{
+    background-color: hsla(120, 100%, 50%, 0); 
+  }
+  .hide{
+    display: none
+  }
+  h5{
+    display: inline-block;
+  }
+  h4{
+    display: inline-block;
+  }
+  
+  .rounded-corners{
+    border-radius: 10px;         
+  }
+  .highlight{
+    border-radius: 4px;
+    margin: 1.25em 1.5em;
+  }
+} */
+.pre-colorless pre{
+  background-color: hsla(120, 100%, 50%, 0); 
+}
+.content .hide{
+  display: none; /* !important;*/
+}
+.content h5{
+  display: inline-block;
+}
+.content h4{
+  display: inline-block;
+}
+.content .codeinline{
+  display:inline !important;        
+  padding-top: 0.25em; 
+  padding-right: 0.250em;
+  padding-bottom: 0.25em;                            
+  padding-left: 0.25em;                               
+  border-radius: 4px;                                
+  white-space: nowrap;
+} 
+.content .rounded-corners{
+  border-radius: 10px;         
+}
+.content .highlight{
+  border-radius: 4px;
+  /* padding: 1.25em 1.5em; */
+  /* margin: 1.25em 0em; */
+}
+.pre-color{
+  background-color: #f5f5f5;
+  /* margin: 1.25em 0em; */
+  padding: 1em 1em;
+}
+.pre-colorless{
+  background-color: hsla(120, 100%, 50%, 0);
+  /* margin: 1.25em 0em; */
+  padding: 1em 1em;
+}
+
+.refresh-summary{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  height: 4.5em;
+  text-overflow: ellipsis;
+}
+
+/* .pre-colorless{
+  pre{
+    background-color: black;
+  }
+} */
+
+.refresh-site-left{
+  width: 100%; 
+  border-top-right-radius: 0px; ; 
+  border-bottom-right-radius: 0px;
+}
+
+.refresh-site-right{
+  width: 100%; 
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.refresh-book{
+  min-width: 50px; 
+  max-width: 250px;
+}
+
+.hide{
+    display: none;
+}
