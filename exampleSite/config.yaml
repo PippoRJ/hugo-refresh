@@ -150,11 +150,23 @@ languages:
       # won't be inherited.
       footer:
         logo: "/images/refresh-square.svg"
-        email: имя.фамилия@домен.com
-        linkedin: https://www.linkedin.com/your_linkedin_profile/
-        # facebook: your.username
-        # twitter: username
-        # instagram: username
-        # github: username
+        email: 
+          link: имя.фамилия@домен.com
+          title: Эл. адрес
+        linkedin: 
+          link: your_linkedin_profile
+          title: LinkedIn
+        # facebook: 
+        #   link: your.username
+        #   title: Facebook 
+        # twitter: 
+        #   link: username
+        #   title: Twitter
+        # instagram: 
+        #   link: username
+        #   title: Instagram
+        # github: 
+        #   link: username
+        #   title: Github
         copyright: Julia белая краска - 2019
       
