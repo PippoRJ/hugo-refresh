@@ -93,17 +93,33 @@ params:
     # option to specify the logo in the footer
     logo: "/images/refresh-square.svg"
     # option to specify your contact email in the footer
-    email: name.surname@domain.com
+    email: 
+      link: name.surname@domain.com
+      title: My Email
     # option to specify your linkedin profile in the footer
-    linkedin: https://www.linkedin.com/your_linkedin_profile/
-    # option to specify your facebook account in the footer; **uncomment** the below line to show in footer
-    # facebook: your.username
-    # option to specify your github account in the footer; **uncomment** the below line to show in footer
-    # github: username
-    # option to specify your twitter username in the footer; **uncomment** the below line to show in footer
-    # twitter: username
-    # option to specify your instagram username in the footer; **uncomment** the below line to show in footer
-    # instagram: username
+    linkedin: 
+      link: your_linkedin_profile
+      title: My LinkedIn
+    # option to specify your facebook account in the footer; 
+    # **uncomment** the lines below to show in footer
+    # facebook: 
+    #   link: your.username
+    #   title: Facebook
+    # option to specify your github account in the footer; 
+    # **uncomment** the below line to show in footer
+    # github: 
+    #   link: username
+    #   title: Github
+    # option to specify your twitter username in the footer; 
+    # **uncomment** the below line to show in footer
+    # twitter: 
+    #    link: username
+    #    title: Twitter
+    # option to specify your instagram username in the footer; 
+    # **uncomment** the below line to show in footer
+    # instagram: 
+    #    link: username
+    #    title: Instagram
     # option to specify the copyright in the footer
     copyright: Julia The White - 2019
 

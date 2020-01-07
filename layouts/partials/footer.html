@@ -47,51 +47,75 @@
               <h3>{{ i18n "contacts" }}</h3>
           </div>
           <ul class="link-list">
-            {{ if isset .Site.Params.footer "linkedin" }}
+            {{ if isset .Site.Params.footer.linkedin "link" }}
             <li>
-              <a href="{{ .Site.Params.footer.linkedin }}" target="_blank">
+              <a href="https://www.linkedin.com/{{ .Site.Params.footer.linkedin.link }}" target="_blank">
                 <span class="icon"><i class="fa fa-linkedin"></i></span>
-                Linkedin
+                {{ if isset .Site.Params.footer.linkedin "title" }}
+                  {{ .Site.Params.footer.linkedin.title }}
+                {{ else }}
+                  LinkedIn
+                {{ end }}
               </a>
             </li>
             {{ end }}
-            {{ if isset .Site.Params.footer "github" }}
+            {{ if isset .Site.Params.footer.github "link" }}
             <li>
-              <a href="https://github.com/{{ .Site.Params.footer.github }}" target="_blank">
+              <a href="https://github.com/{{ .Site.Params.footer.github.link }}" target="_blank">
                 <span class="icon"><i class="fa fa-github"></i></span>
-                Github
+                {{ if isset .Site.Params.footer.github "title" }}
+                  {{ .Site.Params.footer.github.title }}
+                {{ else }}
+                  Github
+                {{ end }}
               </a>
             </li>
             {{ end }}             
-            {{ if isset .Site.Params.footer "email" }}
+            {{ if isset .Site.Params.footer.email "link" }}
             <li>
-              <a href="mailto:{{ .Site.Params.footer.email }}" target="_blank">
+              <a href="mailto:{{ .Site.Params.footer.email.link }}" target="_blank">
                 <span class="icon"><i class="fa fa-envelope"></i></span>
-                Email
+                {{ if isset .Site.Params.footer.email "title" }}
+                  {{ .Site.Params.footer.email.title }}
+                {{ else }}
+                  Email
+                {{ end }}
               </a>
             </li>
             {{ end }}
-            {{ if isset .Site.Params.footer "facebook" }}
+            {{ if isset .Site.Params.footer.facebook "link" }}
             <li>
-              <a href="https://facebook.com/{{ .Site.Params.footer.facebook }}" target="_blank">
+              <a href="https://facebook.com/{{ .Site.Params.footer.facebook.link }}" target="_blank">
                 <span class="icon"><i class="fa fa-facebook"></i></span>
-                Facebook
+                {{ if isset .Site.Params.footer.facebook "title" }}
+                  {{ .Site.Params.footer.facebook.title }}
+                {{ else }}
+                  Facebook
+                {{ end }}
               </a>
             </li>
             {{ end }}       
-            {{ if isset .Site.Params.footer "twitter" }}
+            {{ if isset .Site.Params.footer.twitter "link" }}
             <li>
-              <a href="https://twitter.com/{{ .Site.Params.footer.twitter }}" target="_blank">
+              <a href="https://twitter.com/{{ .Site.Params.footer.twitter.link }}" target="_blank">
                 <span class="icon"><i class="fa fa-twitter"></i></span>
-                Twitter
+                {{ if isset .Site.Params.footer.twitter "title" }}
+                  {{ .Site.Params.footer.twitter.title }}
+                {{ else }}
+                  Twitter
+                {{ end }}
               </a>
             </li>
             {{ end }}       
-            {{ if isset .Site.Params.footer "instagram" }}
+            {{ if isset .Site.Params.footer.instagram "link" }}
             <li>
-              <a href="https://instagram.com/{{ .Site.Params.footer.instagram }}" target="_blank">
+              <a href="https://instagram.com/{{ .Site.Params.footer.instagram.link }}" target="_blank">
                 <span class="icon"><i class="fa fa-instagram"></i></span>
-                Instagram
+                {{ if isset .Site.Params.footer.instagram "title" }}
+                  {{ .Site.Params.footer.instagram.title }}
+                {{ else }}
+                  Instagram
+                {{ end }}
               </a>
             </li>
             {{ end }}       
