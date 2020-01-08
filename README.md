@@ -48,6 +48,9 @@ git submodule add https://github.com/PippoRJ/hugo-refresh themes/hugo-refresh
 # Remove the default config
 rm config.toml
 
+# Remove the static folder
+rm -r static/
+
 # Copy the Example site content and configuration in my-site
 cp -R themes/hugo-refresh/exampleSite/* ./
 
