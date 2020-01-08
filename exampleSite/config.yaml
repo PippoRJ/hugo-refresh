@@ -4,6 +4,9 @@ title: Personal website and blog
 theme: hugo-refresh
 # theme: ../..
 
+# This options specify where to look for the images
+assetDir: "static"
+
 # Option to specify the default language of the theme
 # I.e., the landing language of your root 
 DefaultContentLanguage: en
@@ -42,12 +45,14 @@ params:
   # summary options
   summary:
     # option to specify the default image in the summary list
-    defaultImage : "/images/default_summary.jpg"
+    # the starting folder is configure in "assetDir" of this file
+    defaultImage : "/default_summary.jpg"
   
   # loading options
   loading:
     # option to specify the loading image
-    image: "/images/loaders/rings.svg"
+    # the starting folder is configure in "assetDir" of this file
+    image: "/rings.svg"
 
   # main pages options
   mainPage:
@@ -57,7 +62,8 @@ params:
   # sidebar options
   sidebar:
     # option to specify the logo of the sidebar
-    logo: "/images/refresh-square.svg"
+    # the starting folder is configure in "assetDir" of this file
+    logo: "/refresh-square.svg"
     # option to specify the font of the sidebar
     fontFamily: "Open Sans" # "Open Sans"
 
@@ -69,7 +75,8 @@ params:
   # 404 page options
   pagNotFound:
     # option to specify the main picture of the sidebar
-    image: "/images/avataaars_404.png"
+    # the starting folder is configure in "assetDir" of this file
+    image: "/avataaars_404.png"
     # option to specify the title of the 404 page
     title: 404 Page Not Found :(
     # option to specify the subtitle of the 404 page
@@ -84,14 +91,15 @@ params:
     # option to specify the subtitle in the homepage
     subtitle: Personal website and blog
     # option to specify image in the homepage
-    image: "/images/avataaars.png" # worker.svg 
+    image: "/avataaars.png" # worker.svg 
     # option to specify the width of the image in the homepage
     imageWidth: 500px
 
   # footer options
   footer:
     # option to specify the logo in the footer
-    logo: "/images/refresh-square.svg"
+    # the starting folder is configure in "assetDir" of this file
+    logo: "/refresh-square.svg"
     # option to specify your contact email in the footer
     email: 
       link: name.surname@domain.com
@@ -140,7 +148,7 @@ languages:
       homepage:
         title: Julia белая краска
         subtitle: Персональный сайт и блог
-        image: "/images/avataaars.png" # worker.svg 
+        image: "/avataaars.png" # worker.svg 
         imageWidth: 500px
       
       # Some sub-parameters of the "footer" parameter
@@ -149,7 +157,7 @@ languages:
       # i.e., the parameters of the default language
       # won't be inherited.
       footer:
-        logo: "/images/refresh-square.svg"
+        logo: "/refresh-square.svg"
         email: 
           link: имя.фамилия@домен.com
           title: Эл. адрес
