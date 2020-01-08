@@ -73,6 +73,7 @@ You can enter your Google / Yandex / etc statistic counter code into the `layout
 There are different configuration options for Hugo ReFresh including options for: the navbar, the sidebar, the homepage, fonts, colours landing, stats counters and images. 
 Read the comments in the `config.yaml` file to know more.
 
+The images specified in the `config.yaml` file need to be placed in the directory specified by the `assetDir` option in the config file itself, the default folder for the images is the `static` folder. 
 
 ## List of shortcodes you can use in your articles with description:
 
