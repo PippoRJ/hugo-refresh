@@ -1,3 +1,12 @@
+.refresh-summary{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  height: 4.5em;
+  text-overflow: ellipsis;
+}
+
 .refresh-summary-title{
   position: relative;
   margin: 10px 0 0 0;
@@ -80,15 +89,6 @@
   padding: 1em 1em;
 }
 
-.refresh-summary{
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;  
-  overflow: hidden;
-  height: 4.5em;
-  text-overflow: ellipsis;
-}
-
 /* .pre-colorless{
   pre{
     background-color: black;
@@ -107,10 +107,10 @@
   border-bottom-left-radius: 0px;
 }
 
-.refresh-book{
+/* .refresh-book{
   min-width: 50px; 
   max-width: 250px;
-}
+} */
 
 .hide{
     display: none;
