@@ -114,17 +114,17 @@ params:
     #   link: your.username
     #   title: Facebook
     # option to specify your github account in the footer; 
-    # **uncomment** the below line to show in footer
+    # **uncomment** the below lines to show in footer
     # github: 
     #   link: username
     #   title: Github
     # option to specify your twitter username in the footer; 
-    # **uncomment** the below line to show in footer
+    # **uncomment** the below lines to show in footer
     # twitter: 
     #    link: username
     #    title: Twitter
     # option to specify your instagram username in the footer; 
-    # **uncomment** the below line to show in footer
+    # **uncomment** the below lines to show in footer
     # instagram: 
     #    link: username
     #    title: Instagram
