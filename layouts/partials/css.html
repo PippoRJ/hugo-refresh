@@ -41,8 +41,6 @@
 
 {{- end -}}
 
-{{- if .Site.Params.cssFingerprint -}}
-
 {{- $css  = $css  | resources.Fingerprint -}}
 {{- $css1 = $css1 | resources.Fingerprint -}}
 {{- $css2 = $css2 | resources.Fingerprint -}}
@@ -50,24 +48,9 @@
 {{- $css4 = $css4 | resources.Fingerprint -}}
 {{- $css5 = $css5 | resources.Fingerprint -}}
 
-{{- end -}}
-
-{{- if .Site.Params.cssFingerprint -}}
-
 <link rel="stylesheet" type="text/css" href="{{- $css.Permalink  | relURL -}}" integrity="{{- $css.Data.Integrity -}}">
 {{/*  <link rel="stylesheet" type="text/css" href="{{- $css1.Permalink | relURL -}}" integrity="{{- $css1.Data.Integrity -}}">  */}}
 <link rel="stylesheet" type="text/css" href="{{- $css2.Permalink | relURL -}}" integrity="{{- $css2.Data.Integrity -}}">
 <link rel="stylesheet" type="text/css" href="{{- $css3.Permalink | relURL -}}" integrity="{{- $css3.Data.Integrity -}}">
 <link rel="stylesheet" type="text/css" href="{{- $css4.Permalink | relURL -}}" integrity="{{- $css4.Data.Integrity -}}">
 <link rel="stylesheet" type="text/css" href="{{- $css5.Permalink | relURL -}}" integrity="{{- $css5.Data.Integrity -}}">
-
-{{- else -}}
-
-<link rel="stylesheet" type="text/css" href="{{- $css.Permalink  | relURL -}}">
-{{/*  <link rel="stylesheet" type="text/css" href="{{- $css1.Permalink | relURL -}}">  */}}
-<link rel="stylesheet" type="text/css" href="{{- $css2.Permalink | relURL -}}">
-<link rel="stylesheet" type="text/css" href="{{- $css3.Permalink | relURL -}}">
-<link rel="stylesheet" type="text/css" href="{{- $css4.Permalink | relURL -}}">
-<link rel="stylesheet" type="text/css" href="{{- $css5.Permalink | relURL -}}">
-
-{{- end -}}

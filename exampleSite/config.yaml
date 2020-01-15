@@ -37,12 +37,8 @@ params:
 
   # parameter used to specify if you want to minify the imported js
   jsMinify: false
-  # parameter used to specify if you want to add the fingerprint to the imported js
-  jsFingerprint: false
   # parameter used to specify if you want to minify the imported css
-  cssMinify: true
-  # parameter used to specify if you want to add the fingerprint to the imported css
-  cssFingerprint: true
+  cssMinify: false
   # option to specify the main colour of the theme
   mainColour: "#F39200"
 
@@ -135,7 +131,9 @@ params:
     # option to specify the copyright in the footer
     copyright: Julia The White - 2019
 
-# multilanguage support
+###################################################################
+################## multilanguage support options ##################
+###################################################################
 languages:
   en:
     languageName:       English
