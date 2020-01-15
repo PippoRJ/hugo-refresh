@@ -31,6 +31,10 @@ Taxonomies:
 # https://bulkitv2.cssninja.io/_components-icons-fa.html
 
 params:
+  # parameter used to specify the number of article in each row 
+  # for the summary pages, the possible options are: 2, 3, 4, 5 or 6
+  articlesPerRow: 3 
+
   # parameter used to specify if you want to minify the imported js
   jsMinify: false
   # parameter used to specify if you want to add the fingerprint to the imported js
