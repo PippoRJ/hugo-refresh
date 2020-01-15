@@ -6,11 +6,10 @@
 <div class="box">
     <div class="columns">
       <div class="column is-2">
-        <!-- <figure class="image is-128x128"> -->
-        <figure class="image">
+        <figure>
           {{- with $original -}}
           {{- $image := .Resize $size -}}
-          <img class="refresh-book" src="{{ $image.RelPermalink }}" alt="Book image">
+          <img src="{{ $image.RelPermalink }}" alt="Book image">
           {{- end -}}
         </figure>
       </div>
