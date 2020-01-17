@@ -19,12 +19,27 @@
           {{- $image = .Page.Resources.GetMatch .Params.summaryImage -}}
           {{- .Scratch.Set "image" ($image.Resize "600x") -}}
           {{- $image = .Scratch.Get "image" -}}
-        {{ else }}
+        {{- else -}}
           {{- $image = resources.Get .Site.Params.summary.defaultImage -}}
           {{- .Scratch.Set "image" ($image.Resize "600x") -}}
           {{- $image = .Scratch.Get "image" -}}
         {{- end }}
-        <a href="{{- .Permalink | relURL -}}"><img src="{{- $image.Permalink | relURL -}}" alt=""></a>
+        {{ $mmm := resources.Get .Site.Params.summary.defaultImage }}
+        <a href="{{- .Permalink | relURL -}}">
+        {{ if .Page.Params.keepImageRatio }}
+          {{ $imgData := imageConfig (printf "content/%s%s" .Page.Dir $image) }}
+          {{ $w := mul (div $imgData.Width 3) 2 }} {{/* is-3by2*/}}
+          {{ $h := $imgData.Height }} 
+          {{ if not (gt $w $h) }}
+            <img src="{{- $image.Permalink | relURL -}}" style="width: auto; margin:auto" alt="">
+                 {{/*  style="width: 100%; height: auto; margin: auto"  */}}
+          {{ else }}
+            <img src="{{- $image.Permalink | relURL -}}" style="height: auto; margin:auto" alt="">
+          {{ end }}
+        {{ else }}
+          <img src="{{- $image.Permalink | relURL -}}" alt="">
+        {{ end }}
+        </a>
       </figure>
       <h3 class="title is-5 refresh-summary-title">
         {{ .Params.title }}

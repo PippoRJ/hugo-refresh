@@ -309,6 +309,7 @@ date: 2019-06-03T21:51:13+01:00
 draft: false
 hideLastModified: true
 summaryImage: "images/system.jpg" 
+keepImageRatio: true
 tags: ["Tag1", "tag2", "tag 3"]
 summary: "This is a custom summary for my article"
 showInMenu: true
@@ -316,6 +317,8 @@ showInMenu: true
 ```
 
 * `summaryImage`: it is used to specify the image to be used in the summary 
+
+* `keepImageRatio`: it is used to force the aspect ratio of the image to be kept. The default value is **false**.
 
 * `summary`: it is used to specify the summary of an article instead of taking it from the article itself.
 

@@ -17,7 +17,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-/* .codeinline{
+.codeinline{
   display:inline !important;        
   padding-top: 0.25em; 
   padding-right: 0.250em;
@@ -25,7 +25,7 @@
   padding-left: 0.25em;                               
   border-radius: 4px;                                
   white-space: nowrap;
-}  */
+}  
 
 /* .content{
   pre{
