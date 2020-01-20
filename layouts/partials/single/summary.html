@@ -15,19 +15,23 @@
     <div class="box">
       <figure class="image is-3by2">
         {{- $image := "" -}}
+        {{- $imageDir := "" -}}
         {{- if .Params.summaryImage -}} 
           {{- $image = .Page.Resources.GetMatch .Params.summaryImage -}}
+          {{/*  {{- $imageDir = $image.File.Dir -}}  */}}
+          {{- $imageDir = ($image.Permalink | relURL) -}}
           {{- .Scratch.Set "image" ($image.Resize "600x") -}}
           {{- $image = .Scratch.Get "image" -}}
         {{- else -}}
           {{- $image = resources.Get .Site.Params.summary.defaultImage -}}
+          {{/*  {{- $imageDir = $image.File.Dir -}}  */}}
+          {{- $imageDir = ($image.Permalink | relURL) -}}
           {{- .Scratch.Set "image" ($image.Resize "600x") -}}
           {{- $image = .Scratch.Get "image" -}}
         {{- end }}
-        {{ $mmm := resources.Get .Site.Params.summary.defaultImage }}
         <a href="{{- .Permalink | relURL -}}">
         {{ if .Page.Params.keepImageRatio }}
-          {{ $imgData := imageConfig (printf "content/%s%s" .Page.Dir $image) }}
+          {{ $imgData := imageConfig (printf "content/%s" $imageDir) }}
           {{ $w := mul (div $imgData.Width 3) 2 }} {{/* is-3by2*/}}
           {{ $h := $imgData.Height }} 
           {{ if not (gt $w $h) }}

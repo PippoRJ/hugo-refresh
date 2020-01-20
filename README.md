@@ -48,9 +48,6 @@ git submodule add https://github.com/PippoRJ/hugo-refresh themes/hugo-refresh
 # Remove the default config
 rm config.toml
 
-# Remove the static folder
-rm -r static/
-
 # Copy the Example site content and configuration in my-site
 cp -R themes/hugo-refresh/exampleSite/* ./
 
@@ -76,7 +73,8 @@ You can enter your Google / Yandex / etc statistic counter code into the `layout
 There are different configuration options for Hugo ReFresh including options for: the navbar, the sidebar, the homepage, fonts, colours landing, stats counters and images. 
 Read the comments in the `config.yaml` file to know more.
 
-The images specified in the `config.yaml` file need to be placed in the directory specified by the `assetDir` option in the config file itself, the default folder for the images is the `static` folder. 
+The images specified in the `config.yaml` file need to be placed in the directory specified by the `assetDir` option in the config file. 
+E.g.: set `assetDir: "static"` to the set the default folder the `static` folder of your site. 
 
 ## List of shortcodes you can use in your articles with description:
 
