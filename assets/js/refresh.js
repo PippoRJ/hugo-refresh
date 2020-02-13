@@ -113,7 +113,7 @@ $(document).ready(function () {
     //reveal elements on scroll so animations trigger the right way
     var $window = $(window),
         win_height_padded = $window.height() * 1.1,
-        isTouch = Modernizr.touch;
+        isTouch = Modernizr.touchevents;
 
     $window.on('scroll', revealOnScroll);
 
