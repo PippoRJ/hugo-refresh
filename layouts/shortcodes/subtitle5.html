@@ -1,1 +1,5 @@
+{{- if .Get 1 -}}
+<h5 class="subtitle is-5" id="{{ .Get 1 }}">{{ .Get 0 }}</h5>
+{{- else -}}
 <h5 class="subtitle is-5">{{ .Get 0 }}</h5>
+{{- end -}}
