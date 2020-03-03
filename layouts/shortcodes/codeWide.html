@@ -1,11 +1,17 @@
-{{- if .Get 0 -}}
+{{- if .Get "id" -}}
 <div class="columns is-centered container" id="{{ .Get 0 }}">
 {{- else -}}
 <div class="columns is-centered container">
 {{- end -}}
+    {{- if or (eq (.Get "line-numbers") "false") (eq (.Get "line-numbers") false) -}}
+    <div class="column is-full nonumbers">
+    {{- else -}}
     <div class="column is-full">
-        <div class="pre-color">
-            {{ .Inner }}
-        </div>
+    {{- end -}}
+    {{- if .Get "language" -}}
+    <pre><code class="code-highlight language-{{- .Get "language" -}}">{{- trim .Inner "\n" -}}</code></pre>
+    {{- else -}}
+    <pre><code class="code-highlight">{{- trim .Inner "\n" -}}</code></pre>
+    {{- end -}}
     </div>
 </div>
