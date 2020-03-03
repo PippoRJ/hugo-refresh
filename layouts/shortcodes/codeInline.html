@@ -1,1 +1,9 @@
+{{- if and (.Get "language") (.Get "id") -}}
+<code class="codeinline language-{{ .Get "language" }}" id="{{ .Get "id" }}">{{ .Inner }}</code>
+{{- else if .Get "language" -}}
+<code class="codeinline language-{{ .Get "language" }}">{{ .Inner }}</code>
+{{- else if .Get "id" -}}
+<code class="codeinline" id="{{ .Get "id" }}">{{ .Inner }}</code>
+{{- else -}}
 <code class="codeinline">{{ .Inner }}</code>
+{{- end -}}
