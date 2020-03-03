@@ -132,7 +132,7 @@ params:
     #    link: username
     #    title: Instagram
     # option to specify the copyright in the footer
-    copyright: Julia The White - 2019
+    copyright: Julia The White - 2020
 
 ###################################################################
 ################## multilanguage support options ##################
@@ -181,5 +181,5 @@ languages:
         # github: 
         #   link: username
         #   title: Github
-        copyright: Julia белая краска - 2019
+        copyright: Julia белая краска - 2020
       
