@@ -9,6 +9,9 @@
 {{- $js8 := resources.Get "js/mathjax/tex_out.js" -}}
 {{- $js9 := resources.Get "js/mathjax/startup.js" -}}
 
+{{- $js10 := resources.Get "js/highlight.9.18.1.js" -}}
+{{- $js11 := resources.Get "js/highlightjs-line-numbers.2.7.0.min.js" -}}
+
 {{- if .Site.Params.jsMinify -}}
     {{- $js1 = $js1 | resources.Minify -}}
     {{- $js2 = $js2 | resources.Minify -}}
@@ -20,6 +23,8 @@
     {{- $js7 = $js7 | resources.Minify -}}
     {{- $js8 = $js8 | resources.Minify -}}
     {{- $js9 = $js9 | resources.Minify -}}
+    {{- $js10 = $js10 | resources.Minify -}}
+    {{- $js11 = $js11 | resources.Minify -}}
 {{- end -}}
 
 {{- $js1 = $js1 | resources.Fingerprint -}}
@@ -32,6 +37,9 @@
 {{- $js7 = $js7 | resources.Fingerprint -}}
 {{- $js8 = $js8 | resources.Fingerprint -}}
 {{- $js9 = $js9 | resources.Fingerprint -}}
+
+{{- $js10 = $js10 | resources.Fingerprint -}}
+{{- $js11 = $js11 | resources.Fingerprint -}}
 
 <script src="{{- $js1.Permalink | relURL -}}" integrity="{{- $js1.Data.Integrity -}}"></script>
 <script src="{{- $js2.Permalink | relURL -}}" integrity="{{- $js2.Data.Integrity -}}"></script>
@@ -54,7 +62,20 @@
     },
   };
 </script>
+
 <script src="{{- $js9.Permalink | relURL -}}" integrity="{{- $js9.Data.Integrity -}}"></script>
+<script src="{{- $js10.Permalink | relURL -}}" integrity="{{- $js10.Data.Integrity -}}"></script>
+<script src="{{- $js11.Permalink | relURL -}}" integrity="{{- $js11.Data.Integrity -}}"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.initLineNumbersOnLoad();
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('.codeinline').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
 
 {{/*  <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
