@@ -98,6 +98,25 @@ It can be used in links to the same page as:
 </details>
 
 <details>
+<summary> subtitle1.html, subtitle2.html, subtitle3.html, subtitle4.html, subtitle5.html, subtitle6.html </summary>
+
+Usage example:
+
+```
+{{< subtitle1 "My awesome subtitle" "my-subtitle-id">}}
+```
+
+The **first parameter** is the title of the shortcode (in this example is "My awesome subtitle").<br>
+The **second paramter** is the ID of the shortcode (in this example is "my-subtitle-id").<br>
+It can be used in links to the same page as:
+
+```
+[link to the subtitle](#my-subtitle-id)
+```
+
+</details>
+
+<details>
 <summary> code.html </summary>
 
 This shortcode builds a centred page that is two-third of the full size of the page.
@@ -105,32 +124,73 @@ This shortcode builds a centred page that is two-third of the full size of the p
 Usage example:
 
 ```
-{{% code %}}
-` ` `
+{{< code language="shell" >}}
     $ sudo bash -c 'echo 0 > /proc/sys/kernel/randomize_va_space'
-` ` `
-{{% /code %}}
+{{< /code >}}
 ```
+
+This shortcode has 2 parameters:
+
+* **line-numbers** to hide or show the line numbers. The default is true, for single line code the number is never shown.
+
+* **language** is used to highlight the syntax of the code properly
 
 </details>
 
 <details>
-<summary> codeAll.html </summary>
+<summary> codeWide.html </summary>
 
 This shortcode builds a centred page that is as wide as the full size of the page.
 
 Usage example:
 
 ```
-{{% codeAll %}}
-` ` `
+{{< codeWide language="shell" >}}
     $ dmesg | tail
     ......
     [13401.299114] overflow64[16566]: segfault at 616161616161 ip 0000616161616161 sp 00007fffffffddb0 error 14 in libc-2.27.so[7ffff79e4000+1e7000]
-` ` `
-{{% /codeAll %}}
+{{< /codeWide >}}
 ```
 
+This shortcode has 2 parameters:
+
+* **line-numbers** to hide or show the line numbers. The default is true, for single line code the number is never shown.
+
+* **language** is used to highlight the syntax of the code properly
+
+</details>
+
+<details>
+<summary> container.html </summary>
+
+This shortcode builds a centred page that is as wide as the two third of the size of the page. The content of the shortcode will pass through the markdown processor.
+
+Usage example:
+
+```
+{{< container "container-id" >}}
+
+{{< /container >}}
+```
+
+This shortcode has an optional parameter to give an ID to the html `div`.
+
+</details>
+
+<details>
+<summary> containerWide.html </summary>
+
+This shortcode builds a centred page that is as wide as the size of the page. The content of the shortcode will pass through the markdown processor. 
+
+Usage example:
+
+```
+{{< containerWide "container-wide-id" >}}
+
+{{< /containerWide >}}
+```
+
+This shortcode has an optional parameter to give an ID to the html `div`.
 
 </details>
 
@@ -216,22 +276,57 @@ See example of use [here](https://rjordaney.is/code_exercises/staircase_n_steps/
 
 
 <details>
-<summary> code_tabs.html </summary>
+<summary> tabsCode.html </summary>
 
 Usage example:
 
 ```
-{{< code_tabs 
-    file1="/content/code_exercises/staircase_n_steps/code/solution_python.md" title1="Python" icon1="python"
-    file2="/content/code_exercises/staircase_n_steps/code/solution_c.md" title2="C" icon2="c"
-    file3="/content/code_exercises/staircase_n_steps/code/solution_java.md" title3="Java" icon3="java" 
+{{< tabsCode 
+    file1="/content/code_exercises/staircase_n_steps/code/solution_python.md" language1="python" title1="Python" icon1="python"
+    file2="/content/code_exercises/staircase_n_steps/code/solution_c.md" language1="c" title2="C" icon2="c"
+    file3="/content/code_exercises/staircase_n_steps/code/solution_java.md" language1="java" title3="Java" icon3="java" 
 >}}
 ```
 
-The parameter **file1** is the name of the markdown file to be displayed in the first tab.
+The parameter **file1** is the name of the code file to be displayed in the first tab.
 The path needs to start from the `content` folder.<br>
-The **title1** is the title of the first tab.<br>
-The **icon1** is the icon to be shown at the right of the title, it is an optional parameter. See the partial code `icon.html` for the available icons.
+The parameter **language1** is used to highlight the syntax of the code properly. 
+The parameter **title1** is the title of the first tab.<br>
+The parameter **icon1** is the icon to be shown at the right of the title, it is an optional parameter. See the partial code `icon.html` for the available icons.
+
+There are 6 tabs supported at this moment
+
+* the files parameters are **file1**, **file2**, **file3**, **file4**, **file5**, **file6** 
+
+* the titles parameters are **title1**, **title2**, **title3**, **title4**, **title5**, **title6** 
+
+* the languages parameters are **language1**, **language2**, **language3**, **language4**, **language5**, **language6**
+
+* the icons parameters are **icon1**, **icon2**, **icon3**, **icon4**, **icon5**, **icon6** 
+
+See example of use [here](https://rjordaney.is/code_exercises/staircase_n_steps/)
+
+</details>
+
+<details>
+<summary> tabs.html </summary>
+
+Usage example:
+
+```
+{{< tabs 
+    file1="/content/exercises/article1/comments/my_comments.md" title1="My Ideas"
+    file2="/content/exercises/article1/comments/your_comments.md" title2="Your Ideas" 
+    file3="/content/exercises/article1/comments/her_comments.md" title3="Her Ideas"  
+>}}
+```
+
+The content of the files (file1, file2 ...) are passed through the markdown processor, so you can use markdown in these files.
+
+The parameter **file1** is the name of the code file to be displayed in the first tab.
+The path needs to start from the `content` folder.<br>
+The parameter **title1** is the title of the first tab.<br>
+The parameter **icon1** is the icon to be shown at the right of the title, it is an optional parameter. See the partial code `icon.html` for the available icons.
 
 There are 6 tabs supported at this moment
 
@@ -241,11 +336,7 @@ There are 6 tabs supported at this moment
 
 * the icons parameters are **icon1**, **icon2**, **icon3**, **icon4**, **icon5**, **icon6** 
 
-
-See example of use [here](https://rjordaney.is/code_exercises/staircase_n_steps/)
-
 </details>
-
 
 <details>
 <summary> codeInLine.html </summary>
@@ -253,17 +344,21 @@ See example of use [here](https://rjordaney.is/code_exercises/staircase_n_steps/
 Usage example:
 
 ```
-{{% codeInline %}}sudo echo 0 > /proc/sys/kernel/randomize_va_space{{% /codeInline %}}
+{{< codeInline >}}sudo echo 0 > /proc/sys/kernel/randomize_va_space{{< /codeInline >}}
 ```
 
-This shortcode has no parameters.
+This shortcode has 2 parameters:
+
+* **language** is used to highlight the syntax of the code properly
+
+* **id** to set a id of the html `code` element
 
 See an example of usage [here](https://rjordaney.is/lectures/basic_buffer_overflow/)
 
 </details>
 
 <details>
-<summary> message_blue.html, message_dark.html, message_green.html, message_red.html, message_yellow.html </summary>
+<summary> messageBlue.html, messageDark.html, messageGreen.html, messageRed.html, messageYellow.html </summary>
 
 
 
@@ -277,14 +372,14 @@ See an example of usage [here](https://rjordaney.is/lectures/basic_buffer_overfl
 </details>
 
 <details>
-<summary> site_blue.html, site_green.html, site_lightgreen.html, site_red.html, site_yellow.html </summary>
+<summary> siteBlue.html, siteGreen.html, siteLightgreen.html, siteRed.html, siteYellow.html </summary>
 
 Usage example:
 
 ```
-{{< site_lightgreen "Web" "https://www.example.com" >}}
+{{< siteLightgreen "Web" "https://www.example.com" >}}
 <p>Description of the website.</p>
-{{< /site_lightgreen >}}
+{{< /siteLightgreen >}}
 ```
 
 The **first parameter** will appear in the right coloured part of the shortcode.<br>
