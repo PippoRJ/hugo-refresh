@@ -444,15 +444,15 @@ To avoid path problems when specifying the `summaryImage`, it is recommended to 
 
 * The images used to build the summaries are resized to allow better usage of the bandwidth.
 
-* The js and css files are minified (with a configurable option on the `config.yaml`).
+* The js and css files can be minified (with a configurable option on the `config.yaml`).
 
-* The menu is built following the structure of the `content` folder. Two levels are allowed at the moment.
+* The menu is automatically built following the structure of the `content` folder. Two levels are allowed at the moment.
 
 * The `navbar-burger` used in the theme's menu is removed (it was displayed when the page was resized).
 
 * The `.sass` files are now processed with `resources.ExecuteAsTemplate` so that it is possible to use variables from the `config.yaml`.
 
-* An option in the config.yaml was added to configure the font-family for the navbar, sidebar and content of the page.
+* An option in the `config.yaml` was added to configure the font-family for the navbar, sidebar and content of the page.
 
 * [Bulma](https://bulma.io/) (the css framework the theme is based on) is now updated to version 0.7.5 because in the new version the class _content_ has a separate style to allow modification that will impact only the contents of the posts.
 
@@ -460,6 +460,16 @@ To avoid path problems when specifying the `summaryImage`, it is recommended to 
 
 * [highlightjs-line-number.js](https://github.com/wcoder/highlightjs-line-numbers.js/) was added to have the line number at the beginning of each line of code in a code sections of a post.
 
-* An option was added to show the date of the last modification in a post.
+* An option is added to show the date of the last modification in a post.
 
-* A shortcode was added to resize the images and save bandwidth in a post content.
+* Several other options are added to the content of a post. 
+
+* A shortcode is added to resize the images and save bandwidth in a post content.
+
+* A shortcode is added to show multiple tabs.
+
+* Four shortcodes are added to show code: inline, in page, in page wide, in tabs. 
+
+* The loaders images are now processed with `resources.ExecuteAsTemplate` so that they take the main colour of the theme (defined in `config.yaml`)
+
+* All the js and css files are loaded locally, i.e., not loaded from third party sites. 
