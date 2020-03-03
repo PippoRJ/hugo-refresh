@@ -67,7 +67,7 @@
     {{ end }}
 {{ end }}
 
-<div class="container pre-colorless">
+<div class="container">
 <div class="tabs is-medium is-marginless"> <!-- is-boxed is-toggle -->
     <ul class="is-marginless">
       <li class="is-active" data-target="{{ $id0 }}">
@@ -116,43 +116,30 @@
       {{ end }}
     </ul>
 </div>
-    <!-- <div style="border-width: 2px; border-style: solid; border-color: #dbdbdb;" id="{{ $id0 }}"> -->
     <div id="{{ $id0 }}">
-      <div class="pre-colorless">
-        {{ $content0 | markdownify }}
-      </div>
+      {{ $content0 | markdownify }}
     </div>
     <div id="{{ $id1 }}" class="hide">
-      <div class="pre-colorless">
-        {{ $content1 | markdownify }}
-      </div>
+      {{ $content1 | markdownify }}
     </div>
     {{ if $file2 }}
         <div id="{{ $id2 }}" class="hide">
-          <div class="pre-colorless">
-            {{ $content2 | markdownify }}
-          </div>
+          {{ $content2 | markdownify }}
         </div>
     {{ end }}
     {{ if $file3 }}
         <div id="{{ $id3 }}" class="hide">
-          <div class="pre-colorless">
-            {{ $content3 | markdownify }}
-          </div>
+          {{ $content3 | markdownify }}
         </div>
     {{ end }}
     {{ if $file4 }}
     <div id="{{ $id4 }}" class="hide">
-      <div class="pre-colorless">
-        {{ $content4 | markdownify }}
-      </div>
+      {{ $content4 | markdownify }}
     </div>
     {{ end }}
     {{ if $file5 }}
     <div id="{{ $id5 }}" class="hide">
-      <div class="pre-colorless">
-        {{ $content5 | markdownify }}
-      </div>
+      {{ $content5 | markdownify }}
     </div>
 {{ end }}
 </div>
