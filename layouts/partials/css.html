@@ -27,8 +27,6 @@
 {{- $css2 := resources.Get "css/icons.css" -}}
 {{- $css3 := resources.Get "css/refresh.css" -}}
 {{- $css4 := resources.Get "css/devicon.min.css" -}}
-{{- $css5 := resources.Get "css/syntax.css" -}}
-
 
 {{- if .Site.Params.cssMinify -}}
 
@@ -37,7 +35,6 @@
 {{- $css2 = $css2 | resources.Minify -}}
 {{- $css3 = $css3 | resources.Minify -}}
 {{- $css4 = $css4 | resources.Minify -}}
-{{- $css5 = $css5 | resources.Minify -}}
 
 {{- end -}}
 
@@ -46,11 +43,10 @@
 {{- $css2 = $css2 | resources.Fingerprint -}}
 {{- $css3 = $css3 | resources.Fingerprint -}}
 {{- $css4 = $css4 | resources.Fingerprint -}}
-{{- $css5 = $css5 | resources.Fingerprint -}}
+
 
 <link rel="stylesheet" type="text/css" href="{{- $css.Permalink  | relURL -}}" integrity="{{- $css.Data.Integrity -}}">
-{{/*  <link rel="stylesheet" type="text/css" href="{{- $css1.Permalink | relURL -}}" integrity="{{- $css1.Data.Integrity -}}">  */}}
+<link rel="stylesheet" type="text/css" href="{{- $css1.Permalink | relURL -}}" integrity="{{- $css1.Data.Integrity -}}">
 <link rel="stylesheet" type="text/css" href="{{- $css2.Permalink | relURL -}}" integrity="{{- $css2.Data.Integrity -}}">
 <link rel="stylesheet" type="text/css" href="{{- $css3.Permalink | relURL -}}" integrity="{{- $css3.Data.Integrity -}}">
 <link rel="stylesheet" type="text/css" href="{{- $css4.Permalink | relURL -}}" integrity="{{- $css4.Data.Integrity -}}">
-<link rel="stylesheet" type="text/css" href="{{- $css5.Permalink | relURL -}}" integrity="{{- $css5.Data.Integrity -}}">
