@@ -7,7 +7,7 @@ theme: hugo-refresh
 ########################################
 ######## Uncomment this option #########
 ########################################
-# This options specify where to look for the images
+# This options specify where to look for the images used in this config
 # assetDir: "static"
 
 # Option to specify the default language of the theme
@@ -89,6 +89,9 @@ params:
 
   # homepage options
   homepage:
+    # this options let you specify if you want a link to the homepage
+    # it can be: "none", "menu", "footer" or "menu+footer"
+    linkPosition: "footer" 
     # option to specify the title in the homepage
     title: Julia The White
     # option to specify the subtitle in the homepage

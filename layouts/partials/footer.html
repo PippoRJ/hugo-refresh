@@ -5,6 +5,7 @@
         <!-- <div class="footer-logo"> -->
             {{- $out_fo  := "footer.svg" -}}
             {{- $img_n   := .Site.Params.footer.logo -}}
+            {{- $home    := .Site.Params.homepage.linkPosition -}}
             {{- $type    := lower (substr $img_n (sub (len $img_n) 3) (len $img_n)) -}}
             {{- $img     := resources.Get $img_n -}}
             {{- if eq $type "svg" -}}
@@ -20,21 +21,29 @@
               <h3>{{ i18n "website" }}</h3>
           </div>
           <ul class="link-list">
+            {{- if or (eq $home "footer") (eq $home "menu+footer") -}}
+            <li>
+              <a href="{{- .Permalink | relURL -}}"> 
+                <span class="icon"><i class="fa fa-home"></i></span> 
+                {{ i18n "homepage" }}
+              </a>
+            </li>
+            {{- end -}}
             <li>
                 {{- with .Site.GetPage "/credits/index" -}}
                 <a href="{{- .RelPermalink -}}">
-                {{- end -}}    
                   <span class="icon"><i class="fa fa-cube"></i></span>
                   {{ i18n "credits" }}
                 </a>
+                {{- end -}}
               </li>
             <li>
               {{- with .Site.GetPage "tags" -}}
               <a href="{{- .RelPermalink -}}">
-              {{- end -}}
                 <span class="icon"><i class="fa fa-tag"></i></span> 
                 {{ i18n "allTags" }}
               </a>
+              {{- end -}}
             </li>
           </ul>
         </div>
