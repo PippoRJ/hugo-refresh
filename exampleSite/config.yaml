@@ -8,6 +8,7 @@ theme: hugo-refresh
 ######## Uncomment this option #########
 ########################################
 # This options specify where to look for the images used in this config
+# The default value is the "asset" directory of this theme
 # assetDir: "static"
 
 # Option to specify the default language of the theme
@@ -37,6 +38,10 @@ params:
   # parameter used to specify the number of article in each row 
   # for the summary pages, the possible options are: 2, 3, 4, 5 or 6
   articlesPerRow: 3 
+
+  # option to specify the favicon image of the site
+  # the path is relative to the folder "assetDir" of this configuration
+  favicon: "/images/favicon.svg"
 
   # parameter used to specify if you want to minify the imported js
   jsMinify: false
