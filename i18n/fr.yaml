@@ -16,3 +16,5 @@
   translation: "Droits d'auteur"
 - id: contacts
   translation: "Contacts"
+- id: homepage
+  translation: "Homepage"

@@ -16,3 +16,5 @@
   translation: "Авторские права"
 - id: contacts
   translation: "контакты"
+- id: homepage
+  translation: "Homepage"
