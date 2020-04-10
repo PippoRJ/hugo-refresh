@@ -92,6 +92,8 @@ params:
     # this options let you specify if you want a link to the homepage
     # it can be: "none", "menu", "footer" or "menu+footer"
     linkPosition: "footer" 
+    # this options let you specify the text of the link to the homepage
+    # linkText: "Homepage"  
     # option to specify the title in the homepage
     title: Julia The White
     # option to specify the subtitle in the homepage

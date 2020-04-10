@@ -25,7 +25,11 @@
             <li>
               <a href="{{- .Permalink | relURL -}}"> 
                 <span class="icon"><i class="fa fa-home"></i></span> 
-                {{ i18n "homepage" }}
+                {{- if .Site.Params.homepage.linkText -}}
+                  {{- print .Site.Params.homepage.linkText -}}
+                {{- else -}}
+                  {{ i18n "homepage" }}
+                {{- end -}}
               </a>
             </li>
             {{- end -}}

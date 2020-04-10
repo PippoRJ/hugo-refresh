@@ -43,9 +43,13 @@
         {{- $home    := .Site.Params.homepage.linkPosition -}}
         {{/*  {{- if or (eq $home "menu") (eq $home "menu+footer") -}}  */}}
         {{ if or (eq $home "menu") (eq $home "menu+footer") }}
-        <a href="{{- .Permalink | relURL -}}" class="navbar-item is-secondary">
-          {{ i18n "homepage" }}
-        </a>
+          <a href="{{- .Permalink | relURL -}}" class="navbar-item is-secondary">
+            {{- if .Site.Params.homepage.linkText -}}
+              {{- print .Site.Params.homepage.linkText -}}
+            {{- else -}}
+              {{ i18n "homepage" }}
+            {{- end -}}
+          </a>
         {{- end -}}
         {{ range .Site.RegularPages }}
           {{- if eq .Params.showInMenu true -}}
