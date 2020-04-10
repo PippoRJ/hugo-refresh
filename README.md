@@ -434,7 +434,7 @@ To avoid path problems when specifying the `summaryImage`, it is recommended to 
 
 ## List of modifications from the original theme
 
-* The ReFresh theme was transformed from single page template to multipage.
+* The ReFresh theme was transformed from _single page_ template to _multipage_.
 
 * Added multilanguage support.
 
@@ -442,17 +442,17 @@ To avoid path problems when specifying the `summaryImage`, it is recommended to 
 
 * The _list_ and _terms_ types of pages contain a list of the post summaries.
 
-* The images used to build the summaries are resized to allow better usage of the bandwidth.
+* The images used to build the summaries can be resized to allow better usage of the bandwidth.
 
 * The js and css files can be minified (with a configurable option on the `config.yaml`).
 
 * The menu is automatically built following the structure of the `content` folder. Two levels are allowed at the moment.
 
-* The `navbar-burger` used in the theme's menu is removed (it was displayed when the page was resized).
+* The `navbar-burger` used in the original theme's menu is removed (it was displayed when the page was resized).
 
 * The `.sass` files are now processed with `resources.ExecuteAsTemplate` so that it is possible to use variables from the `config.yaml`.
 
-* An option in the `config.yaml` was added to configure the font-family for the navbar, sidebar and content of the page.
+* Options in the `config.yaml` are added to configure the font-family for the navbar, sidebar and content of the a page.
 
 * [Bulma](https://bulma.io/) (the css framework the theme is based on) is now updated to version 0.7.5 because in the new version the class _content_ has a separate style to allow modification that will impact only the contents of the posts.
 
@@ -460,9 +460,9 @@ To avoid path problems when specifying the `summaryImage`, it is recommended to 
 
 * [highlightjs-line-number.js](https://github.com/wcoder/highlightjs-line-numbers.js/) was added to have the line number at the beginning of each line of code in a code sections of a post.
 
-* An option is added to show the date of the last modification in a post.
+* A minimal version of [https://www.mathjax.org/](MathJax) was added to allow LaTeX style mathematical expressions to be placed in the site.
 
-* Several other options are added to the content of a post. 
+* Several other options are added to personalise the content of a post. 
 
 * A shortcode is added to resize the images and save bandwidth in a post content.
 
@@ -471,5 +471,7 @@ To avoid path problems when specifying the `summaryImage`, it is recommended to 
 * Four shortcodes are added to show code: inline, in page, in page wide, in tabs. 
 
 * The loaders images are now processed with `resources.ExecuteAsTemplate` so that they take the main colour of the theme (defined in `config.yaml`)
+
+* The _favicon_ is processed with `resources.ExecuteAsTemplate` to follow the main colour of the page.
 
 * All the js and css files are loaded locally, i.e., not loaded from third party sites. 
