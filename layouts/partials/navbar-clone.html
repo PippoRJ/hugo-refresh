@@ -41,7 +41,7 @@
         <div class="navbar-end">
           {{- $home    := .Site.Params.homepage.linkPosition -}}
           {{- if or (eq $home "menu") (eq $home "menu+footer") -}}
-            <a href="{{- .Permalink | relURL -}}" class="navbar-item is-secondary">
+            <a href="{{ "/" | relLangURL }}" class="navbar-item is-secondary">
               {{- if .Site.Params.homepage.linkText -}}
                 {{- print .Site.Params.homepage.linkText -}}
               {{- else -}}

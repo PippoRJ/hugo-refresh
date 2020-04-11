@@ -4,9 +4,9 @@ title: Personal website and blog
 theme: hugo-refresh
 # theme: ../..
 
-########################################
-######## Uncomment this option #########
-########################################
+#########################################
+######## Uncomment this option ##########
+#########################################
 # This options specify where to look for the images used in this config
 # The default value is the "asset" directory of this theme
 # assetDir: "static"
