@@ -460,7 +460,7 @@ To avoid path problems when specifying the `summaryImage`, it is recommended to 
 
 * [highlightjs-line-number.js](https://github.com/wcoder/highlightjs-line-numbers.js/) was added to have the line number at the beginning of each line of code in a code sections of a post.
 
-* A minimal version of [https://www.mathjax.org/](MathJax) was added to allow LaTeX style mathematical expressions to be placed in the site.
+* A minimal version of [MathJax](https://www.mathjax.org/) was added to allow LaTeX style mathematical expressions to be placed in the site.
 
 * Several other options are added to personalise the content of a post. 
 
@@ -473,5 +473,7 @@ To avoid path problems when specifying the `summaryImage`, it is recommended to 
 * The loaders images are now processed with `resources.ExecuteAsTemplate` so that they take the main colour of the theme (defined in `config.yaml`)
 
 * The _favicon_ is processed with `resources.ExecuteAsTemplate` to follow the main colour of the page.
+
+* Added Open Graph meta tags to each post for easy-sharing on social media sites.
 
 * All the js and css files are loaded locally, i.e., not loaded from third party sites. 

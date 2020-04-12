@@ -1,3 +1,31 @@
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+{{- if .Page.IsPage -}}
+
+    <meta property="og:url"  content="{{- .Permalink -}}" />
+    <meta property="og:type" content="article" />
+
+    {{- $title := replace .Title '"' ' ' -}} 
+    <meta property="og:title" content="{{- $title -}}" />
+    {{- if .Params.summary -}}
+    {{- $summary := replace .Params.summary '"' ' ' -}}
+    <meta property="og:description" content="{{- $summary -}}" />
+    {{- end -}}
+
+    {{- $image := "" -}}
+    {{- if .Params.summaryImage -}} 
+        {{- $image = .Page.Resources.GetMatch .Params.summaryImage -}}
+        {{- .Scratch.Set "image" ($image.Resize "600x") -}}
+        {{- $image = .Scratch.Get "image" -}}
+    {{- else -}}
+        {{- $image = resources.Get .Site.Params.summary.defaultImage -}}
+        {{- .Scratch.Set "image" ($image.Resize "600x") -}}
+        {{- $image = .Scratch.Get "image" -}}
+    {{- end -}}
+
+    <meta property="og:image" content="{{- $image.Permalink -}}" />
+    <!-- <meta property="og:locale"      content="" /> -->
+
+{{- end -}}
