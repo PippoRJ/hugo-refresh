@@ -2,14 +2,23 @@
 {{- $width    := printf "%s" (.Get "width" ) -}}
 {{- $height   := printf "%s" (.Get "height") -}}
 {{- $size     := printf "%sx%s" $width $height -}}
+{{- $caption  := printf "%s" (.Get "caption") -}}
+{{- $alt      := printf "%s" (.Get "alt") -}}
 {{- with $original -}}
 {{- $image := .Resize $size -}}
 <div class="columns is-centered container">
     <div class="column is-full">
         <figure>
-            <img class="rounded-corners" src="{{- $image.RelPermalink -}}" 
-                width="{{- $image.Width -}}" 
-                height="{{- $image.Height -}}">
+            {{- if $caption -}}
+                <img class="rounded-corners" src="{{- $image.RelPermalink -}}" 
+                    width="{{- $image.Width -}}" height="{{- $image.Height -}}" alt="{{- $alt -}}" >
+            {{- else -}}
+                <img class="rounded-corners" src="{{- $image.RelPermalink -}}" 
+                width="{{- $image.Width -}}" height="{{- $image.Height -}}" >
+            {{- end -}}
+            {{- if $caption -}}
+                <figcaption>{{- $caption -}}</figcaption>
+            {{- end -}}
         </figure>
     </div>
 </div>

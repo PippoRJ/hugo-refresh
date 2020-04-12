@@ -209,6 +209,8 @@ Usage example:
 The parameter **src** is the location of the image relative to the location of the file where the shortcode has been used.<br>
 The parameter **width** is the width of the image.<br>
 The parameter **height** is the height of the image.<br>
+The parameter **caption** is the caption of the image.<br>
+The parameter **alt** is the alt property of the image.<br>
 
 </details>
 
@@ -226,9 +228,14 @@ Usage example:
 The parameter **src1** is the location of the right image relative to the location of the file where the shortcode has been used.<br>
 The parameter **width1** is the width of the right image.<br>
 The parameter **height1** is the height of the right image.<br>
+The parameter **caption1** is the caption of the right image.<br>
+The parameter **alt1** is the alt property of the right image.<br>
 The parameter **src2** is the location of the left image relative to the location of the file where the shortcode has been used.<br>
 The parameter **width2** is the width of the left image.<br>
 The parameter **height2** is the height of the left image.<br>
+The parameter **caption2** is the caption of the left image.<br>
+The parameter **alt2** is the alt property of the left image.<br>
+
 
 With a small screen these images will be shown one on top of the other.
 

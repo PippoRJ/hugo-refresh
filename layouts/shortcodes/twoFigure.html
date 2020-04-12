@@ -2,30 +2,48 @@
 {{- $width1    := printf "%s" (.Get "width1" ) -}}
 {{- $height1   := printf "%s" (.Get "height1") -}}
 {{- $size1     := printf "%sx%s" $width1 $height1 -}}
+{{- $caption1  := printf "%s" (.Get "caption1") -}}
+{{- $alt1      := printf "%s" (.Get "alt1") -}}
 
 {{- $original2 := (.Page.Resources.ByType "image").GetMatch (printf "*%s*" (.Get "src2")) -}}
 {{- $width2    := printf "%s" (.Get "width2" ) -}}
 {{- $height2   := printf "%s" (.Get "height2") -}}
 {{- $size2     := printf "%sx%s" $width2 $height2 -}}
+{{- $caption2  := printf "%s" (.Get "caption2") -}}
+{{- $alt2      := printf "%s" (.Get "alt2") -}}
 
 <div class="columns is-centered container">
     <div class="column is-half">
         <figure>
             {{- with $original1 -}}
-            {{- $image1 := .Resize $size1 -}}
-            <img class="rounded-corners" src="{{- $image1.RelPermalink -}}" 
-                width="{{- $image1.Width -}}" 
-                height="{{- $image1.Height -}}">
+                {{- $image1 := .Resize $size1 -}}
+                {{- if $caption1 -}}
+                    <img class="rounded-corners" src="{{- $image1.RelPermalink -}}" 
+                        width="{{- $image1.Width -}}" height="{{- $image1.Height -}}" alt="{{- $alt1 -}}" >
+                {{- else -}}
+                    <img class="rounded-corners" src="{{- $image1.RelPermalink -}}" 
+                        width="{{- $image1.Width -}}" height="{{- $image1.Height -}}" >
+                {{- end -}}
+                {{- if $caption1 -}}
+                    <figcaption>{{- $caption1 -}}</figcaption>
+                {{- end -}}
             {{- end -}}
         </figure>
     </div>
     <div class="column is-half">
         <figure>
             {{- with $original2 -}}
-            {{- $image2 := .Resize $size2 -}}
-            <img class="rounded-corners" src="{{- $image2.RelPermalink -}}" 
-                width="{{- $image2.Width -}}" 
-                height="{{- $image2.Height -}}">
+                {{- $image2 := .Resize $size2 -}}
+                {{- if $caption2 -}}
+                    <img class="rounded-corners" src="{{- $image2.RelPermalink -}}" 
+                        width="{{- $image2.Width -}}" height="{{- $image2.Height -}}" alt="{{- $alt2 -}}" >
+                {{- else -}}
+                    <img class="rounded-corners" src="{{- $image2.RelPermalink -}}" 
+                        width="{{- $image2.Width -}}" height="{{- $image2.Height -}}">
+                {{- end -}}
+                {{- if $caption2 -}}
+                    <figcaption>{{- $caption2 -}}</figcaption>
+                {{- end -}}
             {{- end -}}
         </figure>
     </div>
