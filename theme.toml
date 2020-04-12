@@ -3,8 +3,8 @@ license = "MIT"
 licenselink = "https://raw.githubusercontent.com/PippoRJ/hugo-refresh/master/LICENSE"
 description = "A re-adaptation of the Hugo Fresh theme"
 homepage = "https://github.com/PippoRJ/hugo-refresh"
-tags = ["responsive", "blog", "light", "clean", "personal", "multilingual"]
-features = ["blog", "responsive", "simple", "404"]
+tags = ["responsive", "blog", "light", "clean", "personal", "multilingual", "syntax-highlighting"]
+features = ["blog", "responsive", "simple", "404", "mathjax"]
 min_version = "0.45"
 
 [author]
