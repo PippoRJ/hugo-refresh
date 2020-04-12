@@ -202,8 +202,8 @@ This shortcode resize an image that with the width and/or height that you specif
 Usage example:
 
 ```
-{{% figure src="images/the_stack.png" width="700" %}}
-{{% figure src="images/the_stack.png" height="700" %}}
+{{< figure src="images/the_stack.png" width="700" >}}
+{{< figure src="images/the_stack.png" height="700" >}}
 ```
 
 The parameter **src** is the location of the image relative to the location of the file where the shortcode has been used.<br>
@@ -220,7 +220,7 @@ This shortcode shows 2 images one next to the other with the possibility to resi
 Usage example:
 
 ```
-{{% twoFigure src1="images/overflow_1.png" width1="700" src2="images/overflow_2.png" width2="700" %}}
+{{< twoFigure src1="images/overflow_1.png" width1="700" src2="images/overflow_2.png" width2="700" >}}
 ```
 
 The parameter **src1** is the location of the right image relative to the location of the file where the shortcode has been used.<br>
