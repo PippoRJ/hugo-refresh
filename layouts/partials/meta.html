@@ -10,11 +10,15 @@
     {{- $title := replace .Title '"' ' ' -}} 
     <meta property="og:title" content="{{- $title -}}" />
     {{- if .Params.summary -}}
-    {{- $summary := replace .Params.summary '"' ' ' -}}
-    <meta property="og:description" content="{{- $summary -}}" />
+        {{- $summary := replace .Params.summary '"' ' ' -}}
+        <meta property="og:description" content="{{- $summary -}}" />
+    {{- else -}}
+        <meta property="og:description" content="" />
     {{- end -}}
 
     {{- $image := "" -}}
+    {{- $imgWidthDefault := 375 -}}
+    {{- $imgHeightDefault := 250 -}}
     {{- if .Params.summaryImage -}} 
         {{- $image = .Page.Resources.GetMatch .Params.summaryImage -}}
         {{- .Scratch.Set "image" ($image.Resize "600x") -}}
@@ -25,7 +29,14 @@
         {{- $image = .Scratch.Get "image" -}}
     {{- end -}}
 
-    <meta property="og:image" content="{{- $image.Permalink -}}" />
     <!-- <meta property="og:locale"      content="" /> -->
+    {{- if .Page.Params.keepImageRatio -}}
+        <meta property="og:image:width"  content="{{- $image.Width -}}" />
+        <meta property="og:image:height" content="{{- $image.Height -}}" />
+    {{- else -}}
+        <meta property="og:image:width"  content="{{- $imgWidthDefault -}}" />
+        <meta property="og:image:height" content="{{- $imgHeightDefault -}}" />
+    {{- end -}}
+    <meta property="og:image" content="{{- $image.Permalink -}}" />
 
 {{- end -}}
