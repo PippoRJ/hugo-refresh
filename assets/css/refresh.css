@@ -50,6 +50,16 @@
 }  
 /* End */
 
+/* Style to remove srollbar width */
+div.scroll { 
+  overflow-x: hidden; 
+  scrollbar-width: none; /* Remove scrollbar width in Firefox */
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* Remove scrollbar width in MS Edge */
+}
+/* Remove scrollbar width in Chrome */
+div.scroll::-webkit-scrollbar { width: 0px; }
+/* end */
+
 
 /* .content{
   pre{
