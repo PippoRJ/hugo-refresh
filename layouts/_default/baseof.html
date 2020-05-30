@@ -10,7 +10,15 @@
     {{- end -}}
     <link rel="icon" href="{{- $img.Permalink | relURL -}}">
     {{- partial "meta.html" . -}}
-    <title>{{- block "title" . -}}{{- .Site.Title -}}{{- end -}}</title>
+
+    <title>{{- block "title" . -}}
+    {{- if .IsHome -}}
+    {{- .Site.Title -}}
+    {{- else -}}
+    {{- .Site.Title -}}{{- " - " -}}{{- .Page.Title -}}
+    {{- end -}}
+    {{- end -}}</title>
+
     {{ partial "css.html" . }}
   </head>
   <body>
