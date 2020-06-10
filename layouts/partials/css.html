@@ -34,12 +34,15 @@
 
 {{- end -}}
 
+{{- if .Site.Params.cssIntegrity -}}
+
 {{- $css  = $css  | resources.Fingerprint -}}
 {{- $css1 = $css1 | resources.Fingerprint -}}
 {{- $css2 = $css2 | resources.Fingerprint -}}
 {{- $css3 = $css3 | resources.Fingerprint -}}
 {{- $css4 = $css4 | resources.Fingerprint -}}
 
+{{- end -}}
 
 <link rel="stylesheet" type="text/css" href="{{- $css.Permalink  | relURL -}}" integrity="{{- $css.Data.Integrity -}}">
 <link rel="stylesheet" type="text/css" href="{{- $css1.Permalink | relURL -}}" integrity="{{- $css1.Data.Integrity -}}">

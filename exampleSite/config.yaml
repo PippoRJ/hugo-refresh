@@ -47,6 +47,10 @@ params:
   jsMinify: false
   # parameter used to specify if you want to minify the imported css
   cssMinify: false
+  # parameter used to specify if you want to calculate the css integrity
+  cssIntegrity: true
+  # parameter used to specify if you want to calculate the js integrity
+  jsIntegrity: true
   # option to specify the main colour of the theme
   mainColour: "#F39200"
 

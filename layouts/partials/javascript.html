@@ -27,24 +27,33 @@
     {{- $js11 = $js11 | resources.Minify -}}
 {{- end -}}
 
-{{- $js1 = $js1 | resources.Fingerprint -}}
-{{- $js2 = $js2 | resources.Fingerprint -}}
-{{- $js3 = $js3 | resources.Fingerprint -}}
-{{- $js4 = $js4 | resources.Fingerprint -}}
+{{- if .Site.Params.jsIntegrity -}}
+  {{- $js1 = $js1 | resources.Fingerprint -}}
+  {{- $js2 = $js2 | resources.Fingerprint -}}
+  {{- $js3 = $js3 | resources.Fingerprint -}}
+  {{- $js4 = $js4 | resources.Fingerprint -}}
 
-{{- $js5 = $js5 | resources.Fingerprint -}}
-{{- $js6 = $js6 | resources.Fingerprint -}}
-{{- $js7 = $js7 | resources.Fingerprint -}}
-{{- $js8 = $js8 | resources.Fingerprint -}}
-{{- $js9 = $js9 | resources.Fingerprint -}}
+  {{- $js5 = $js5 | resources.Fingerprint -}}
+  {{- $js6 = $js6 | resources.Fingerprint -}}
+  {{- $js7 = $js7 | resources.Fingerprint -}}
+  {{- $js8 = $js8 | resources.Fingerprint -}}
+  {{- $js9 = $js9 | resources.Fingerprint -}}
 
-{{- $js10 = $js10 | resources.Fingerprint -}}
-{{- $js11 = $js11 | resources.Fingerprint -}}
+  {{- $js10 = $js10 | resources.Fingerprint -}}
+  {{- $js11 = $js11 | resources.Fingerprint -}}
+{{- end -}}
 
-<script src="{{- $js1.Permalink | relURL -}}" integrity="{{- $js1.Data.Integrity -}}"></script>
-<script src="{{- $js2.Permalink | relURL -}}" integrity="{{- $js2.Data.Integrity -}}"></script>
-<script src="{{- $js3.Permalink | relURL -}}" integrity="{{- $js3.Data.Integrity -}}"></script>
-<script src="{{- $js4.Permalink | relURL -}}" integrity="{{- $js4.Data.Integrity -}}"></script>
+{{- if .Site.Params.jsIntegrity -}}
+  <script src="{{- $js1.Permalink | relURL -}}" integrity="{{- $js1.Data.Integrity -}}"></script>
+  <script src="{{- $js2.Permalink | relURL -}}" integrity="{{- $js2.Data.Integrity -}}"></script>
+  <script src="{{- $js3.Permalink | relURL -}}" integrity="{{- $js3.Data.Integrity -}}"></script>
+  <script src="{{- $js4.Permalink | relURL -}}" integrity="{{- $js4.Data.Integrity -}}"></script>
+{{- else -}}
+  <script src="{{- $js1.Permalink | relURL -}}"></script>
+  <script src="{{- $js2.Permalink | relURL -}}"></script>
+  <script src="{{- $js3.Permalink | relURL -}}"></script>
+  <script src="{{- $js4.Permalink | relURL -}}"></script>
+{{- end -}}
 
 <script>
   window.MathJax = {
@@ -63,9 +72,15 @@
   };
 </script>
 
-<script src="{{- $js9.Permalink | relURL -}}" integrity="{{- $js9.Data.Integrity -}}"></script>
-<script src="{{- $js10.Permalink | relURL -}}" integrity="{{- $js10.Data.Integrity -}}"></script>
-<script src="{{- $js11.Permalink | relURL -}}" integrity="{{- $js11.Data.Integrity -}}"></script>
+{{- if .Site.Params.jsIntegrity -}}
+  <script src="{{- $js9.Permalink | relURL -}}" integrity="{{- $js9.Data.Integrity -}}"></script>
+  <script src="{{- $js10.Permalink | relURL -}}" integrity="{{- $js10.Data.Integrity -}}"></script>
+  <script src="{{- $js11.Permalink | relURL -}}" integrity="{{- $js11.Data.Integrity -}}"></script>
+{{- else -}}
+  <script src="{{- $js9.Permalink | relURL -}}"></script>
+  <script src="{{- $js10.Permalink | relURL -}}"></script>
+  <script src="{{- $js11.Permalink | relURL -}}"></script>
+{{- end -}}
 
 <script>
   hljs.initHighlightingOnLoad();
