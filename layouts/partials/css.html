@@ -44,8 +44,20 @@
 
 {{- end -}}
 
+{{- if .Site.Params.cssIntegrity -}}
+
 <link rel="stylesheet" type="text/css" href="{{- $css.Permalink  | relURL -}}" integrity="{{- $css.Data.Integrity -}}">
 <link rel="stylesheet" type="text/css" href="{{- $css1.Permalink | relURL -}}" integrity="{{- $css1.Data.Integrity -}}">
 <link rel="stylesheet" type="text/css" href="{{- $css2.Permalink | relURL -}}" integrity="{{- $css2.Data.Integrity -}}">
 <link rel="stylesheet" type="text/css" href="{{- $css3.Permalink | relURL -}}" integrity="{{- $css3.Data.Integrity -}}">
 <link rel="stylesheet" type="text/css" href="{{- $css4.Permalink | relURL -}}" integrity="{{- $css4.Data.Integrity -}}">
+
+{{- else -}}
+
+<link rel="stylesheet" type="text/css" href="{{- $css.Permalink  | relURL -}}">
+<link rel="stylesheet" type="text/css" href="{{- $css1.Permalink | relURL -}}">
+<link rel="stylesheet" type="text/css" href="{{- $css2.Permalink | relURL -}}">
+<link rel="stylesheet" type="text/css" href="{{- $css3.Permalink | relURL -}}">
+<link rel="stylesheet" type="text/css" href="{{- $css4.Permalink | relURL -}}">
+
+{{- end -}}
