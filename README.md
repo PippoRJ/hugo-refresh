@@ -438,6 +438,27 @@ To avoid path problems when specifying the `summaryImage`, it is recommended to 
       * system.jpg (file)
 ```
 
+## Multilanguage support
+
+To chose the default language you need to set the `DefaultContentLanguage` setting in the `config.yaml` file.
+(You can also have multiple languages at the same time, see `exampleSite/config.yaml` for an example.)
+
+The language supported are:
+
+* English 
+
+* Spanish
+
+* French
+
+* Italian
+
+* Russian
+
+* Chinese
+
+If you want to add a missing language please submit a pull request.
+
 
 ## List of modifications from the original theme
 
