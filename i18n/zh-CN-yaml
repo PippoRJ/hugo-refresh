@@ -5,7 +5,7 @@
 - id: allTags
   translation: "全部标签"
 - id: tags
-  translation: "最后标签"
+  translation: "标签"
 - id: lastModified
   translation: "最后修改"
 - id: website
