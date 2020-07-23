@@ -81,9 +81,11 @@ params:
 
   # navbar options
   navbar:
-    # option to specify the logo of the sidebar
+    # option to specify the font used in the navbar
     fontFamily: "Open Sans"
-  
+    # option to show the little logos on the side of the navbar items
+    showIcons: false
+    
   # 404 page options
   pagNotFound:
     # option to specify the main picture of the sidebar
@@ -100,7 +102,7 @@ params:
   homepage:
     # this options let you specify if you want a link to the homepage
     # it can be: "none", "menu", "footer" or "menu+footer"
-    linkPosition: "footer" 
+    # linkPosition: "footer" 
     # this options let you specify the text of the link to the homepage
     # linkText: "Homepage"  
     # option to specify the title in the homepage

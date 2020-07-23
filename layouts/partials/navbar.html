@@ -35,8 +35,11 @@
       </a>
     </div>
 
-    
-
+    {{- $showIcons := false -}}
+    {{- if .Site.Params.navbar.showIcons -}}
+      {{- $showIcons = .Site.Params.navbar.showIcons -}}
+    {{- end -}}
+    {{- $mainColour := .Site.Params.mainColour -}}
     <div id="navbar-menu" class="navbar-menu is-static">
       <!-- <div class="navbar-start"></div> -->
       <div class="navbar-end">
@@ -44,6 +47,9 @@
         {{/*  {{- if or (eq $home "menu") (eq $home "menu+footer") -}}  */}}
         {{ if or (eq $home "menu") (eq $home "menu+footer") }}
           <a href="{{ "/" | relLangURL }}" class="navbar-item is-secondary">
+            {{- if $showIcons -}}
+              <i class="fa fa-home" style="color:{{- print $mainColour -}};">&nbsp;</i>
+            {{- end -}}
             {{- if .Site.Params.homepage.linkText -}}
               {{- print .Site.Params.homepage.linkText -}}
             {{- else -}}
@@ -54,6 +60,9 @@
         {{ range .Site.RegularPages }}
           {{- if eq .Params.showInMenu true -}}
           <a href="{{- .Permalink | relURL -}}" class="navbar-item is-secondary">
+            {{- if $showIcons -}}
+              <i class="fa fa-file-text" style="color:{{- print $mainColour -}};">&nbsp;</i>
+            {{- end -}}            
             {{- .Title -}}
           </a>
           {{- end -}}
@@ -64,6 +73,9 @@
           {{- if (ne $secCount 0) }}
           <div class="navbar-item has-dropdown is-hoverable">
             <a href="{{- .Permalink | relURL -}}" class="navbar-link">
+              {{- if $showIcons -}}
+                <i class="fa fa-book" style="color:{{- print $mainColour -}};">&nbsp;</i>
+              {{- end -}}
               {{- .Title -}}
             </a>
             <div class="navbar-dropdown">
@@ -79,6 +91,9 @@
           </div>
           {{- else -}}
           <a href="{{- .Permalink | relURL -}}" class="navbar-item is-secondary">
+            {{- if $showIcons -}}
+              <i class="fa fa-book" style="color:{{- print $mainColour -}};">&nbsp;</i>
+            {{- end -}}
             {{- .Title -}}
           </a>
           {{- end -}}
