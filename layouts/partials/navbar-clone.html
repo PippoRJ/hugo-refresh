@@ -67,36 +67,40 @@
           {{- end -}}
         {{- end -}}
           {{- range .Site.Sections -}}
-            {{- if not (eq .Title "singles") -}}
-            {{- $secCount := len .Sections -}}
-            {{- if (ne $secCount 0) -}}
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a href="{{- .Permalink | relURL -}}" class="navbar-link">
-              {{- if $showIcons -}}
-                <i class="fa fa-book" style="color:{{- print $mainColour -}};">&nbsp;</i>
-              {{- end -}}
-                {{- .Title -}}
-              </a>
-              <div class="navbar-dropdown">
-                <!-- <a href="{{- .Permalink -}}" class="navbar-item">
-                  > All
-                </a> -->
-                {{- range .Sections -}}
-                <a href="{{- .Permalink | relURL -}}" class="navbar-item">
+            {{- $shmenu := true -}}
+            {{- if (isset .Params "showinmenu") -}}
+              {{- $shmenu = .Params.showinmenu -}}
+            {{- end -}}
+            {{- if $shmenu -}}
+              {{- $secCount := len .Sections -}}
+              {{- if (ne $secCount 0) -}}
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a href="{{- .Permalink | relURL -}}" class="navbar-link">
+                {{- if $showIcons -}}
+                  <i class="fa fa-book" style="color:{{- print $mainColour -}};">&nbsp;</i>
+                {{- end -}}
                   {{- .Title -}}
                 </a>
-                {{- end -}}
+                <div class="navbar-dropdown">
+                  <!-- <a href="{{- .Permalink -}}" class="navbar-item">
+                    > All
+                  </a> -->
+                  {{- range .Sections -}}
+                  <a href="{{- .Permalink | relURL -}}" class="navbar-item">
+                    {{- .Title -}}
+                  </a>
+                  {{- end -}}
+                </div>
               </div>
-            </div>
-            {{- else -}}
-            <a href="{{- .Permalink | relURL -}}" class="navbar-item is-secondary">
-              {{- if $showIcons -}}
-                <i class="fa fa-book" style="color:{{- print $mainColour -}};">&nbsp;</i>
+              {{- else -}}
+              <a href="{{- .Permalink | relURL -}}" class="navbar-item is-secondary">
+                {{- if $showIcons -}}
+                  <i class="fa fa-book" style="color:{{- print $mainColour -}};">&nbsp;</i>
+                {{- end -}}
+                {{- .Title -}}
+              </a>
               {{- end -}}
-              {{- .Title -}}
-            </a>
             {{- end -}}
-          {{- end -}}
           {{- end -}}
         </div>
       </div>
