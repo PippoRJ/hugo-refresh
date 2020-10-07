@@ -1,0 +1,39 @@
+{{- $id1 := .Get "id1" | default (.Get 0) -}}
+{{- $id2 := .Get "id2" | default (.Get 1) -}}
+{{- $auto1 := default "false" (.Get "autoplay1") -}}
+{{- $auto2 := default "false" (.Get "autoplay2") -}}
+{{- $ratio1 := default "16:9" (.Get "ratio1") -}}
+{{- $ratio2 := default "16:9" (.Get "ratio2") -}}
+{{ $r1 := "56.25" }}
+{{ $r2 := "56.25" }}
+{{ if eq $ratio1 "16:9" }}
+    {{ $r1 = "56.25"}}
+{{ else if eq $ratio1 "4:3" }}
+    {{ $r1 = "75"}}
+{{ end }}
+{{ if eq $ratio2 "16:9" }}
+    {{ $r2 = "56.25"}}
+{{ else if eq $ratio2 "4:3" }}
+    {{ $r2 = "75"}}
+{{ end }}
+<div class="columns is-centered container">    
+    <div class="column is-centered container">
+        <div>
+            <div style="position:relative;padding-top:{{ print $r1 }}%;">
+                <iframe src="https://www.youtube.com/embed/{{ $id1 }}{{ with $auto1 }}{{ if or ( or (eq . "true") (eq . true)) (eq . 1) }}?autoplay=1&mute=1{{ end }}{{ end }}" 
+                            allowfullscreen 
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="column is-centered container">
+        <div>
+            <div style="position:relative;padding-top:{{ print $r2 }}%;">
+                <iframe src="https://www.youtube.com/embed/{{ $id2 }}{{ with $auto2 }}{{ if or ( or (eq . "true") (eq . true)) (eq . 1) }}?autoplay=1&mute=1{{ end }}{{ end }}" 
+                            allowfullscreen
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
