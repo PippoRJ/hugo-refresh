@@ -483,6 +483,8 @@ The language supported are:
 
 * Chinese
 
+* Polish
+
 If you want to add a missing language please submit a feature request.
 
 
