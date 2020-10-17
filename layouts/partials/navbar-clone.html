@@ -102,11 +102,32 @@
               {{- end -}}
             {{- end -}}
           {{- end -}}
+        
+          {{ $currentLang := .Site.Language.Lang }}
+          {{ $languageNumber := len $.Site.Home.AllTranslations }}
+          {{ if gt $languageNumber 1 }}
+          <div class="control">
+            <div class="select languageselectOutside">
+              <select class="is-hovered" id="languageSelector"
+                style="color:#999; 
+                       padding-right: 0.75em;
+                       padding-left: 0.75em; 
+                       border-color: {{- print $mainColour -}}; 
+                       text-align-last:center;
+                       box-shadow: none ;
+                       "><!-- box-shadow: 0 0 0 0.125em #999; -->
+                
+                {{ range $.Site.Home.AllTranslations }}
+                <option value="{{ .Permalink }}" 
+                {{ if eq $currentLang .Language.Lang }} {{ print "selected" }} {{ end }}
+                >{{ upper .Language.Lang }}</option>
+                {{ end }}
+              </select>
+            </div>
+          </div>
+          {{ end }}
+        
         </div>
       </div>
-  
-  
-  
-  
     </div>
   </nav>

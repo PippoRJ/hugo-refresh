@@ -60,6 +60,13 @@ div.scroll {
 div.scroll::-webkit-scrollbar { width: 0px; }
 /* end */
 
+/* Language selector */
+/* Remove Arrow */
+.languageselectOutside::after {
+  content: initial !important;
+}
+/* Language selector END */
+
 
 /* .content{
   pre{

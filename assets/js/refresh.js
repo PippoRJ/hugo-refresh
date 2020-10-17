@@ -27,6 +27,8 @@ $(document).ready(function () {
         $("i", this).toggleClass("fa-angle-down fa-angle-up");
     });
 
+    
+
     //Toggle Tabs
     $('.tabs li').on("click", function(e){
         
@@ -47,6 +49,11 @@ $(document).ready(function () {
         // $(this).find("a").addClass("has-background-white-ter");
     });
 
+    // change language
+    $( "#languageSelector" ).change(function() {
+        window.location.href = $( "#languageSelector" ).val();
+    });
+    
 
     //Mobile menu toggle
     // if ($('.navbar-burger').length) {
