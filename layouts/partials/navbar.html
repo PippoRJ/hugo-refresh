@@ -105,7 +105,8 @@
         {{- end -}}
         
         {{ $currentLang := .Site.Language.Lang }}
-
+        {{ $languageNumber := len $.Site.Home.AllTranslations }}
+        {{ if gt $languageNumber 1 }}
         <div class="navbar-item">
           <div class="dropdown is-hoverable is-centered" >
             <div class="dropdown-trigger" >
@@ -134,7 +135,7 @@
             </div>
           </div>
         </div>
-
+        {{ end }}
       </div>
     </div>
   </div>
