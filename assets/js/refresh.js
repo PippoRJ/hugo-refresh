@@ -50,9 +50,9 @@ $(document).ready(function () {
     });
 
     // change language
-    $( "#languageSelector" ).change(function() {
-        window.location.href = $( "#languageSelector" ).val();
-    });
+    // $( "#languageSelector" ).change(function() {
+    //     window.location.href = $( "#languageSelector" ).val();
+    // });
     
 
     //Mobile menu toggle

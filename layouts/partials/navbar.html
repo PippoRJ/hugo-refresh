@@ -105,28 +105,35 @@
         {{- end -}}
         
         {{ $currentLang := .Site.Language.Lang }}
-        {{ $languageNumber := len $.Site.Home.AllTranslations }}
-        {{ if gt $languageNumber 1 }}
-        <div class="control">
-          <div class="select languageselectOutside">
-            <select class="is-hovered" id="languageSelector"
-              style="color:#999; 
-                     padding-right: 0.75em;
-                     padding-left: 0.75em; 
-                     border-color: {{- print $mainColour -}}; 
-                     text-align-last:center;
-                     box-shadow: none ;
-                     "><!-- box-shadow: 0 0 0 0.125em #999; -->
-              
-              {{ range $.Site.Home.AllTranslations }}
-              <option value="{{ .Permalink }}" 
-              {{ if eq $currentLang .Language.Lang }} {{ print "selected" }} {{ end }}
-              >{{ upper .Language.Lang }}</option>
-              {{ end }}
-            </select>
+
+        <div class="navbar-item">
+          <div class="dropdown is-hoverable is-centered" >
+            <div class="dropdown-trigger" >
+              <button class="button is-active" 
+              style="color:#999;  
+                    border-color: {{- print $mainColour -}}; 
+                    box-shadow: none ;
+                    padding-right: 0.625em ; 
+                    padding-left: 0.625em  ;
+                    ">
+
+                <span>{{ upper $currentLang }}</span>
+              </button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu" role="menu" style="min-width: 0em;">
+              <div class="dropdown-content" style="padding: 0rem;">
+                {{ range $.Site.Home.AllTranslations }}
+                  {{ if ne $currentLang .Language.Lang }}
+                <a href="{{ .Permalink }}" class="dropdown-item" 
+                style="text-align: center; color:#999; padding-right: 0.82em !important ; padding-left: 0.82em !important;">
+                  {{ upper .Language.Lang }}
+                </a>
+                {{ end }}
+                {{ end }}
+              </div>
+            </div>
           </div>
         </div>
-        {{ end }}       
 
       </div>
     </div>
