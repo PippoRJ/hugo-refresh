@@ -487,6 +487,8 @@ The language supported are:
 
 * Polish
 
+* German
+
 If you want to add a missing language please submit a feature request.
 
 
