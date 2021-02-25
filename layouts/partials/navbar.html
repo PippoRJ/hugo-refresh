@@ -123,13 +123,27 @@
             </div>
             <div class="dropdown-menu" id="dropdown-menu" role="menu" style="min-width: 0em;">
               <div class="dropdown-content" style="padding: 0rem;">
+                {{ $allLanguage := slice }}
+                {{ $translatedLanguage := slice }}
+                {{ range $.Site.Home.AllTranslations }}
+                  {{ $allLanguage = $allLanguage | append .Language.Lang }}
+                {{ end }}
+                {{ range .Translations }}
+                  {{ $translatedLanguage = $translatedLanguage | append .Language.Lang }}
+                  <a href="{{ .Permalink }}" class="dropdown-item" 
+                      style="text-align: center; color:#999; padding-right: 0.82em !important ; padding-left: 0.82em !important;">
+                    {{ upper .Language.Lang }}
+                  </a>
+                {{ end }}
                 {{ range $.Site.Home.AllTranslations }}
                   {{ if ne $currentLang .Language.Lang }}
-                <a href="{{ .Permalink }}" class="dropdown-item" 
-                style="text-align: center; color:#999; padding-right: 0.82em !important ; padding-left: 0.82em !important;">
-                  {{ upper .Language.Lang }}
-                </a>
-                {{ end }}
+                    {{ if not (in $translatedLanguage .Language.Lang) }}
+                    <a href="{{ .Permalink }}" class="dropdown-item" 
+                        style="text-align: center; color:#999; padding-right: 0.82em !important ; padding-left: 0.82em !important;">
+                        {{ upper .Language.Lang }}
+                    </a>
+                    {{ end }}
+                  {{ end }}
                 {{ end }}
               </div>
             </div>
