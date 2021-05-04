@@ -147,8 +147,13 @@ params:
     # instagram: 
     #    link: username
     #    title: Instagram
+    # option to specify your telegram username in the footer; 
+    # **uncomment** the below lines to show in footer
+    # telegram: 
+    #    link: username
+    #    title: Telegram
     # option to specify the copyright in the footer
-    copyright: Julia The White - 2020
+    copyright: Julia The White - 2021
 
 ###################################################################
 ################## multilanguage support options ##################

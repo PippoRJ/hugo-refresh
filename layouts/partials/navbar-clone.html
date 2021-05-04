@@ -60,7 +60,7 @@
           {{- if eq .Params.showInMenu true -}}
           <a href="{{- .Permalink | relURL -}}" class="navbar-item is-secondary">
             {{- if $showIcons -}}
-              <i class="fa fa-file-text" style="color:{{- print $mainColour -}};">&nbsp;</i>
+              <i class="fa fa-bookmark" style="color:{{- print $mainColour -}};">&nbsp;</i>
             {{- end -}}
             {{- .Title -}}
           </a>
@@ -103,8 +103,21 @@
             {{- end -}}
           {{- end -}}
         
+          {{ $allTranslations := slice }}
+          {{ range $.Site.Home.AllTranslations }}
+            {{ if not (in .Site.Params.hideLanguages .Language.Lang) }}
+              {{ $allTranslations = $allTranslations | append . }}
+            {{ end }}
+          {{ end }}
+          {{ $translations := slice }}
+          {{ range .Translations }}
+            {{ if not (in .Site.Params.hideLanguages .Language.Lang) }}
+              {{ $translations = $translations | append . }}
+            {{ end }}
+          {{ end }}
+
           {{ $currentLang := .Site.Language.Lang }}
-          {{ $languageNumber := len $.Site.Home.AllTranslations }}
+          {{ $languageNumber := len $allTranslations }}
           {{ if gt $languageNumber 1 }}
           <div class="navbar-item">
             <div class="dropdown is-hoverable is-centered" >
@@ -124,17 +137,17 @@
                 <div class="dropdown-content" style="padding: 0rem;">
                   {{ $allLanguage := slice }}
                   {{ $translatedLanguage := slice }}
-                  {{ range $.Site.Home.AllTranslations }}
+                  {{ range $allTranslations }}
                     {{ $allLanguage = $allLanguage | append .Language.Lang }}
                   {{ end }}
-                  {{ range .Translations }}
+                  {{ range $translations }}
                     {{ $translatedLanguage = $translatedLanguage | append .Language.Lang }}
                     <a href="{{ .Permalink }}" class="dropdown-item" 
                         style="text-align: center; color:#999; padding-right: 0.82em !important ; padding-left: 0.82em !important;">
                       {{ upper .Language.Lang }}
                     </a>
                   {{ end }}
-                  {{ range $.Site.Home.AllTranslations }}
+                  {{ range $allTranslations }}
                     {{ if ne $currentLang .Language.Lang }}
                       {{ if not (in $translatedLanguage .Language.Lang) }}
                       <a href="{{ .Permalink }}" class="dropdown-item" 
