@@ -21,10 +21,11 @@
 
     {{ partial "css.html" . }}
     {{ partial "custom_head.html" . }}
+    {{ if and (hugo.IsProduction) (.Site.Params.googleAnalyticsID) }}
+    {{ template "_internal/google_analytics.html" . }}
+    {{ end }}
   </head>
   <body>
-    <!-- Counter -->
-    {{- partial "counter.html" -}}
     <!-- Preloader -->
     <div id="preloader">
       <div id="status"></div>
