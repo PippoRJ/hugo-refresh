@@ -423,6 +423,31 @@ The **second parameter** will appear in the middle part of the shortcode.<br>
 See example of usage [here](https://rjordaney.is/miscellaneous/ctf_resources/)
 
 </details>
+<details>
+<summary> termynal.html, termynal-progress.html, termynal-output.html, termynal-input.html </summary>
+
+This shortcode builds an animated terminal using [Termynal](https://github.com/ines/termynal).
+
+Usage example:
+
+```
+{{< termynal id="example">}}
+{{< termynal-input >}}This is typed{{< /termynal-input >}}
+{{< termynal-input prompt="Show progress bar(Y/N)">}}Y{{< /termynal-input >}}
+{{< termynal-progress>}}
+{{< termynal-output >}}This is output{{< /termynal-output >}}
+{{< /termynal >}}
+```
+
+The `termynal` shortcode has 1 parameter:
+
+* **id** is used to give each termynal instance a unique identifier.
+
+The `termynal-input` shortcode has 1 optional parameter:
+
+* **prompt** is used to change the prompt in the pseudo terminal
+
+</details>
 
 
 

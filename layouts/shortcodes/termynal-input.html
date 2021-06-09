@@ -1,0 +1,5 @@
+{{- if (.Get "prompt") -}}
+<span data-ty="input" data-ty-prompt="{{ (.Get "prompt") }}" data-ty-typeDelay="1000" >{{- .Inner -}}</span>
+{{- else -}}
+<span data-ty="input">{{- .Inner -}}</span>
+{{- end -}}

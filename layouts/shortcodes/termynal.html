@@ -1,0 +1,7 @@
+{{- $id := .Get "id" | default "termynal" -}}
+<div class="columns is-centered container">
+<div id="{{$id}}" data-termynal data-ty-typeDelay="40" data-ty-lineDelay="700">
+    <a href="#" onclick="new Termynal('#{{$id}}'); return false;" id="restart-termynal">Run »</a>
+    {{ .Inner  }}
+</div>
+</div>
