@@ -60,7 +60,7 @@ a#restart-termynal:hover {
 }
 
 [data-termynal]:after {
-    content: 'bash';
+    content: 'terminal';
     position: absolute;
     color: var(--color-text-subtle);
     top: 5px;
