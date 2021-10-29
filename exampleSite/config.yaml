@@ -137,7 +137,12 @@ params:
     # github: 
     #   link: username
     #   title: Github
-    # option to specify your twitter username in the footer; 
+    # option to specify your gitlab account in the footer; 
+    # **uncomment** the below lines to show in footer
+    # gitlab: 
+    #   link: username
+    #   title: Gitlab
+    # option to specify your twitter username in the footer;
     # **uncomment** the below lines to show in footer
     # twitter: 
     #    link: username
@@ -202,5 +207,8 @@ languages:
         # github: 
         #   link: username
         #   title: Github
+        # gitlab: 
+        #   link: username
+        #   title: Gitlab
         copyright: Julia белая краска - 2020
       
