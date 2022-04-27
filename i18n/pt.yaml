@@ -1,7 +1,7 @@
 - id: readMore
   translation: "Leia mais"
 - id: mainMenu
-  translation: "Menu"
+  translation: "Cardápio"
 - id: allTags
   translation: "Todas as Etiquetas"
 - id: tags
@@ -11,7 +11,7 @@
 - id: website
   translation: "Site"
 - id: credits
-  translation: "Créditos"
+  translation: "Mérito"
 - id: copyright
   translation: "Direitos autorais"
 - id: contacts
