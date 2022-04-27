@@ -11,8 +11,8 @@ tags: ["custom_summary", "code"]
 
 Example code:
 
-```python
+{{< code language="python"> }}
 def dummy_function(arg1):
     print("dummy function")
     return arg1 
-```
+{{< /code >}}
