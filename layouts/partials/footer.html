@@ -23,7 +23,7 @@
           <ul class="link-list">
             {{- if or (eq $home "footer") (eq $home "menu+footer") -}}
             <li>
-              <a href="{{ "/" | relLangURL }}"><span class="icon"><i class="fa fa-home"></i></span> 
+              <a href="{{ .Site.baseURL | relLangURL }}"><span class="icon"><i class="fa fa-home"></i></span> 
                 {{- if .Site.Params.homepage.linkText -}}
                   {{- printf " %s" .Site.Params.homepage.linkText -}}
                 {{- else -}}
