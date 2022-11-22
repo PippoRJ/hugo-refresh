@@ -14,7 +14,7 @@
             <img src="{{- $img.Permalink | relURL -}}" alt="">
         <!-- </div> -->
       </div>
-      
+
     <div class="column">
         <div class="footer-column">
           <div class="footer-header">
@@ -23,7 +23,7 @@
           <ul class="link-list">
             {{- if or (eq $home "footer") (eq $home "menu+footer") -}}
             <li>
-              <a href="{{ .Site.baseURL | relLangURL }}"><span class="icon"><i class="fa fa-home"></i></span> 
+              <a href="{{ .Site.baseURL | relLangURL }}"><span class="icon"><i class="fa fa-home"></i></span>
                 {{- if .Site.Params.homepage.linkText -}}
                   {{- printf " %s" .Site.Params.homepage.linkText -}}
                 {{- else -}}
@@ -43,7 +43,7 @@
             <li>
               {{- with .Site.GetPage "tags" -}}
               <a href="{{- .RelPermalink -}}">
-                <span class="icon"><i class="fa fa-tag"></i></span> 
+                <span class="icon"><i class="fa fa-tag"></i></span>
                 {{ i18n "allTags" }}
               </a>
               {{- end -}}
@@ -51,8 +51,8 @@
           </ul>
         </div>
       </div>
-    
-      {{ if (or (or (or (or (or (or (or (isset .Site.Params.footer "linkedin") (isset .Site.Params.footer "email")) (isset .Site.Params.footer "facebook")) (isset .Site.Params.footer "twitter")) (isset .Site.Params.footer "instagram")) (isset .Site.Params.footer "github")) (isset .Site.Params.footer "telegram")) (isset .Site.Params.footer "gitlab"))}}
+
+      {{ if (or (or (or (or (or (or (or (or (isset .Site.Params.footer "linkedin") (isset .Site.Params.footer "email")) (isset .Site.Params.footer "facebook")) (isset .Site.Params.footer "twitter")) (isset .Site.Params.footer "instagram")) (isset .Site.Params.footer "github")) (isset .Site.Params.footer "telegram")) (isset .Site.Params.footer "mastodon")) (isset .Site.Params.footer "gitlab")) }}
       <div class="column">
         <div class="footer-column">
           <div class="footer-header">
@@ -82,7 +82,7 @@
                 {{ end }}
               </a>
             </li>
-            {{ end }}             
+            {{ end }}
             {{ if isset .Site.Params.footer.email "link" }}
             <li>
               <a href="mailto:{{ .Site.Params.footer.email.link }}" target="_blank">
@@ -106,7 +106,19 @@
                 {{ end }}
               </a>
             </li>
-            {{ end }}       
+            {{ end }}
+            {{ if isset .Site.Params.footer.mastodon "server" }}
+            <li>
+              <a href="https://{{ .Site.Params.footer.mastodon.server }}/@{{ .Site.Params.footer.mastodon.user }}" target="_blank" rel="me">
+                <span class="icon"><i class="fab fa-mastodon"></i></span>
+                {{ if isset .Site.Params.footer.mastodon "title" }}
+                  {{ .Site.Params.footer.mastodon.title }}
+                {{ else }}
+                  Mastodon
+                {{ end }}
+              </a>
+            </li>
+            {{ end }}
             {{ if isset .Site.Params.footer.twitter "link" }}
             <li>
               <a href="https://twitter.com/{{ .Site.Params.footer.twitter.link }}" target="_blank">
@@ -118,7 +130,7 @@
                 {{ end }}
               </a>
             </li>
-            {{ end }}       
+            {{ end }}
             {{ if isset .Site.Params.footer.instagram "link" }}
             <li>
               <a href="https://instagram.com/{{ .Site.Params.footer.instagram.link }}" target="_blank">
@@ -130,7 +142,6 @@
                 {{ end }}
               </a>
             </li>
-            {{ end }}
             {{ if isset .Site.Params.footer.telegram "link" }}
             <li>
               <a href="https://t.me/{{ .Site.Params.footer.telegram.link }}" target="_blank">
@@ -154,8 +165,7 @@
                 {{ end }}
               </a>
             </li>
-            {{ end }}             
-       
+            {{ end }}
           </ul>
         </div>
       </div>
