@@ -154,6 +154,11 @@ params:
     #    title: Instagram
     # option to specify your telegram username in the footer; 
     # **uncomment** the below lines to show in footer
+    # mastodon: 
+    #    server: domain name of mastodon server
+    #    user: mastodon user name
+    #    title: Mastodon
+    # **uncomment** the below lines to show in footer
     # telegram: 
     #    link: username
     #    title: Telegram
