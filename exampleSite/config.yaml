@@ -69,7 +69,8 @@ params:
   # main pages options
   mainPage:
     # option to specify the main font of the theme
-    fontFamily: "Open Sans" 
+    # fontFamily: "Open Sans" # --> it will lookup in the google fonts
+    fontFamily: "/fonts/Open Sans.css" # --> it will lookup in the local folder
 
   # sidebar options
   sidebar:

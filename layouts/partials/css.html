@@ -4,25 +4,38 @@
 
 {{- $cssOpts   := cond (hugo.IsServer) (dict "targetPath" $cssTarget "enableSourceMap" true) (dict "targetPath" $cssTarget "outputStyle" "compressed") -}}
 
+{{- $fontUrl1  := "" -}}
 {{- $font1     := .Site.Params.mainPage.fontFamily -}}
+{{- if resources.Get $font1 -}}
+  {{- $fontUrl1 = (resources.Get $font1).Permalink | relURL -}}
+{{- else -}}
+  {{- with .Site.Params.mainPage.sizes -}}
+    {{- $font1 = printf "%s:%d,%d" $font1 (index . 0) (index . 1) -}}
+  {{- end -}}
+  {{- $fontUrl1 = printf "https://fonts.googleapis.com/css2?%s" (querify "family" $font1) -}}
+{{- end -}}
+
+{{- $fontUrl2  := "" -}}
 {{- $font2     := .Site.Params.sidebar.fontFamily -}}
+{{- if resources.Get $font2 -}}
+  {{- $fontUrl2 = (resources.Get $font2).Permalink | relURL -}}
+{{- else -}}
+  {{- with .Site.Params.sidebar.sizes -}}
+    {{- $font2 = printf "%s:%d,%d" $font2 (index . 0) (index . 1) -}}
+  {{- end -}}
+  {{- $fontUrl2 = printf "https://fonts.googleapis.com/css2?%s" (querify "family" $font2) -}}
+{{- end -}}
+
+{{- $fontUrl3  := "" -}}
 {{- $font3     := .Site.Params.navbar.fontFamily -}}
-
-{{- with .Site.Params.mainPage.sizes -}}
-  {{- $font1 = printf "%s:%d,%d" $font1 (index . 0) (index . 1) -}}
+{{- if resources.Get $font3 -}}
+  {{- $fontUrl3 = (resources.Get $font3).Permalink | relURL -}}
+{{- else -}}
+  {{- with .Site.Params.navbar.sizes -}}
+    {{- $font3 = printf "%s:%d,%d" $font3 (index . 0) (index . 1) -}}
+  {{- end -}}
+  {{- $fontUrl3 = printf "https://fonts.googleapis.com/css2?%s" (querify "family" $font3) -}}
 {{- end -}}
-
-{{- with .Site.Params.sidebar.sizes -}}
-  {{- $font2 = printf "%s:%d,%d" $font2 (index . 0) (index . 1) -}}
-{{- end -}}
-
-{{- with .Site.Params.navbar.sizes -}}
-  {{- $font3 = printf "%s:%d,%d" $font3 (index . 0) (index . 1) -}}
-{{- end -}}
-
-{{- $fontUrl1  := printf "https://fonts.googleapis.com/css2?%s" (querify "family" $font1) -}}
-{{- $fontUrl2  := printf "https://fonts.googleapis.com/css2?%s" (querify "family" $font2) -}}
-{{- $fontUrl3  := printf "https://fonts.googleapis.com/css2?%s" (querify "family" $font3) -}}
 
 <link href="{{- $fontUrl1 -}}" rel="stylesheet">
 <link href="{{- $fontUrl2 -}}" rel="stylesheet">
