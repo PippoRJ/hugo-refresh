@@ -19,7 +19,7 @@
     {{- $image := "" -}}
     {{- $imgWidthDefault := 375 -}}
     {{- $imgHeightDefault := 250 -}}
-    {{- if .Params.summaryImage -}} 
+    {{- if and .Params.summaryImage (.Page.Resources.GetMatch .Params.summaryImage) -}} 
         {{- $image = .Page.Resources.GetMatch .Params.summaryImage -}}
         {{- .Scratch.Set "image" ($image.Resize "600x") -}}
         {{- $image = .Scratch.Get "image" -}}

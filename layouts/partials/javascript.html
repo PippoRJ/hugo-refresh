@@ -1,6 +1,7 @@
-{{- $js1 := resources.Get "js/jquery-2.2.4.js" -}}
+{{- $js1 := resources.Get "js/jquery-3.7.1.js" -}}
 {{- $js2 := resources.Get "js/feather.4.22.0.js" -}}
-{{- $js3 := resources.Get "js/modernizr-3.6.0.js" -}}
+{{- /* $js3 := resources.Get "js/modernizr-3.6.0.js" */ -}}
+{{- $js3 := resources.Get "js/modernizr-3.12.0.js" -}}
 {{- $js4 := resources.Get "js/refresh.js" -}}
 
 {{- $js5 := resources.Get "js/mathjax/core.js" -}}
@@ -9,8 +10,8 @@
 {{- $js8 := resources.Get "js/mathjax/tex_out.js" -}}
 {{- $js9 := resources.Get "js/mathjax/startup.js" -}}
 
-{{- $js10 := resources.Get "js/highlight.9.18.1.js" -}}
-{{- $js11 := resources.Get "js/highlightjs-line-numbers.2.7.0.min.js" -}}
+{{- $js10 := resources.Get "js/highlight-11.10.0.js" -}}
+{{- $js11 := resources.Get "js/highlightjs-line-numbers-2.8.0.js" -}}
 
 {{- if .Site.Params.jsMinify -}}
     {{- $js1 = $js1 | resources.Minify -}}
@@ -45,13 +46,13 @@
 
 {{- if .Site.Params.jsIntegrity -}}
   <script src="{{- $js1.Permalink | relURL -}}" integrity="{{- $js1.Data.Integrity -}}"></script>
-  <script src="{{- $js2.Permalink | relURL -}}" integrity="{{- $js2.Data.Integrity -}}"></script>
-  <script src="{{- $js3.Permalink | relURL -}}" integrity="{{- $js3.Data.Integrity -}}"></script>
+  <!-- <script src="{{- $js2.Permalink | relURL -}}" integrity="{{- $js2.Data.Integrity -}}"></script> -->
+  <!-- <script src="{{- $js3.Permalink | relURL -}}" integrity="{{- $js3.Data.Integrity -}}"></script> -->
   <script src="{{- $js4.Permalink | relURL -}}" integrity="{{- $js4.Data.Integrity -}}"></script>
 {{- else -}}
   <script src="{{- $js1.Permalink | relURL -}}"></script>
-  <script src="{{- $js2.Permalink | relURL -}}"></script>
-  <script src="{{- $js3.Permalink | relURL -}}"></script>
+  <!-- <script src="{{- $js2.Permalink | relURL -}}"></script> -->
+  <!-- <script src="{{- $js3.Permalink | relURL -}}"></script> -->
   <script src="{{- $js4.Permalink | relURL -}}"></script>
 {{- end -}}
 
@@ -83,11 +84,11 @@
 {{- end -}}
 
 <script>
-  hljs.initHighlightingOnLoad();
+  hljs.highlightAll();
   hljs.initLineNumbersOnLoad();
   document.addEventListener('DOMContentLoaded', (event) => {
     document.querySelectorAll('.codeinline').forEach((block) => {
-      hljs.highlightBlock(block);
+      hljs.highlightElement(block);
     });
   });
 </script>

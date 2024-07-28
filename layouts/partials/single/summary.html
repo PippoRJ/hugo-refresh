@@ -17,7 +17,7 @@
         {{- $image := "" -}}
         {{- $imgWidth := 0 -}}
         {{- $imgHeight := 0 -}}
-        {{- if .Params.summaryImage -}} 
+        {{- if and .Params.summaryImage (.Page.Resources.GetMatch .Params.summaryImage) -}} 
           {{- $image = .Page.Resources.GetMatch .Params.summaryImage -}}
           {{- $imgWidth = $image.Width -}}
           {{- $imgHeight = $image.Height -}}

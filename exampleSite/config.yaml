@@ -158,7 +158,7 @@ params:
     #    link: username
     #    title: Telegram
     # option to specify the copyright in the footer
-    copyright: Julia The White - 2021
+    copyright: Julia The White - 2024
 
 ###################################################################
 ################## multilanguage support options ##################

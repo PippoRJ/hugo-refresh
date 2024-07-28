@@ -2,36 +2,45 @@
 {{- $scss      := "style.scss" -}}
 {{- $cssTarget := "css/style.css" -}}
 
-{{- $cssOpts   := cond (.Site.IsServer) (dict "targetPath" $cssTarget "enableSourceMap" true) (dict "targetPath" $cssTarget "outputStyle" "compressed") -}}
-{{- $font1     := replace .Site.Params.mainPage.fontFamily " " "+" -}}
-{{- $font2     := replace .Site.Params.sidebar.fontFamily " " "+" -}}
-{{- $font3     := replace .Site.Params.navbar.fontFamily " " "+" -}}
-{{/*  {{- $fontSizes := delimit .Site.Params.mainPage.sizes "," -}}  */}}
-{{/*  {{- $fontUrl1     := printf "https://fonts.googleapis.com/css?family=%s:%s" $font1 $fontSizes -}}
-{{- $fontUrl2     := printf "https://fonts.googleapis.com/css?family=%s:%s" $font2 $fontSizes -}}
-{{- $fontUrl3     := printf "https://fonts.googleapis.com/css?family=%s:%s" $font3 $fontSizes -}}  */}}
-{{- $fontUrl1  := printf "https://fonts.googleapis.com/css?family=%s" $font1 -}}
-{{- $fontUrl2  := printf "https://fonts.googleapis.com/css?family=%s" $font2 -}}
-{{- $fontUrl3  := printf "https://fonts.googleapis.com/css?family=%s" $font3 -}}
+{{- $cssOpts   := cond (hugo.IsServer) (dict "targetPath" $cssTarget "enableSourceMap" true) (dict "targetPath" $cssTarget "outputStyle" "compressed") -}}
+
+{{- $font1     := .Site.Params.mainPage.fontFamily -}}
+{{- $font2     := .Site.Params.sidebar.fontFamily -}}
+{{- $font3     := .Site.Params.navbar.fontFamily -}}
+
+{{- with .Site.Params.mainPage.sizes -}}
+  {{- $font1 = printf "%s:%d,%d" $font1 (index . 0) (index . 1) -}}
+{{- end -}}
+
+{{- with .Site.Params.sidebar.sizes -}}
+  {{- $font2 = printf "%s:%d,%d" $font2 (index . 0) (index . 1) -}}
+{{- end -}}
+
+{{- with .Site.Params.navbar.sizes -}}
+  {{- $font3 = printf "%s:%d,%d" $font3 (index . 0) (index . 1) -}}
+{{- end -}}
+
+{{- $fontUrl1  := printf "https://fonts.googleapis.com/css2?%s" (querify "family" $font1) -}}
+{{- $fontUrl2  := printf "https://fonts.googleapis.com/css2?%s" (querify "family" $font2) -}}
+{{- $fontUrl3  := printf "https://fonts.googleapis.com/css2?%s" (querify "family" $font3) -}}
 
 <link href="{{- $fontUrl1 -}}" rel="stylesheet">
 <link href="{{- $fontUrl2 -}}" rel="stylesheet">
 <link href="{{- $fontUrl3 -}}" rel="stylesheet">
 
 {{- $css  := resources.Get $sass | resources.ExecuteAsTemplate $scss . | toCSS $cssOpts -}}
-{{- $css1 := resources.Get "css/monokai-sublime.9.15.8.min.css" -}}
-{{- $css2 := resources.Get "css/all.min.css" -}}
+{{- $css1 := resources.Get "css/monokai-sublime-11.10.0.css" -}}
+{{- $css2 := resources.Get "css/all-6.6.0.css" -}}
 {{- $css3 := resources.Get "css/refresh.css" -}}
-{{- $css4 := resources.Get "css/devicon.min.css" -}}
+{{- $css4 := resources.Get "css/devicon.min-2.16.0.css" -}}
 
-{{- if .Site.Params.cssMinify -}}
+{{- if eq .Site.Params.cssMinify true -}}
 
 {{- $css  = $css  | resources.Minify -}}
 {{- $css1 = $css1 | resources.Minify -}}
 {{- $css2 = $css2 | resources.Minify -}}
 {{- $css3 = $css3 | resources.Minify -}}
 {{- $css4 = $css4 | resources.Minify -}}
-
 {{- end -}}
 
 {{- if .Site.Params.cssIntegrity -}}
