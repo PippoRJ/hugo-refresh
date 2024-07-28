@@ -1,11 +1,23 @@
-$(document).ready(function () {
+// To handle situation when the load event is called before the document is ready
+var loadEventCalled = false;
+window.addEventListener("load", (event) => {
+    loadEventCalled = true;
+  });
+
+$(function () {
 
     //Preloader
     $(window).on('load', function () { // makes sure the whole site is loaded
         $('#status').fadeOut(); // will first fade out the loading animation
         $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
         $('body').delay(350).css({ 'overflow': 'visible' });
-    })
+    });
+    // load event called before $(windows).on('load')
+    if (loadEventCalled){ 
+        $('#status').fadeOut(); // will first fade out the loading animation
+        $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+        $('body').delay(350).css({ 'overflow': 'visible' });
+    }
 
     //Animate right hamburger icon and open sidebar
     // $('.menu-icon-trigger').click(function (e) {
@@ -115,12 +127,12 @@ $(document).ready(function () {
     }
 
     //Init feather icons
-    feather.replace();
+    // feather.replace();
 
     //reveal elements on scroll so animations trigger the right way
     var $window = $(window),
-        win_height_padded = $window.height() * 1.1,
-        isTouch = Modernizr.touchevents;
+        win_height_padded = $window.height() * 1.1;
+        // isTouch = Modernizr.touchevents;
 
     $window.on('scroll', revealOnScroll);
 
