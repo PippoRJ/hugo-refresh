@@ -1,7 +1,7 @@
 name = "Hugo ReFresh"
 license = "MIT"
 licenselink = "https://raw.githubusercontent.com/PippoRJ/hugo-refresh/master/LICENSE"
-description = "A re-adaptation of the Hugo Fresh theme"
+description = "A multi-page, clean and responsive theme. Multilingual supported."
 homepage = "https://github.com/PippoRJ/hugo-refresh"
 tags = ["responsive", "blog", "light", "clean", "personal", "multilingual", "syntax-highlighting"]
 features = ["blog", "responsive", "simple", "404", "mathjax"]
