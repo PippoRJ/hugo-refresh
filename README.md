@@ -1,8 +1,8 @@
 # The ReFresh theme for Hugo
 
-**ReFresh** is a theme for the [Hugo](https://gohugo.io) static site generator _highly_ modified from the awesome [Fresh](https://github.com/StefMa/hugo-fresh) theme (below you can find the list of changes to the original theme). 
+**ReFresh** is a theme for the [Hugo](https://gohugo.io) static site generator **highly** modified from the awesome [Fresh](https://github.com/StefMa/hugo-fresh) theme (below you can find the list of changes to the original theme). 
 
-You can find a live demo of the original Fresh theme [here](https://themes.gohugo.io/theme/hugo-fresh/) or a demo of the Hugo ReFresh theme [here](https://themes.gohugo.io/theme/hugo-refresh/).
+You can find a live demo of the theme [here](https://themes.gohugo.io/theme/hugo-refresh/).
 
 You can find another example of ReFresh theme in [my personal website](https://rjordaney.is/). 
 
@@ -496,46 +496,46 @@ If you want to add a missing language please submit a feature request.
 
 ## List of modifications from the original theme
 
-* The ReFresh theme was transformed from _single page_ template to _multipage_.
+* Big modification: The ReFresh theme is transformed from _single page_ template to _multipage_.
 
-* Added multilanguage support.
+* Addition: Added multilanguage support.
 
-* The left side menu now contains page tags along with theirs post counter.
+* Big extention: The left side menu shows tags and number of occurences dynamically generated based on the content of the pages (not from a list in the config file like in the original theme).
 
-* The _list_ and _terms_ types of pages contain a list of the post summaries.
+* Addition: The theme images change colour accordingly to the main colour theme (i.e.: are now processed with `resources.ExecuteAsTemplate` and the colout is written to the resulting SVG image).
 
-* The images used to build the summaries can be resized to allow better usage of the bandwidth.
+* Addition: The _list_ and _terms_ types of pages contain a list of the post summaries.
 
-* The js and css files can be minified (with a configurable option on the `config.yaml`).
+* Addition: The images used to build the summaries can be resized to allow better usage of the bandwidth.
 
-* The menu is automatically built following the structure of the `content` folder. Two levels are allowed at the moment.
+* Addition: The js and css files can be minified (with a configurable option on the `config.yaml`).
 
-* The `navbar-burger` used in the original theme's menu is removed (it was displayed when the page was resized).
+* Big extention: The menu is automatically built following the structure of the `content` folder (not from a list in the config file like in the orginal theme). Two levels are allowed at the moment. 
 
-* The `.sass` files are now processed with `resources.ExecuteAsTemplate` so that it is possible to use variables from the `config.yaml`.
+* Suppression: The `navbar-burger` used in the original theme's menu is removed (it was displayed when the page was resized).
 
-* Options in the `config.yaml` are added to configure the font-family for the navbar, sidebar and content of the a page.
+* Boost: The `.sass` files are now processed with `resources.ExecuteAsTemplate` so that it is possible to use variables from the `config.yaml`.
 
-* [Bulma](https://bulma.io/) (the css framework the theme is based on) is now updated to version 0.7.5 because in the new version the class _content_ has a separate style to allow modification that will impact only the contents of the posts.
+* Boost: Options in the `config.yaml` are added to configure the font-family for the navbar, sidebar and content of the a page.
 
-* [highlight.js](https://highlightjs.org/) was added to better highlight the code sections of the posts. I chose the style **monokai-sublime**.
+* Boost: [Bulma](https://bulma.io/) (the css framework the theme is based on) is now updated to version 0.7.5 because in the new version the class _content_ has a separate style to allow modification that will impact only the contents of the posts.
 
-* [highlightjs-line-number.js](https://github.com/wcoder/highlightjs-line-numbers.js/) was added to have the line number at the beginning of each line of code in a code sections of a post.
+* Extention: [highlight.js](https://highlightjs.org/) was added to better highlight the code sections of the posts. I chose the style **monokai-sublime**.
 
-* A minimal version of [MathJax](https://www.mathjax.org/) was added to allow LaTeX style mathematical expressions to be placed in the site.
+* Extention: [highlightjs-line-number.js](https://github.com/wcoder/highlightjs-line-numbers.js/) was added to have the line number at the beginning of each line of code in a code sections of a post.
 
-* Several other options are added to personalise the content of a post. 
+* Extention: A minimal version of [MathJax](https://www.mathjax.org/) was added to allow LaTeX style mathematical expressions to be placed in the site.
 
-* A shortcode is added to resize the images and save bandwidth in a post content.
+* Boosts: Several other options are added to personalise the content of a post. 
 
-* A shortcode is added to show multiple tabs.
+* Extention: A shortcode is added to resize the images and save bandwidth in a post content.
 
-* Four shortcodes are added to show code: inline, in page, in page wide, in tabs. 
+* Extention: A shortcode is added to show multiple tabs.
 
-* The loaders images are now processed with `resources.ExecuteAsTemplate` so that they take the main colour of the theme (defined in `config.yaml`)
+* Extention: Four shortcodes are added to show code: inline, in page, in page wide, in tabs. 
 
-* The _favicon_ is processed with `resources.ExecuteAsTemplate` to follow the main colour of the page.
+* Boost: The _favicon_ is processed with `resources.ExecuteAsTemplate` to follow the main colour of the page.
 
-* Added Open Graph meta tags to each post for easy-sharing on social media sites.
+* Extention: Added Open Graph meta tags to each post for easy-sharing on social media sites.
 
-* All the js and css files are loaded locally, i.e., not loaded from third party sites. 
+* Big Extention: All the js and css files are loaded locally, i.e., not loaded from third party sites. 
