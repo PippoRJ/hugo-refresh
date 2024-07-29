@@ -500,9 +500,9 @@ If you want to add a missing language please submit a feature request.
 
 * Addition: Added multilanguage support.
 
-* Big extention: The left side menu shows tags and number of occurences dynamically generated based on the content of the pages (not from a list in the config file like in the original theme).
+* Big extension: The left side menu shows tags and number of occurrences dynamically generated based on the content of the pages (not from a list in the config file like in the original theme).
 
-* Addition: The theme images change colour accordingly to the main colour theme (i.e.: are now processed with `resources.ExecuteAsTemplate` and the colout is written to the resulting SVG image).
+* Addition: The theme images change colour accordingly to the main colour theme (i.e.: are now processed with `resources.ExecuteAsTemplate` and the colour is written to the resulting SVG image).
 
 * Addition: The _list_ and _terms_ types of pages contain a list of the post summaries.
 
@@ -510,7 +510,7 @@ If you want to add a missing language please submit a feature request.
 
 * Addition: The js and css files can be minified (with a configurable option on the `config.yaml`).
 
-* Big extention: The menu is automatically built following the structure of the `content` folder (not from a list in the config file like in the orginal theme). Two levels are allowed at the moment. 
+* Big extension: The menu is automatically built following the structure of the `content` folder (not from a list in the config file like in the original theme). Two levels are allowed at the moment. 
 
 * Suppression: The `navbar-burger` used in the original theme's menu is removed (it was displayed when the page was resized).
 
@@ -520,22 +520,22 @@ If you want to add a missing language please submit a feature request.
 
 * Boost: [Bulma](https://bulma.io/) (the css framework the theme is based on) is now updated to version 0.7.5 because in the new version the class _content_ has a separate style to allow modification that will impact only the contents of the posts.
 
-* Extention: [highlight.js](https://highlightjs.org/) was added to better highlight the code sections of the posts. I chose the style **monokai-sublime**.
+* Extension: [highlight.js](https://highlightjs.org/) was added to better highlight the code sections of the posts. I chose the style **monokai-sublime**.
 
-* Extention: [highlightjs-line-number.js](https://github.com/wcoder/highlightjs-line-numbers.js/) was added to have the line number at the beginning of each line of code in a code sections of a post.
+* Extension: [highlightjs-line-number.js](https://github.com/wcoder/highlightjs-line-numbers.js/) was added to have the line number at the beginning of each line of code in a code sections of a post.
 
-* Extention: A minimal version of [MathJax](https://www.mathjax.org/) was added to allow LaTeX style mathematical expressions to be placed in the site.
+* Extension: A minimal version of [MathJax](https://www.mathjax.org/) was added to allow LaTeX style mathematical expressions to be placed in the site.
 
 * Boosts: Several other options are added to personalise the content of a post. 
 
-* Extention: A shortcode is added to resize the images and save bandwidth in a post content.
+* Extension: A shortcode is added to resize the images and save bandwidth in a post content.
 
-* Extention: A shortcode is added to show multiple tabs.
+* Extension: A shortcode is added to show multiple tabs.
 
-* Extention: Four shortcodes are added to show code: inline, in page, in page wide, in tabs. 
+* Extension: Four shortcodes are added to show code: inline, in page, in page wide, in tabs. 
 
 * Boost: The _favicon_ is processed with `resources.ExecuteAsTemplate` to follow the main colour of the page.
 
-* Extention: Added Open Graph meta tags to each post for easy-sharing on social media sites.
+* Extension: Added Open Graph meta tags to each post for easy-sharing on social media sites.
 
-* Big Extention: All the js and css files are loaded locally, i.e., not loaded from third party sites. 
+* Big Extension: All the js and css files are loaded locally, i.e., not loaded from third party sites. 
