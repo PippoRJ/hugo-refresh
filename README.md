@@ -6,7 +6,7 @@ You can find a live demo of the theme [here](https://themes.gohugo.io/theme/hugo
 
 You can find another example of ReFresh theme in [my personal website](https://rjordaney.is/). 
 
-![ReFresh theme logo](images/screenshot.png)
+![ReFresh theme logo](https://raw.githubusercontent.com/PippoRJ/hugo-refresh/master/images/screenshot.png)
 
 > This theme is intended for personal website and blog. If you'd like to extend the theme to include other functionalities submit a pull request.
 
