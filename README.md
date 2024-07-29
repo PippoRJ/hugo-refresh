@@ -1,6 +1,6 @@
 # The ReFresh theme for Hugo
 
-**ReFresh** is a theme for the [Hugo](https://gohugo.io) static site generator **highly** modified from the awesome [Fresh](https://github.com/StefMa/hugo-fresh) theme (below you can find the list of changes to the original theme). 
+**ReFresh** is a theme for the [Hugo](https://gohugo.io) static site generator _inspired_ from the awesome [Fresh](https://github.com/StefMa/hugo-fresh) theme (below you can find the list of changes to the original theme). 
 
 You can find a live demo of the theme [here](https://themes.gohugo.io/theme/hugo-refresh/).
 
