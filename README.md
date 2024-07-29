@@ -2,9 +2,7 @@
 
 **ReFresh** is a theme for the [Hugo](https://gohugo.io) static site generator _inspired_ from the awesome [Fresh](https://github.com/StefMa/hugo-fresh) theme (below you can find the list of changes to the original theme). 
 
-You can find a live demo of the theme [here](https://themes.gohugo.io/theme/hugo-refresh/).
-
-You can find another example of ReFresh theme in [my personal website](https://rjordaney.is/). 
+You can find a live demo of the ReFresh theme in [my personal website](https://rjordaney.is/). 
 
 ![ReFresh theme logo](https://raw.githubusercontent.com/PippoRJ/hugo-refresh/master/images/screenshot.png)
 
