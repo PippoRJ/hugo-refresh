@@ -69,7 +69,7 @@
         {{- end -}}
         {{- range .Site.Sections -}}
           {{- $shmenu := true -}}
-          {{- if (isset .Params "showinmenu") -}}
+          {{- if .Params.showinmenu -}}
             {{- $shmenu = .Params.showinmenu -}}
           {{- end -}}
           {{- if $shmenu -}}

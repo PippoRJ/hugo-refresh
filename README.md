@@ -92,7 +92,7 @@ Usage example:
 ```
 
 The **first parameter** is the title of the shortcode (in this example is "My awesome title").<br>
-The **second paramter** is the ID of the shortcode (in this example is "my-title-id").<br>
+The **second parameter** is the ID of the shortcode (in this example is "my-title-id").<br>
 It can be used in links to the same page as:
 
 ```
@@ -111,7 +111,7 @@ Usage example:
 ```
 
 The **first parameter** is the title of the shortcode (in this example is "My awesome subtitle").<br>
-The **second paramter** is the ID of the shortcode (in this example is "my-subtitle-id").<br>
+The **second parameter** is the ID of the shortcode (in this example is "my-subtitle-id").<br>
 It can be used in links to the same page as:
 
 ```
